@@ -12,6 +12,7 @@ PATH=/usr/sbin:/usr/bin:/sbin:/bin
 set -u
 
 die() { echo "canmon-setup: $*" >&2; exit 2; }
+supports_berr() { ip -details -json link show "$1" | grep -q '"ctrlmode_supported":\[[^]]*"BERR-REPORTING"'; }
 
 action=${1-}
 iface=${2-}
@@ -35,7 +36,9 @@ case "$action" in
     [[ $sp =~ ^0(\.[0-9]{1,3})?$ ]] || die "sample-point must be 0 or 0.xxx"
     [[ $dsp =~ ^0(\.[0-9]{1,3})?$ ]] || die "dsample-point must be 0 or 0.xxx"
     [[ $listen == on || $listen == off ]] || die "listen-only must be on or off"
-    args=(bitrate "$bitrate" dbitrate "$dbitrate" fd on listen-only "$listen" berr-reporting on)
+    args=(bitrate "$bitrate" dbitrate "$dbitrate" fd on listen-only "$listen")
+    # Some drivers (peak_usb) report bus errors without this mode and refuse it, so ask only when it is supported.
+    supports_berr "$iface" && args+=(berr-reporting on)
     [ "$sp" != 0 ] && args+=(sample-point "$sp")
     [ "$dsp" != 0 ] && args+=(dsample-point "$dsp")
     # Recover from bus-off by itself only when the tool is allowed to transmit.

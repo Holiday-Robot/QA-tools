@@ -19,7 +19,9 @@ case "$mode" in
 esac
 
 ip link set "$iface" down 2>/dev/null || true
-ip link set "$iface" type can "${args[@]}" fd on listen-only on berr-reporting on
+# peak_usb reports bus errors without berr-reporting and refuses that mode, so ask only when it is supported.
+ip -details -json link show "$iface" | grep -q '"ctrlmode_supported":\[[^]]*"BERR-REPORTING"' && args+=(berr-reporting on)
+ip link set "$iface" type can "${args[@]}" fd on listen-only on
 ip link set "$iface" txqueuelen 1000
 ip link set "$iface" up
 ip -details -statistics link show "$iface"
