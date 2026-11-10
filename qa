@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# Run the QA tools from this folder without installing them: ./qa, ./qa list, ./qa canmon -h
+# Uses the packages in .deps when that folder exists, otherwise the Python packages already installed.
+here=$(cd "$(dirname "$0")" && pwd)
+export PYTHONPATH="$here/src${PYTHONPATH:+:$PYTHONPATH}"
+if [ -d "$here/.deps" ]; then
+  export PYTHONPATH="$PYTHONPATH:$here/.deps"
+fi
+# WSL usually lacks the libraries for Qt's X11 plugin, so prefer Wayland (WSLg) when it is available.
+if [ -z "$QT_QPA_PLATFORM" ] && [ -n "$WAYLAND_DISPLAY" ]; then
+  export QT_QPA_PLATFORM="wayland;xcb"
+fi
+exec python3 -m qatools "$@"

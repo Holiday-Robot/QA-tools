@@ -1,0 +1,1114 @@
+VERSION ""
+
+NS_ :
+
+BS_:
+
+BU_: HETC_L_TACT HTAC_51 HMDI_1 HMAS_11 HMDI_2 HMAS_12 HMDC_3 HMDC_4 HMDC_5 HMDC_6 HMDC_7 HMDC_8
+
+BO_ 2163245823 CTRL_HETC_L_TACT_to_ALL: 7 HETC_L_TACT
+ SG_ SubCode M : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ Rtc_Year2000 m9 : 8|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ Rtc_Month m9 : 16|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ Rtc_Day m9 : 24|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ Rtc_Hour m9 : 32|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ Rtc_Min m9 : 40|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ Rtc_Sec m9 : 48|8@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 2163376895 QUIET_HETC_L_TACT_to_ALL: 6 HETC_L_TACT
+ SG_ Divider : 0|16@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ HoldMs : 16|32@1+ (1,0) [0|0] "ms" Vector__XXX
+
+BO_ 2147648255 EVENT_HETC_L_TACT_to_ALL: 7 HETC_L_TACT
+ SG_ EvtType : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ EvtCode : 8|16@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ EvtData : 24|32@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 2147648000 EVENT_HETC_L_TACT_to_ALLHP: 7 HETC_L_TACT
+ SG_ EvtType : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ EvtCode : 8|16@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ EvtData : 24|32@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 2163291010 STATUS_HTAC_51_to_HETC_L_TACT: 64 HTAC_51
+ SG_ SubCode M : 0|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_CanId m5 : 8|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_HostId m5 : 16|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Pid m5 : 24|16@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Bid m5 : 40|16@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Mid m5 : 56|16@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_VerMajor m5 : 72|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_VerMinor m5 : 80|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_VerPatch m5 : 88|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name0 m5 : 96|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name1 m5 : 104|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name2 m5 : 112|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name3 m5 : 120|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name4 m5 : 128|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name5 m5 : 136|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name6 m5 : 144|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name7 m5 : 152|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name8 m5 : 160|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name9 m5 : 168|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name10 m5 : 176|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name11 m5 : 184|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name12 m5 : 192|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name13 m5 : 200|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name14 m5 : 208|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name15 m5 : 216|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_FmtVer m5 : 224|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_GitRev m5 : 232|32@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_FwCrc m5 : 264|16@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_UptimeS m5 : 280|16@1+ (1,0) [0|0] "s" HETC_L_TACT
+ SG_ G2_Type m9M : 8|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ G2p_PointIdx m0 : 16|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ G2p_MsgCnt m0 : 24|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ G2p_X0 m0 : 32|16@1- (1,0) [0|0] "" HETC_L_TACT
+ SG_ G2p_Y0 m0 : 48|16@1- (1,0) [0|0] "" HETC_L_TACT
+ SG_ G2p_Z0 m0 : 64|16@1- (1,0) [0|0] "" HETC_L_TACT
+ SG_ G2p_X1 m0 : 80|16@1- (1,0) [0|0] "" HETC_L_TACT
+ SG_ G2p_Y1 m0 : 96|16@1- (1,0) [0|0] "" HETC_L_TACT
+ SG_ G2p_Z1 m0 : 112|16@1- (1,0) [0|0] "" HETC_L_TACT
+ SG_ G2p_X2 m0 : 128|16@1- (1,0) [0|0] "" HETC_L_TACT
+ SG_ G2p_Y2 m0 : 144|16@1- (1,0) [0|0] "" HETC_L_TACT
+ SG_ G2p_Z2 m0 : 160|16@1- (1,0) [0|0] "" HETC_L_TACT
+ SG_ G2p_X3 m0 : 176|16@1- (1,0) [0|0] "" HETC_L_TACT
+ SG_ G2p_Y3 m0 : 192|16@1- (1,0) [0|0] "" HETC_L_TACT
+ SG_ G2p_Z3 m0 : 208|16@1- (1,0) [0|0] "" HETC_L_TACT
+ SG_ G2p_X4 m0 : 224|16@1- (1,0) [0|0] "" HETC_L_TACT
+ SG_ G2p_Y4 m0 : 240|16@1- (1,0) [0|0] "" HETC_L_TACT
+ SG_ G2p_Z4 m0 : 256|16@1- (1,0) [0|0] "" HETC_L_TACT
+ SG_ G2p_X5 m0 : 272|16@1- (1,0) [0|0] "" HETC_L_TACT
+ SG_ G2p_Y5 m0 : 288|16@1- (1,0) [0|0] "" HETC_L_TACT
+ SG_ G2p_Z5 m0 : 304|16@1- (1,0) [0|0] "" HETC_L_TACT
+ SG_ G2p_X6 m0 : 320|16@1- (1,0) [0|0] "" HETC_L_TACT
+ SG_ G2p_Y6 m0 : 336|16@1- (1,0) [0|0] "" HETC_L_TACT
+ SG_ G2p_Z6 m0 : 352|16@1- (1,0) [0|0] "" HETC_L_TACT
+ SG_ G2p_X7 m0 : 368|16@1- (1,0) [0|0] "" HETC_L_TACT
+ SG_ G2p_Y7 m0 : 384|16@1- (1,0) [0|0] "" HETC_L_TACT
+ SG_ G2p_Z7 m0 : 400|16@1- (1,0) [0|0] "" HETC_L_TACT
+ SG_ G2p_X8 m0 : 416|16@1- (1,0) [0|0] "" HETC_L_TACT
+ SG_ G2p_Y8 m0 : 432|16@1- (1,0) [0|0] "" HETC_L_TACT
+ SG_ G2p_Z8 m0 : 448|16@1- (1,0) [0|0] "" HETC_L_TACT
+ SG_ G2p_X9 m0 : 464|16@1- (1,0) [0|0] "" HETC_L_TACT
+ SG_ G2p_Y9 m0 : 480|16@1- (1,0) [0|0] "" HETC_L_TACT
+ SG_ G2p_Z9 m0 : 496|16@1- (1,0) [0|0] "" HETC_L_TACT
+ SG_ G2s_TactileNum m1 : 16|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ G2s_EncoderNum m1 : 24|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ G2s_I2cFault m1 : 32|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ G2s_TactileOk m1 : 48|64@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ G2s_MagnetFault m1 : 112|64@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ G2s_EncoderOk m1 : 176|32@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ G2s_EncoderFault m1 : 208|32@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Enc_Count m27 : 8|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Enc0_Id m27 : 16|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Enc0_Ready m27 : 24|1@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Enc0_Angle m27 : 25|1@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Enc0_Error m27 : 28|1@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Enc0_I2cFault m27 : 36|4@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Enc0_AngleRad m27 : 40|32@1- (1,0) [0|0] "rad" HETC_L_TACT
+ SG_ Enc1_Id m27 : 72|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Enc1_Ready m27 : 80|1@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Enc1_Angle m27 : 81|1@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Enc1_Error m27 : 84|1@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Enc1_I2cFault m27 : 92|4@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Enc1_AngleRad m27 : 96|32@1- (1,0) [0|0] "rad" HETC_L_TACT
+ SG_ Enc2_Id m27 : 128|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Enc2_Ready m27 : 136|1@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Enc2_Angle m27 : 137|1@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Enc2_Error m27 : 140|1@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Enc2_I2cFault m27 : 148|4@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Enc2_AngleRad m27 : 152|32@1- (1,0) [0|0] "rad" HETC_L_TACT
+ SG_ Enc3_Id m27 : 184|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Enc3_Ready m27 : 192|1@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Enc3_Angle m27 : 193|1@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Enc3_Error m27 : 196|1@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Enc3_I2cFault m27 : 204|4@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Enc3_AngleRad m27 : 208|32@1- (1,0) [0|0] "rad" HETC_L_TACT
+ SG_ Enc4_Id m27 : 240|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Enc4_Ready m27 : 248|1@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Enc4_Angle m27 : 249|1@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Enc4_Error m27 : 252|1@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Enc4_I2cFault m27 : 260|4@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Enc4_AngleRad m27 : 264|32@1- (1,0) [0|0] "rad" HETC_L_TACT
+ SG_ Enc5_Id m27 : 296|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Enc5_Ready m27 : 304|1@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Enc5_Angle m27 : 305|1@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Enc5_Error m27 : 308|1@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Enc5_I2cFault m27 : 316|4@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Enc5_AngleRad m27 : 320|32@1- (1,0) [0|0] "rad" HETC_L_TACT
+ SG_ Enc6_Id m27 : 352|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Enc6_Ready m27 : 360|1@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Enc6_Angle m27 : 361|1@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Enc6_Error m27 : 364|1@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Enc6_I2cFault m27 : 372|4@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Enc6_AngleRad m27 : 376|32@1- (1,0) [0|0] "rad" HETC_L_TACT
+ SG_ Enc7_Id m27 : 408|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Enc7_Ready m27 : 416|1@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Enc7_Angle m27 : 417|1@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Enc7_Error m27 : 420|1@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Enc7_I2cFault m27 : 428|4@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Enc7_AngleRad m27 : 432|32@1- (1,0) [0|0] "rad" HETC_L_TACT
+
+BO_ 2163291135 STATUS_HTAC_51_to_ALL: 48 HTAC_51
+ SG_ SubCode M : 0|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_CanId m5 : 8|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_HostId m5 : 16|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Pid m5 : 24|16@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Bid m5 : 40|16@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Mid m5 : 56|16@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_VerMajor m5 : 72|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_VerMinor m5 : 80|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_VerPatch m5 : 88|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name0 m5 : 96|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name1 m5 : 104|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name2 m5 : 112|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name3 m5 : 120|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name4 m5 : 128|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name5 m5 : 136|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name6 m5 : 144|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name7 m5 : 152|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name8 m5 : 160|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name9 m5 : 168|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name10 m5 : 176|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name11 m5 : 184|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name12 m5 : 192|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name13 m5 : 200|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name14 m5 : 208|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name15 m5 : 216|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_FmtVer m5 : 224|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_GitRev m5 : 232|32@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_FwCrc m5 : 264|16@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_UptimeS m5 : 280|16@1+ (1,0) [0|0] "s" HETC_L_TACT
+
+BO_ 2147713537 RPDO_HETC_L_TACT_to_HMDI_1: 16 HETC_L_TACT
+ SG_ Type : 0|8@1+ (1,0) [0|0] "" HMDI_1
+ SG_ ReqState : 8|8@1+ (1,0) [0|0] "" HMDI_1
+ SG_ DesiredMode : 16|8@1+ (1,0) [0|0] "" HMDI_1
+ SG_ DesiredPosition : 24|32@1- (1,0) [0|0] "rad" HMDI_1
+ SG_ DesiredVelocity : 56|32@1- (1,0) [0|0] "rad/s" HMDI_1
+ SG_ DesiredTorque : 88|32@1- (1,0) [0|0] "" HMDI_1
+
+BO_ 2147746178 TPDO_HMDI_1_to_HETC_L_TACT: 20 HMDI_1
+ SG_ Type : 0|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ ErrCode : 8|32@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ PresentState : 40|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ PresentMode : 48|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ PresentPosition : 56|32@1- (1,0) [0|0] "rad" HETC_L_TACT
+ SG_ PresentVelocity : 88|32@1- (1,0) [0|0] "rad/s" HETC_L_TACT
+ SG_ PresentTorque : 120|32@1- (1,0) [0|0] "" HETC_L_TACT
+ SG_ Temperature : 152|8@1- (1,0) [0|0] "degC" HETC_L_TACT
+
+BO_ 2163278210 STATUS_HMDI_1_to_HETC_L_TACT: 48 HMDI_1
+ SG_ SubCode M : 0|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_CanId m5 : 8|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_HostId m5 : 16|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Pid m5 : 24|16@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Bid m5 : 40|16@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Mid m5 : 56|16@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_VerMajor m5 : 72|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_VerMinor m5 : 80|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_VerPatch m5 : 88|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name0 m5 : 96|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name1 m5 : 104|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name2 m5 : 112|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name3 m5 : 120|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name4 m5 : 128|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name5 m5 : 136|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name6 m5 : 144|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name7 m5 : 152|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name8 m5 : 160|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name9 m5 : 168|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name10 m5 : 176|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name11 m5 : 184|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name12 m5 : 192|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name13 m5 : 200|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name14 m5 : 208|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name15 m5 : 216|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_FmtVer m5 : 224|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_GitRev m5 : 232|32@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_FwCrc m5 : 264|16@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_UptimeS m5 : 280|16@1+ (1,0) [0|0] "s" HETC_L_TACT
+
+BO_ 2147614976 EVENT_HMDI_1_to_ALLHP: 7 HMDI_1
+ SG_ EvtType : 0|8@1+ (1,0) [0|0] "" HETC_L_TACT,HTAC_51,HMAS_11
+ SG_ EvtCode : 8|16@1+ (1,0) [0|0] "" HETC_L_TACT,HTAC_51,HMAS_11
+ SG_ EvtData : 24|32@1+ (1,0) [0|0] "" HETC_L_TACT,HTAC_51,HMAS_11
+
+BO_ 2147713538 RPDO_HETC_L_TACT_to_HMDI_2: 16 HETC_L_TACT
+ SG_ Type : 0|8@1+ (1,0) [0|0] "" HMDI_2
+ SG_ ReqState : 8|8@1+ (1,0) [0|0] "" HMDI_2
+ SG_ DesiredMode : 16|8@1+ (1,0) [0|0] "" HMDI_2
+ SG_ DesiredPosition : 24|32@1- (1,0) [0|0] "rad" HMDI_2
+ SG_ DesiredVelocity : 56|32@1- (1,0) [0|0] "rad/s" HMDI_2
+ SG_ DesiredTorque : 88|32@1- (1,0) [0|0] "" HMDI_2
+
+BO_ 2147746434 TPDO_HMDI_2_to_HETC_L_TACT: 20 HMDI_2
+ SG_ Type : 0|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ ErrCode : 8|32@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ PresentState : 40|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ PresentMode : 48|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ PresentPosition : 56|32@1- (1,0) [0|0] "rad" HETC_L_TACT
+ SG_ PresentVelocity : 88|32@1- (1,0) [0|0] "rad/s" HETC_L_TACT
+ SG_ PresentTorque : 120|32@1- (1,0) [0|0] "" HETC_L_TACT
+ SG_ Temperature : 152|8@1- (1,0) [0|0] "degC" HETC_L_TACT
+
+BO_ 2163278466 STATUS_HMDI_2_to_HETC_L_TACT: 48 HMDI_2
+ SG_ SubCode M : 0|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_CanId m5 : 8|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_HostId m5 : 16|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Pid m5 : 24|16@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Bid m5 : 40|16@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Mid m5 : 56|16@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_VerMajor m5 : 72|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_VerMinor m5 : 80|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_VerPatch m5 : 88|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name0 m5 : 96|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name1 m5 : 104|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name2 m5 : 112|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name3 m5 : 120|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name4 m5 : 128|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name5 m5 : 136|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name6 m5 : 144|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name7 m5 : 152|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name8 m5 : 160|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name9 m5 : 168|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name10 m5 : 176|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name11 m5 : 184|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name12 m5 : 192|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name13 m5 : 200|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name14 m5 : 208|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name15 m5 : 216|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_FmtVer m5 : 224|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_GitRev m5 : 232|32@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_FwCrc m5 : 264|16@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_UptimeS m5 : 280|16@1+ (1,0) [0|0] "s" HETC_L_TACT
+
+BO_ 2147615232 EVENT_HMDI_2_to_ALLHP: 7 HMDI_2
+ SG_ EvtType : 0|8@1+ (1,0) [0|0] "" HETC_L_TACT,HTAC_51,HMDI_1,HMAS_11,HMAS_12
+ SG_ EvtCode : 8|16@1+ (1,0) [0|0] "" HETC_L_TACT,HTAC_51,HMDI_1,HMAS_11,HMAS_12
+ SG_ EvtData : 24|32@1+ (1,0) [0|0] "" HETC_L_TACT,HTAC_51,HMDI_1,HMAS_11,HMAS_12
+
+BO_ 2147713539 RPDO_HETC_L_TACT_to_HMDC_3: 16 HETC_L_TACT
+ SG_ Type : 0|8@1+ (1,0) [0|0] "" HMDC_3
+ SG_ ReqState : 8|8@1+ (1,0) [0|0] "" HMDC_3
+ SG_ DesiredMode : 16|8@1+ (1,0) [0|0] "" HMDC_3
+ SG_ DesiredPosition : 24|32@1- (1,0) [0|0] "rad" HMDC_3
+ SG_ DesiredVelocity : 56|32@1- (1,0) [0|0] "rad/s" HMDC_3
+ SG_ DesiredTorque : 88|32@1- (1,0) [0|0] "" HMDC_3
+
+BO_ 2147746690 TPDO_HMDC_3_to_HETC_L_TACT: 20 HMDC_3
+ SG_ Type : 0|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ ErrCode : 8|32@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ PresentState : 40|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ PresentMode : 48|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ PresentPosition : 56|32@1- (1,0) [0|0] "rad" HETC_L_TACT
+ SG_ PresentVelocity : 88|32@1- (1,0) [0|0] "rad/s" HETC_L_TACT
+ SG_ PresentTorque : 120|32@1- (1,0) [0|0] "" HETC_L_TACT
+ SG_ Temperature : 152|8@1- (1,0) [0|0] "degC" HETC_L_TACT
+
+BO_ 2163278722 STATUS_HMDC_3_to_HETC_L_TACT: 48 HMDC_3
+ SG_ SubCode M : 0|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_CanId m5 : 8|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_HostId m5 : 16|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Pid m5 : 24|16@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Bid m5 : 40|16@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Mid m5 : 56|16@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_VerMajor m5 : 72|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_VerMinor m5 : 80|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_VerPatch m5 : 88|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name0 m5 : 96|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name1 m5 : 104|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name2 m5 : 112|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name3 m5 : 120|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name4 m5 : 128|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name5 m5 : 136|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name6 m5 : 144|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name7 m5 : 152|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name8 m5 : 160|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name9 m5 : 168|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name10 m5 : 176|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name11 m5 : 184|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name12 m5 : 192|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name13 m5 : 200|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name14 m5 : 208|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name15 m5 : 216|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_FmtVer m5 : 224|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_GitRev m5 : 232|32@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_FwCrc m5 : 264|16@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_UptimeS m5 : 280|16@1+ (1,0) [0|0] "s" HETC_L_TACT
+
+BO_ 2147615488 EVENT_HMDC_3_to_ALLHP: 7 HMDC_3
+ SG_ EvtType : 0|8@1+ (1,0) [0|0] "" HETC_L_TACT,HTAC_51,HMDI_1,HMAS_11,HMDI_2,HMAS_12
+ SG_ EvtCode : 8|16@1+ (1,0) [0|0] "" HETC_L_TACT,HTAC_51,HMDI_1,HMAS_11,HMDI_2,HMAS_12
+ SG_ EvtData : 24|32@1+ (1,0) [0|0] "" HETC_L_TACT,HTAC_51,HMDI_1,HMAS_11,HMDI_2,HMAS_12
+
+BO_ 2147713540 RPDO_HETC_L_TACT_to_HMDC_4: 16 HETC_L_TACT
+ SG_ Type : 0|8@1+ (1,0) [0|0] "" HMDC_4
+ SG_ ReqState : 8|8@1+ (1,0) [0|0] "" HMDC_4
+ SG_ DesiredMode : 16|8@1+ (1,0) [0|0] "" HMDC_4
+ SG_ DesiredPosition : 24|32@1- (1,0) [0|0] "rad" HMDC_4
+ SG_ DesiredVelocity : 56|32@1- (1,0) [0|0] "rad/s" HMDC_4
+ SG_ DesiredTorque : 88|32@1- (1,0) [0|0] "" HMDC_4
+
+BO_ 2147746946 TPDO_HMDC_4_to_HETC_L_TACT: 20 HMDC_4
+ SG_ Type : 0|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ ErrCode : 8|32@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ PresentState : 40|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ PresentMode : 48|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ PresentPosition : 56|32@1- (1,0) [0|0] "rad" HETC_L_TACT
+ SG_ PresentVelocity : 88|32@1- (1,0) [0|0] "rad/s" HETC_L_TACT
+ SG_ PresentTorque : 120|32@1- (1,0) [0|0] "" HETC_L_TACT
+ SG_ Temperature : 152|8@1- (1,0) [0|0] "degC" HETC_L_TACT
+
+BO_ 2163278978 STATUS_HMDC_4_to_HETC_L_TACT: 48 HMDC_4
+ SG_ SubCode M : 0|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_CanId m5 : 8|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_HostId m5 : 16|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Pid m5 : 24|16@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Bid m5 : 40|16@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Mid m5 : 56|16@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_VerMajor m5 : 72|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_VerMinor m5 : 80|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_VerPatch m5 : 88|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name0 m5 : 96|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name1 m5 : 104|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name2 m5 : 112|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name3 m5 : 120|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name4 m5 : 128|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name5 m5 : 136|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name6 m5 : 144|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name7 m5 : 152|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name8 m5 : 160|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name9 m5 : 168|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name10 m5 : 176|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name11 m5 : 184|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name12 m5 : 192|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name13 m5 : 200|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name14 m5 : 208|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name15 m5 : 216|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_FmtVer m5 : 224|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_GitRev m5 : 232|32@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_FwCrc m5 : 264|16@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_UptimeS m5 : 280|16@1+ (1,0) [0|0] "s" HETC_L_TACT
+
+BO_ 2147615744 EVENT_HMDC_4_to_ALLHP: 7 HMDC_4
+ SG_ EvtType : 0|8@1+ (1,0) [0|0] "" HETC_L_TACT,HTAC_51,HMDI_1,HMAS_11,HMDI_2,HMAS_12,HMDC_3
+ SG_ EvtCode : 8|16@1+ (1,0) [0|0] "" HETC_L_TACT,HTAC_51,HMDI_1,HMAS_11,HMDI_2,HMAS_12,HMDC_3
+ SG_ EvtData : 24|32@1+ (1,0) [0|0] "" HETC_L_TACT,HTAC_51,HMDI_1,HMAS_11,HMDI_2,HMAS_12,HMDC_3
+
+BO_ 2147713541 RPDO_HETC_L_TACT_to_HMDC_5: 16 HETC_L_TACT
+ SG_ Type : 0|8@1+ (1,0) [0|0] "" HMDC_5
+ SG_ ReqState : 8|8@1+ (1,0) [0|0] "" HMDC_5
+ SG_ DesiredMode : 16|8@1+ (1,0) [0|0] "" HMDC_5
+ SG_ DesiredPosition : 24|32@1- (1,0) [0|0] "rad" HMDC_5
+ SG_ DesiredVelocity : 56|32@1- (1,0) [0|0] "rad/s" HMDC_5
+ SG_ DesiredTorque : 88|32@1- (1,0) [0|0] "" HMDC_5
+
+BO_ 2147747202 TPDO_HMDC_5_to_HETC_L_TACT: 20 HMDC_5
+ SG_ Type : 0|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ ErrCode : 8|32@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ PresentState : 40|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ PresentMode : 48|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ PresentPosition : 56|32@1- (1,0) [0|0] "rad" HETC_L_TACT
+ SG_ PresentVelocity : 88|32@1- (1,0) [0|0] "rad/s" HETC_L_TACT
+ SG_ PresentTorque : 120|32@1- (1,0) [0|0] "" HETC_L_TACT
+ SG_ Temperature : 152|8@1- (1,0) [0|0] "degC" HETC_L_TACT
+
+BO_ 2163279234 STATUS_HMDC_5_to_HETC_L_TACT: 48 HMDC_5
+ SG_ SubCode M : 0|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_CanId m5 : 8|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_HostId m5 : 16|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Pid m5 : 24|16@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Bid m5 : 40|16@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Mid m5 : 56|16@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_VerMajor m5 : 72|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_VerMinor m5 : 80|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_VerPatch m5 : 88|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name0 m5 : 96|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name1 m5 : 104|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name2 m5 : 112|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name3 m5 : 120|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name4 m5 : 128|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name5 m5 : 136|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name6 m5 : 144|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name7 m5 : 152|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name8 m5 : 160|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name9 m5 : 168|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name10 m5 : 176|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name11 m5 : 184|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name12 m5 : 192|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name13 m5 : 200|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name14 m5 : 208|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name15 m5 : 216|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_FmtVer m5 : 224|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_GitRev m5 : 232|32@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_FwCrc m5 : 264|16@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_UptimeS m5 : 280|16@1+ (1,0) [0|0] "s" HETC_L_TACT
+
+BO_ 2147616000 EVENT_HMDC_5_to_ALLHP: 7 HMDC_5
+ SG_ EvtType : 0|8@1+ (1,0) [0|0] "" HETC_L_TACT,HTAC_51,HMDI_1,HMAS_11,HMDI_2,HMAS_12,HMDC_3,HMDC_4
+ SG_ EvtCode : 8|16@1+ (1,0) [0|0] "" HETC_L_TACT,HTAC_51,HMDI_1,HMAS_11,HMDI_2,HMAS_12,HMDC_3,HMDC_4
+ SG_ EvtData : 24|32@1+ (1,0) [0|0] "" HETC_L_TACT,HTAC_51,HMDI_1,HMAS_11,HMDI_2,HMAS_12,HMDC_3,HMDC_4
+
+BO_ 2147713542 RPDO_HETC_L_TACT_to_HMDC_6: 16 HETC_L_TACT
+ SG_ Type : 0|8@1+ (1,0) [0|0] "" HMDC_6
+ SG_ ReqState : 8|8@1+ (1,0) [0|0] "" HMDC_6
+ SG_ DesiredMode : 16|8@1+ (1,0) [0|0] "" HMDC_6
+ SG_ DesiredPosition : 24|32@1- (1,0) [0|0] "rad" HMDC_6
+ SG_ DesiredVelocity : 56|32@1- (1,0) [0|0] "rad/s" HMDC_6
+ SG_ DesiredTorque : 88|32@1- (1,0) [0|0] "" HMDC_6
+
+BO_ 2147747458 TPDO_HMDC_6_to_HETC_L_TACT: 20 HMDC_6
+ SG_ Type : 0|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ ErrCode : 8|32@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ PresentState : 40|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ PresentMode : 48|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ PresentPosition : 56|32@1- (1,0) [0|0] "rad" HETC_L_TACT
+ SG_ PresentVelocity : 88|32@1- (1,0) [0|0] "rad/s" HETC_L_TACT
+ SG_ PresentTorque : 120|32@1- (1,0) [0|0] "" HETC_L_TACT
+ SG_ Temperature : 152|8@1- (1,0) [0|0] "degC" HETC_L_TACT
+
+BO_ 2163279490 STATUS_HMDC_6_to_HETC_L_TACT: 48 HMDC_6
+ SG_ SubCode M : 0|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_CanId m5 : 8|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_HostId m5 : 16|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Pid m5 : 24|16@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Bid m5 : 40|16@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Mid m5 : 56|16@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_VerMajor m5 : 72|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_VerMinor m5 : 80|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_VerPatch m5 : 88|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name0 m5 : 96|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name1 m5 : 104|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name2 m5 : 112|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name3 m5 : 120|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name4 m5 : 128|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name5 m5 : 136|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name6 m5 : 144|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name7 m5 : 152|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name8 m5 : 160|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name9 m5 : 168|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name10 m5 : 176|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name11 m5 : 184|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name12 m5 : 192|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name13 m5 : 200|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name14 m5 : 208|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name15 m5 : 216|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_FmtVer m5 : 224|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_GitRev m5 : 232|32@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_FwCrc m5 : 264|16@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_UptimeS m5 : 280|16@1+ (1,0) [0|0] "s" HETC_L_TACT
+
+BO_ 2147616256 EVENT_HMDC_6_to_ALLHP: 7 HMDC_6
+ SG_ EvtType : 0|8@1+ (1,0) [0|0] "" HETC_L_TACT,HTAC_51,HMDI_1,HMAS_11,HMDI_2,HMAS_12,HMDC_3,HMDC_4,HMDC_5
+ SG_ EvtCode : 8|16@1+ (1,0) [0|0] "" HETC_L_TACT,HTAC_51,HMDI_1,HMAS_11,HMDI_2,HMAS_12,HMDC_3,HMDC_4,HMDC_5
+ SG_ EvtData : 24|32@1+ (1,0) [0|0] "" HETC_L_TACT,HTAC_51,HMDI_1,HMAS_11,HMDI_2,HMAS_12,HMDC_3,HMDC_4,HMDC_5
+
+BO_ 2147713543 RPDO_HETC_L_TACT_to_HMDC_7: 16 HETC_L_TACT
+ SG_ Type : 0|8@1+ (1,0) [0|0] "" HMDC_7
+ SG_ ReqState : 8|8@1+ (1,0) [0|0] "" HMDC_7
+ SG_ DesiredMode : 16|8@1+ (1,0) [0|0] "" HMDC_7
+ SG_ DesiredPosition : 24|32@1- (1,0) [0|0] "rad" HMDC_7
+ SG_ DesiredVelocity : 56|32@1- (1,0) [0|0] "rad/s" HMDC_7
+ SG_ DesiredTorque : 88|32@1- (1,0) [0|0] "" HMDC_7
+
+BO_ 2147747714 TPDO_HMDC_7_to_HETC_L_TACT: 20 HMDC_7
+ SG_ Type : 0|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ ErrCode : 8|32@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ PresentState : 40|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ PresentMode : 48|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ PresentPosition : 56|32@1- (1,0) [0|0] "rad" HETC_L_TACT
+ SG_ PresentVelocity : 88|32@1- (1,0) [0|0] "rad/s" HETC_L_TACT
+ SG_ PresentTorque : 120|32@1- (1,0) [0|0] "" HETC_L_TACT
+ SG_ Temperature : 152|8@1- (1,0) [0|0] "degC" HETC_L_TACT
+
+BO_ 2163279746 STATUS_HMDC_7_to_HETC_L_TACT: 48 HMDC_7
+ SG_ SubCode M : 0|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_CanId m5 : 8|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_HostId m5 : 16|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Pid m5 : 24|16@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Bid m5 : 40|16@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Mid m5 : 56|16@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_VerMajor m5 : 72|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_VerMinor m5 : 80|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_VerPatch m5 : 88|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name0 m5 : 96|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name1 m5 : 104|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name2 m5 : 112|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name3 m5 : 120|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name4 m5 : 128|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name5 m5 : 136|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name6 m5 : 144|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name7 m5 : 152|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name8 m5 : 160|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name9 m5 : 168|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name10 m5 : 176|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name11 m5 : 184|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name12 m5 : 192|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name13 m5 : 200|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name14 m5 : 208|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name15 m5 : 216|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_FmtVer m5 : 224|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_GitRev m5 : 232|32@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_FwCrc m5 : 264|16@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_UptimeS m5 : 280|16@1+ (1,0) [0|0] "s" HETC_L_TACT
+
+BO_ 2147616512 EVENT_HMDC_7_to_ALLHP: 7 HMDC_7
+ SG_ EvtType : 0|8@1+ (1,0) [0|0] "" HETC_L_TACT,HTAC_51,HMDI_1,HMAS_11,HMDI_2,HMAS_12,HMDC_3,HMDC_4,HMDC_5,HMDC_6
+ SG_ EvtCode : 8|16@1+ (1,0) [0|0] "" HETC_L_TACT,HTAC_51,HMDI_1,HMAS_11,HMDI_2,HMAS_12,HMDC_3,HMDC_4,HMDC_5,HMDC_6
+ SG_ EvtData : 24|32@1+ (1,0) [0|0] "" HETC_L_TACT,HTAC_51,HMDI_1,HMAS_11,HMDI_2,HMAS_12,HMDC_3,HMDC_4,HMDC_5,HMDC_6
+
+BO_ 2147713544 RPDO_HETC_L_TACT_to_HMDC_8: 16 HETC_L_TACT
+ SG_ Type : 0|8@1+ (1,0) [0|0] "" HMDC_8
+ SG_ ReqState : 8|8@1+ (1,0) [0|0] "" HMDC_8
+ SG_ DesiredMode : 16|8@1+ (1,0) [0|0] "" HMDC_8
+ SG_ DesiredPosition : 24|32@1- (1,0) [0|0] "rad" HMDC_8
+ SG_ DesiredVelocity : 56|32@1- (1,0) [0|0] "rad/s" HMDC_8
+ SG_ DesiredTorque : 88|32@1- (1,0) [0|0] "" HMDC_8
+
+BO_ 2147747970 TPDO_HMDC_8_to_HETC_L_TACT: 20 HMDC_8
+ SG_ Type : 0|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ ErrCode : 8|32@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ PresentState : 40|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ PresentMode : 48|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ PresentPosition : 56|32@1- (1,0) [0|0] "rad" HETC_L_TACT
+ SG_ PresentVelocity : 88|32@1- (1,0) [0|0] "rad/s" HETC_L_TACT
+ SG_ PresentTorque : 120|32@1- (1,0) [0|0] "" HETC_L_TACT
+ SG_ Temperature : 152|8@1- (1,0) [0|0] "degC" HETC_L_TACT
+
+BO_ 2163280002 STATUS_HMDC_8_to_HETC_L_TACT: 48 HMDC_8
+ SG_ SubCode M : 0|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_CanId m5 : 8|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_HostId m5 : 16|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Pid m5 : 24|16@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Bid m5 : 40|16@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Mid m5 : 56|16@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_VerMajor m5 : 72|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_VerMinor m5 : 80|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_VerPatch m5 : 88|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name0 m5 : 96|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name1 m5 : 104|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name2 m5 : 112|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name3 m5 : 120|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name4 m5 : 128|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name5 m5 : 136|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name6 m5 : 144|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name7 m5 : 152|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name8 m5 : 160|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name9 m5 : 168|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name10 m5 : 176|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name11 m5 : 184|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name12 m5 : 192|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name13 m5 : 200|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name14 m5 : 208|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name15 m5 : 216|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_FmtVer m5 : 224|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_GitRev m5 : 232|32@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_FwCrc m5 : 264|16@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_UptimeS m5 : 280|16@1+ (1,0) [0|0] "s" HETC_L_TACT
+
+BO_ 2147616768 EVENT_HMDC_8_to_ALLHP: 7 HMDC_8
+ SG_ EvtType : 0|8@1+ (1,0) [0|0] "" HETC_L_TACT,HTAC_51,HMDI_1,HMAS_11,HMDI_2,HMAS_12,HMDC_3,HMDC_4,HMDC_5,HMDC_6,HMDC_7
+ SG_ EvtCode : 8|16@1+ (1,0) [0|0] "" HETC_L_TACT,HTAC_51,HMDI_1,HMAS_11,HMDI_2,HMAS_12,HMDC_3,HMDC_4,HMDC_5,HMDC_6,HMDC_7
+ SG_ EvtData : 24|32@1+ (1,0) [0|0] "" HETC_L_TACT,HTAC_51,HMDI_1,HMAS_11,HMDI_2,HMAS_12,HMDC_3,HMDC_4,HMDC_5,HMDC_6,HMDC_7
+
+BO_ 2163280641 STATUS_HMAS_11_to_HMDI_1: 7 HMAS_11
+ SG_ SubCode M : 0|8@1+ (1,0) [0|0] "" HMDI_1
+ SG_ Ang_Ready m17 : 8|1@1+ (1,0) [0|0] "" HMDI_1
+ SG_ Ang_Valid m17 : 9|1@1+ (1,0) [0|0] "" HMDI_1
+ SG_ Ang_ExtErr m17 : 12|8@1+ (1,0) [0|0] "" HMDI_1
+ SG_ Ang_AngleRad m17 : 24|32@1- (1,0) [0|0] "rad" HMDI_1
+
+BO_ 2163280770 STATUS_HMAS_11_to_HETC_L_TACT: 48 HMAS_11
+ SG_ SubCode M : 0|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_CanId m5 : 8|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_HostId m5 : 16|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Pid m5 : 24|16@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Bid m5 : 40|16@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Mid m5 : 56|16@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_VerMajor m5 : 72|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_VerMinor m5 : 80|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_VerPatch m5 : 88|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name0 m5 : 96|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name1 m5 : 104|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name2 m5 : 112|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name3 m5 : 120|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name4 m5 : 128|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name5 m5 : 136|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name6 m5 : 144|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name7 m5 : 152|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name8 m5 : 160|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name9 m5 : 168|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name10 m5 : 176|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name11 m5 : 184|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name12 m5 : 192|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name13 m5 : 200|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name14 m5 : 208|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name15 m5 : 216|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_FmtVer m5 : 224|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_GitRev m5 : 232|32@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_FwCrc m5 : 264|16@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_UptimeS m5 : 280|16@1+ (1,0) [0|0] "s" HETC_L_TACT
+
+BO_ 2163280651 STATUS_HMAS_11_to_HMAS_11: 7 HMAS_11
+ SG_ SubCode M : 0|8@1+ (1,0) [0|0] "" HMAS_11
+ SG_ Ang_Ready m17 : 8|1@1+ (1,0) [0|0] "" HMAS_11
+ SG_ Ang_Valid m17 : 9|1@1+ (1,0) [0|0] "" HMAS_11
+ SG_ Ang_ExtErr m17 : 12|8@1+ (1,0) [0|0] "" HMAS_11
+ SG_ Ang_AngleRad m17 : 24|32@1- (1,0) [0|0] "rad" HMAS_11
+
+BO_ 2163280898 STATUS_HMAS_12_to_HMDI_2: 7 HMAS_12
+ SG_ SubCode M : 0|8@1+ (1,0) [0|0] "" HMDI_2
+ SG_ Ang_Ready m17 : 8|1@1+ (1,0) [0|0] "" HMDI_2
+ SG_ Ang_Valid m17 : 9|1@1+ (1,0) [0|0] "" HMDI_2
+ SG_ Ang_ExtErr m17 : 12|8@1+ (1,0) [0|0] "" HMDI_2
+ SG_ Ang_AngleRad m17 : 24|32@1- (1,0) [0|0] "rad" HMDI_2
+
+BO_ 2163281026 STATUS_HMAS_12_to_HETC_L_TACT: 48 HMAS_12
+ SG_ SubCode M : 0|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_CanId m5 : 8|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_HostId m5 : 16|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Pid m5 : 24|16@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Bid m5 : 40|16@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Mid m5 : 56|16@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_VerMajor m5 : 72|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_VerMinor m5 : 80|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_VerPatch m5 : 88|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name0 m5 : 96|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name1 m5 : 104|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name2 m5 : 112|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name3 m5 : 120|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name4 m5 : 128|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name5 m5 : 136|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name6 m5 : 144|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name7 m5 : 152|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name8 m5 : 160|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name9 m5 : 168|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name10 m5 : 176|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name11 m5 : 184|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name12 m5 : 192|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name13 m5 : 200|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name14 m5 : 208|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_Name15 m5 : 216|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_FmtVer m5 : 224|8@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_GitRev m5 : 232|32@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_FwCrc m5 : 264|16@1+ (1,0) [0|0] "" HETC_L_TACT
+ SG_ Ping_UptimeS m5 : 280|16@1+ (1,0) [0|0] "s" HETC_L_TACT
+
+BO_ 2163280908 STATUS_HMAS_12_to_HMAS_12: 7 HMAS_12
+ SG_ SubCode M : 0|8@1+ (1,0) [0|0] "" HMAS_12
+ SG_ Ang_Ready m17 : 8|1@1+ (1,0) [0|0] "" HMAS_12
+ SG_ Ang_Valid m17 : 9|1@1+ (1,0) [0|0] "" HMAS_12
+ SG_ Ang_ExtErr m17 : 12|8@1+ (1,0) [0|0] "" HMAS_12
+ SG_ Ang_AngleRad m17 : 24|32@1- (1,0) [0|0] "rad" HMAS_12
+
+CM_ "FM26C HETC-L-TACT_ch1. CAN ID = type<<16 | sender<<8 | dest. Generated from friday-firmware-2.0 dev c0ace19f. Design values, not measured.";
+CM_ BO_ 2163245823 "CLI ping / RTC sync on all channels";
+CM_ BO_ 2163376895 "slow down periodic TX, e.g. during firmware download";
+CM_ BO_ 2147648255 "EVENT_ERR_CLEAR fault-reset fan-out";
+CM_ BO_ 2163291010 "encoder 2 ms, tactile point 10 ms, board status 50 ms (same CAN ID)";
+CM_ BO_ 2163291135 "ping once at boot";
+CM_ BO_ 2163278210 "ping response";
+CM_ BO_ 2163278466 "ping response";
+CM_ BO_ 2163278722 "ping response";
+CM_ BO_ 2163278978 "ping response";
+CM_ BO_ 2163279234 "ping response";
+CM_ BO_ 2163279490 "ping response";
+CM_ BO_ 2163279746 "ping response";
+CM_ BO_ 2163280002 "ping response";
+CM_ BO_ 2163280641 "joint angle; dest = pair motor (hwinfo host-id)";
+CM_ BO_ 2163280770 "ping response";
+CM_ BO_ 2163280651 "Notion lists host-id = own can-id here; verify with hwinfo info";
+CM_ BO_ 2163280898 "joint angle; dest = pair motor (hwinfo host-id)";
+CM_ BO_ 2163281026 "ping response";
+CM_ BO_ 2163280908 "Notion lists host-id = own can-id here; verify with hwinfo info";
+BA_DEF_ "DBName" STRING ;
+BA_DEF_ "BusType" STRING ;
+BA_DEF_ "Baudrate" INT 0 8000000;
+BA_DEF_ "BaudRateCANFD" INT 0 16000000;
+BA_DEF_ BO_ "GenMsgCycleTime" INT 0 65535;
+BA_DEF_ BO_ "VFrameFormat" ENUM "StandardCAN","ExtendedCAN","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","StandardCAN_FD","ExtendedCAN_FD";
+BA_DEF_ BO_ "CANFD_BRS" ENUM "0","1";
+BA_DEF_ BO_ "SubCodeCycles" STRING ;
+BA_DEF_ BO_ "SubCodeLengths" STRING ;
+BA_DEF_DEF_ "DBName" "";
+BA_DEF_DEF_ "BusType" "CAN FD";
+BA_DEF_DEF_ "Baudrate" 1000000;
+BA_DEF_DEF_ "BaudRateCANFD" 5000000;
+BA_DEF_DEF_ "GenMsgCycleTime" 0;
+BA_DEF_DEF_ "VFrameFormat" "ExtendedCAN_FD";
+BA_DEF_DEF_ "CANFD_BRS" "1";
+BA_DEF_DEF_ "SubCodeCycles" "";
+BA_DEF_DEF_ "SubCodeLengths" "";
+BA_ "DBName" "HETC_L_TACT_ch1";
+BA_ "BusType" "CAN FD";
+BA_ "Baudrate" 1000000;
+BA_ "BaudRateCANFD" 5000000;
+BA_ "VFrameFormat" BO_ 2163245823 15;
+BA_ "CANFD_BRS" BO_ 2163245823 1;
+BA_ "SubCodeLengths" BO_ 2163245823 "2:1;9:7";
+BA_ "VFrameFormat" BO_ 2163376895 15;
+BA_ "CANFD_BRS" BO_ 2163376895 1;
+BA_ "VFrameFormat" BO_ 2147648255 15;
+BA_ "CANFD_BRS" BO_ 2147648255 1;
+BA_ "VFrameFormat" BO_ 2147648000 15;
+BA_ "CANFD_BRS" BO_ 2147648000 1;
+BA_ "VFrameFormat" BO_ 2163291010 15;
+BA_ "CANFD_BRS" BO_ 2163291010 1;
+BA_ "GenMsgCycleTime" BO_ 2163291010 2;
+BA_ "SubCodeCycles" BO_ 2163291010 "9.0:10;9.1:50;27:2";
+BA_ "SubCodeLengths" BO_ 2163291010 "5:37;9.0:64;9.1:30;27:58";
+BA_ "VFrameFormat" BO_ 2163291135 15;
+BA_ "CANFD_BRS" BO_ 2163291135 1;
+BA_ "SubCodeLengths" BO_ 2163291135 "5:37";
+BA_ "VFrameFormat" BO_ 2147713537 15;
+BA_ "CANFD_BRS" BO_ 2147713537 1;
+BA_ "GenMsgCycleTime" BO_ 2147713537 2;
+BA_ "VFrameFormat" BO_ 2147746178 15;
+BA_ "CANFD_BRS" BO_ 2147746178 1;
+BA_ "GenMsgCycleTime" BO_ 2147746178 2;
+BA_ "VFrameFormat" BO_ 2163278210 15;
+BA_ "CANFD_BRS" BO_ 2163278210 1;
+BA_ "SubCodeLengths" BO_ 2163278210 "5:37";
+BA_ "VFrameFormat" BO_ 2147614976 15;
+BA_ "CANFD_BRS" BO_ 2147614976 1;
+BA_ "VFrameFormat" BO_ 2147713538 15;
+BA_ "CANFD_BRS" BO_ 2147713538 1;
+BA_ "GenMsgCycleTime" BO_ 2147713538 2;
+BA_ "VFrameFormat" BO_ 2147746434 15;
+BA_ "CANFD_BRS" BO_ 2147746434 1;
+BA_ "GenMsgCycleTime" BO_ 2147746434 2;
+BA_ "VFrameFormat" BO_ 2163278466 15;
+BA_ "CANFD_BRS" BO_ 2163278466 1;
+BA_ "SubCodeLengths" BO_ 2163278466 "5:37";
+BA_ "VFrameFormat" BO_ 2147615232 15;
+BA_ "CANFD_BRS" BO_ 2147615232 1;
+BA_ "VFrameFormat" BO_ 2147713539 15;
+BA_ "CANFD_BRS" BO_ 2147713539 1;
+BA_ "GenMsgCycleTime" BO_ 2147713539 2;
+BA_ "VFrameFormat" BO_ 2147746690 15;
+BA_ "CANFD_BRS" BO_ 2147746690 1;
+BA_ "GenMsgCycleTime" BO_ 2147746690 10;
+BA_ "VFrameFormat" BO_ 2163278722 15;
+BA_ "CANFD_BRS" BO_ 2163278722 1;
+BA_ "SubCodeLengths" BO_ 2163278722 "5:37";
+BA_ "VFrameFormat" BO_ 2147615488 15;
+BA_ "CANFD_BRS" BO_ 2147615488 1;
+BA_ "VFrameFormat" BO_ 2147713540 15;
+BA_ "CANFD_BRS" BO_ 2147713540 1;
+BA_ "GenMsgCycleTime" BO_ 2147713540 2;
+BA_ "VFrameFormat" BO_ 2147746946 15;
+BA_ "CANFD_BRS" BO_ 2147746946 1;
+BA_ "GenMsgCycleTime" BO_ 2147746946 10;
+BA_ "VFrameFormat" BO_ 2163278978 15;
+BA_ "CANFD_BRS" BO_ 2163278978 1;
+BA_ "SubCodeLengths" BO_ 2163278978 "5:37";
+BA_ "VFrameFormat" BO_ 2147615744 15;
+BA_ "CANFD_BRS" BO_ 2147615744 1;
+BA_ "VFrameFormat" BO_ 2147713541 15;
+BA_ "CANFD_BRS" BO_ 2147713541 1;
+BA_ "GenMsgCycleTime" BO_ 2147713541 2;
+BA_ "VFrameFormat" BO_ 2147747202 15;
+BA_ "CANFD_BRS" BO_ 2147747202 1;
+BA_ "GenMsgCycleTime" BO_ 2147747202 10;
+BA_ "VFrameFormat" BO_ 2163279234 15;
+BA_ "CANFD_BRS" BO_ 2163279234 1;
+BA_ "SubCodeLengths" BO_ 2163279234 "5:37";
+BA_ "VFrameFormat" BO_ 2147616000 15;
+BA_ "CANFD_BRS" BO_ 2147616000 1;
+BA_ "VFrameFormat" BO_ 2147713542 15;
+BA_ "CANFD_BRS" BO_ 2147713542 1;
+BA_ "GenMsgCycleTime" BO_ 2147713542 2;
+BA_ "VFrameFormat" BO_ 2147747458 15;
+BA_ "CANFD_BRS" BO_ 2147747458 1;
+BA_ "GenMsgCycleTime" BO_ 2147747458 10;
+BA_ "VFrameFormat" BO_ 2163279490 15;
+BA_ "CANFD_BRS" BO_ 2163279490 1;
+BA_ "SubCodeLengths" BO_ 2163279490 "5:37";
+BA_ "VFrameFormat" BO_ 2147616256 15;
+BA_ "CANFD_BRS" BO_ 2147616256 1;
+BA_ "VFrameFormat" BO_ 2147713543 15;
+BA_ "CANFD_BRS" BO_ 2147713543 1;
+BA_ "GenMsgCycleTime" BO_ 2147713543 2;
+BA_ "VFrameFormat" BO_ 2147747714 15;
+BA_ "CANFD_BRS" BO_ 2147747714 1;
+BA_ "GenMsgCycleTime" BO_ 2147747714 10;
+BA_ "VFrameFormat" BO_ 2163279746 15;
+BA_ "CANFD_BRS" BO_ 2163279746 1;
+BA_ "SubCodeLengths" BO_ 2163279746 "5:37";
+BA_ "VFrameFormat" BO_ 2147616512 15;
+BA_ "CANFD_BRS" BO_ 2147616512 1;
+BA_ "VFrameFormat" BO_ 2147713544 15;
+BA_ "CANFD_BRS" BO_ 2147713544 1;
+BA_ "GenMsgCycleTime" BO_ 2147713544 2;
+BA_ "VFrameFormat" BO_ 2147747970 15;
+BA_ "CANFD_BRS" BO_ 2147747970 1;
+BA_ "GenMsgCycleTime" BO_ 2147747970 10;
+BA_ "VFrameFormat" BO_ 2163280002 15;
+BA_ "CANFD_BRS" BO_ 2163280002 1;
+BA_ "SubCodeLengths" BO_ 2163280002 "5:37";
+BA_ "VFrameFormat" BO_ 2147616768 15;
+BA_ "CANFD_BRS" BO_ 2147616768 1;
+BA_ "VFrameFormat" BO_ 2163280641 15;
+BA_ "CANFD_BRS" BO_ 2163280641 1;
+BA_ "GenMsgCycleTime" BO_ 2163280641 2;
+BA_ "SubCodeCycles" BO_ 2163280641 "17:2";
+BA_ "SubCodeLengths" BO_ 2163280641 "17:7";
+BA_ "VFrameFormat" BO_ 2163280770 15;
+BA_ "CANFD_BRS" BO_ 2163280770 1;
+BA_ "SubCodeLengths" BO_ 2163280770 "5:37";
+BA_ "VFrameFormat" BO_ 2163280651 15;
+BA_ "CANFD_BRS" BO_ 2163280651 1;
+BA_ "GenMsgCycleTime" BO_ 2163280651 2;
+BA_ "SubCodeCycles" BO_ 2163280651 "17:2";
+BA_ "SubCodeLengths" BO_ 2163280651 "17:7";
+BA_ "VFrameFormat" BO_ 2163280898 15;
+BA_ "CANFD_BRS" BO_ 2163280898 1;
+BA_ "GenMsgCycleTime" BO_ 2163280898 2;
+BA_ "SubCodeCycles" BO_ 2163280898 "17:2";
+BA_ "SubCodeLengths" BO_ 2163280898 "17:7";
+BA_ "VFrameFormat" BO_ 2163281026 15;
+BA_ "CANFD_BRS" BO_ 2163281026 1;
+BA_ "SubCodeLengths" BO_ 2163281026 "5:37";
+BA_ "VFrameFormat" BO_ 2163280908 15;
+BA_ "CANFD_BRS" BO_ 2163280908 1;
+BA_ "GenMsgCycleTime" BO_ 2163280908 2;
+BA_ "SubCodeCycles" BO_ 2163280908 "17:2";
+BA_ "SubCodeLengths" BO_ 2163280908 "17:7";
+VAL_ 2163245823 SubCode 11 "POWER" 10 "THOR" 9 "RTC_SYNC" 8 "SAFETY_RESET" 7 "SAFETY_PING" 6 "ECAT_PING" 5 "BAT_LATCH" 4 "BUZZER" 3 "BRAKE" 2 "PING" 1 "MC_TARGET" 0 "MC_TORQUE" ;
+VAL_ 2147648255 EvtCode 19 "CAN_ID_CHANGED" 18 "THOR_OFF" 17 "ROBOT_OFF" 16 "BLACKBOX_TRIG" 15 "BAT_WARN" 14 "ESTOP_UPDATE" 13 "ERR_CLEAR" 12 "ERR_CODE" 11 "WIZ_PHY_SNTP" 10 "WIZ_PHY_DHCP" 9 "WIZ_PHY_LINK" 8 "PAUSE" 7 "ECAT_CONNECT" 6 "ANGLE_EX_CONNECT" 5 "BRAKE_EX_CONNECT" 4 "BLDC_FAULT" 3 "BLDC_TORQUE" 2 "BLDC_LIMIT" 1 "ESTOP" 0 "OK" ;
+VAL_ 2147648000 EvtCode 19 "CAN_ID_CHANGED" 18 "THOR_OFF" 17 "ROBOT_OFF" 16 "BLACKBOX_TRIG" 15 "BAT_WARN" 14 "ESTOP_UPDATE" 13 "ERR_CLEAR" 12 "ERR_CODE" 11 "WIZ_PHY_SNTP" 10 "WIZ_PHY_DHCP" 9 "WIZ_PHY_LINK" 8 "PAUSE" 7 "ECAT_CONNECT" 6 "ANGLE_EX_CONNECT" 5 "BRAKE_EX_CONNECT" 4 "BLDC_FAULT" 3 "BLDC_TORQUE" 2 "BLDC_LIMIT" 1 "ESTOP" 0 "OK" ;
+VAL_ 2163291010 SubCode 34 "POWER" 33 "THOR" 32 "SAFETY" 31 "ECAT_ERR" 30 "BUZZER_CFG" 27 "ANGLE_MULTI" 26 "BAT_LATCH" 25 "SAFETY_SENSOR" 22 "HRMC" 19 "TOF" 18 "USS" 17 "ANGLE" 9 "TACTILE_G2" 5 "PING" ;
+VAL_ 2163291010 G2_Type 1 "BOARD_STATUS" 0 "POINT" ;
+VAL_ 2163291135 SubCode 34 "POWER" 33 "THOR" 32 "SAFETY" 31 "ECAT_ERR" 30 "BUZZER_CFG" 27 "ANGLE_MULTI" 26 "BAT_LATCH" 25 "SAFETY_SENSOR" 22 "HRMC" 19 "TOF" 18 "USS" 17 "ANGLE" 9 "TACTILE_G2" 5 "PING" ;
+VAL_ 2147713537 ReqState 240 "FAULT_RESET" 10 "QC" 9 "ESTOP" 8 "ERROR" 7 "ERR_OCCUR" 6 "PROC_OFF" 5 "RUN" 4 "TORQUE_ON" 3 "PROC_ON" 2 "READY" 1 "DISABLED" 0 "INIT" ;
+VAL_ 2147713537 DesiredMode 5 "TORQUE" 4 "WHEEL" 3 "SIMPLE" 2 "POSITION" 1 "VELOCITY" 0 "IDLE" ;
+VAL_ 2147746178 PresentState 10 "QC" 9 "ESTOP" 8 "ERROR" 7 "ERR_OCCUR" 6 "PROC_OFF" 5 "RUN" 4 "TORQUE_ON" 3 "PROC_ON" 2 "READY" 1 "DISABLED" 0 "INIT" ;
+VAL_ 2147746178 PresentMode 5 "TORQUE" 4 "WHEEL" 3 "SIMPLE" 2 "POSITION" 1 "VELOCITY" 0 "IDLE" ;
+VAL_ 2163278210 SubCode 34 "POWER" 33 "THOR" 32 "SAFETY" 31 "ECAT_ERR" 30 "BUZZER_CFG" 27 "ANGLE_MULTI" 26 "BAT_LATCH" 25 "SAFETY_SENSOR" 22 "HRMC" 19 "TOF" 18 "USS" 17 "ANGLE" 9 "TACTILE_G2" 5 "PING" ;
+VAL_ 2147614976 EvtCode 19 "CAN_ID_CHANGED" 18 "THOR_OFF" 17 "ROBOT_OFF" 16 "BLACKBOX_TRIG" 15 "BAT_WARN" 14 "ESTOP_UPDATE" 13 "ERR_CLEAR" 12 "ERR_CODE" 11 "WIZ_PHY_SNTP" 10 "WIZ_PHY_DHCP" 9 "WIZ_PHY_LINK" 8 "PAUSE" 7 "ECAT_CONNECT" 6 "ANGLE_EX_CONNECT" 5 "BRAKE_EX_CONNECT" 4 "BLDC_FAULT" 3 "BLDC_TORQUE" 2 "BLDC_LIMIT" 1 "ESTOP" 0 "OK" ;
+VAL_ 2147713538 ReqState 240 "FAULT_RESET" 10 "QC" 9 "ESTOP" 8 "ERROR" 7 "ERR_OCCUR" 6 "PROC_OFF" 5 "RUN" 4 "TORQUE_ON" 3 "PROC_ON" 2 "READY" 1 "DISABLED" 0 "INIT" ;
+VAL_ 2147713538 DesiredMode 5 "TORQUE" 4 "WHEEL" 3 "SIMPLE" 2 "POSITION" 1 "VELOCITY" 0 "IDLE" ;
+VAL_ 2147746434 PresentState 10 "QC" 9 "ESTOP" 8 "ERROR" 7 "ERR_OCCUR" 6 "PROC_OFF" 5 "RUN" 4 "TORQUE_ON" 3 "PROC_ON" 2 "READY" 1 "DISABLED" 0 "INIT" ;
+VAL_ 2147746434 PresentMode 5 "TORQUE" 4 "WHEEL" 3 "SIMPLE" 2 "POSITION" 1 "VELOCITY" 0 "IDLE" ;
+VAL_ 2163278466 SubCode 34 "POWER" 33 "THOR" 32 "SAFETY" 31 "ECAT_ERR" 30 "BUZZER_CFG" 27 "ANGLE_MULTI" 26 "BAT_LATCH" 25 "SAFETY_SENSOR" 22 "HRMC" 19 "TOF" 18 "USS" 17 "ANGLE" 9 "TACTILE_G2" 5 "PING" ;
+VAL_ 2147615232 EvtCode 19 "CAN_ID_CHANGED" 18 "THOR_OFF" 17 "ROBOT_OFF" 16 "BLACKBOX_TRIG" 15 "BAT_WARN" 14 "ESTOP_UPDATE" 13 "ERR_CLEAR" 12 "ERR_CODE" 11 "WIZ_PHY_SNTP" 10 "WIZ_PHY_DHCP" 9 "WIZ_PHY_LINK" 8 "PAUSE" 7 "ECAT_CONNECT" 6 "ANGLE_EX_CONNECT" 5 "BRAKE_EX_CONNECT" 4 "BLDC_FAULT" 3 "BLDC_TORQUE" 2 "BLDC_LIMIT" 1 "ESTOP" 0 "OK" ;
+VAL_ 2147713539 ReqState 240 "FAULT_RESET" 10 "QC" 9 "ESTOP" 8 "ERROR" 7 "ERR_OCCUR" 6 "PROC_OFF" 5 "RUN" 4 "TORQUE_ON" 3 "PROC_ON" 2 "READY" 1 "DISABLED" 0 "INIT" ;
+VAL_ 2147713539 DesiredMode 3 "TORQUE" 2 "POSITION" 1 "VELOCITY" 0 "IDLE" ;
+VAL_ 2147746690 PresentState 10 "QC" 9 "ESTOP" 8 "ERROR" 7 "ERR_OCCUR" 6 "PROC_OFF" 5 "RUN" 4 "TORQUE_ON" 3 "PROC_ON" 2 "READY" 1 "DISABLED" 0 "INIT" ;
+VAL_ 2147746690 PresentMode 3 "TORQUE" 2 "POSITION" 1 "VELOCITY" 0 "IDLE" ;
+VAL_ 2163278722 SubCode 34 "POWER" 33 "THOR" 32 "SAFETY" 31 "ECAT_ERR" 30 "BUZZER_CFG" 27 "ANGLE_MULTI" 26 "BAT_LATCH" 25 "SAFETY_SENSOR" 22 "HRMC" 19 "TOF" 18 "USS" 17 "ANGLE" 9 "TACTILE_G2" 5 "PING" ;
+VAL_ 2147615488 EvtCode 19 "CAN_ID_CHANGED" 18 "THOR_OFF" 17 "ROBOT_OFF" 16 "BLACKBOX_TRIG" 15 "BAT_WARN" 14 "ESTOP_UPDATE" 13 "ERR_CLEAR" 12 "ERR_CODE" 11 "WIZ_PHY_SNTP" 10 "WIZ_PHY_DHCP" 9 "WIZ_PHY_LINK" 8 "PAUSE" 7 "ECAT_CONNECT" 6 "ANGLE_EX_CONNECT" 5 "BRAKE_EX_CONNECT" 4 "BLDC_FAULT" 3 "BLDC_TORQUE" 2 "BLDC_LIMIT" 1 "ESTOP" 0 "OK" ;
+VAL_ 2147713540 ReqState 240 "FAULT_RESET" 10 "QC" 9 "ESTOP" 8 "ERROR" 7 "ERR_OCCUR" 6 "PROC_OFF" 5 "RUN" 4 "TORQUE_ON" 3 "PROC_ON" 2 "READY" 1 "DISABLED" 0 "INIT" ;
+VAL_ 2147713540 DesiredMode 3 "TORQUE" 2 "POSITION" 1 "VELOCITY" 0 "IDLE" ;
+VAL_ 2147746946 PresentState 10 "QC" 9 "ESTOP" 8 "ERROR" 7 "ERR_OCCUR" 6 "PROC_OFF" 5 "RUN" 4 "TORQUE_ON" 3 "PROC_ON" 2 "READY" 1 "DISABLED" 0 "INIT" ;
+VAL_ 2147746946 PresentMode 3 "TORQUE" 2 "POSITION" 1 "VELOCITY" 0 "IDLE" ;
+VAL_ 2163278978 SubCode 34 "POWER" 33 "THOR" 32 "SAFETY" 31 "ECAT_ERR" 30 "BUZZER_CFG" 27 "ANGLE_MULTI" 26 "BAT_LATCH" 25 "SAFETY_SENSOR" 22 "HRMC" 19 "TOF" 18 "USS" 17 "ANGLE" 9 "TACTILE_G2" 5 "PING" ;
+VAL_ 2147615744 EvtCode 19 "CAN_ID_CHANGED" 18 "THOR_OFF" 17 "ROBOT_OFF" 16 "BLACKBOX_TRIG" 15 "BAT_WARN" 14 "ESTOP_UPDATE" 13 "ERR_CLEAR" 12 "ERR_CODE" 11 "WIZ_PHY_SNTP" 10 "WIZ_PHY_DHCP" 9 "WIZ_PHY_LINK" 8 "PAUSE" 7 "ECAT_CONNECT" 6 "ANGLE_EX_CONNECT" 5 "BRAKE_EX_CONNECT" 4 "BLDC_FAULT" 3 "BLDC_TORQUE" 2 "BLDC_LIMIT" 1 "ESTOP" 0 "OK" ;
+VAL_ 2147713541 ReqState 240 "FAULT_RESET" 10 "QC" 9 "ESTOP" 8 "ERROR" 7 "ERR_OCCUR" 6 "PROC_OFF" 5 "RUN" 4 "TORQUE_ON" 3 "PROC_ON" 2 "READY" 1 "DISABLED" 0 "INIT" ;
+VAL_ 2147713541 DesiredMode 3 "TORQUE" 2 "POSITION" 1 "VELOCITY" 0 "IDLE" ;
+VAL_ 2147747202 PresentState 10 "QC" 9 "ESTOP" 8 "ERROR" 7 "ERR_OCCUR" 6 "PROC_OFF" 5 "RUN" 4 "TORQUE_ON" 3 "PROC_ON" 2 "READY" 1 "DISABLED" 0 "INIT" ;
+VAL_ 2147747202 PresentMode 3 "TORQUE" 2 "POSITION" 1 "VELOCITY" 0 "IDLE" ;
+VAL_ 2163279234 SubCode 34 "POWER" 33 "THOR" 32 "SAFETY" 31 "ECAT_ERR" 30 "BUZZER_CFG" 27 "ANGLE_MULTI" 26 "BAT_LATCH" 25 "SAFETY_SENSOR" 22 "HRMC" 19 "TOF" 18 "USS" 17 "ANGLE" 9 "TACTILE_G2" 5 "PING" ;
+VAL_ 2147616000 EvtCode 19 "CAN_ID_CHANGED" 18 "THOR_OFF" 17 "ROBOT_OFF" 16 "BLACKBOX_TRIG" 15 "BAT_WARN" 14 "ESTOP_UPDATE" 13 "ERR_CLEAR" 12 "ERR_CODE" 11 "WIZ_PHY_SNTP" 10 "WIZ_PHY_DHCP" 9 "WIZ_PHY_LINK" 8 "PAUSE" 7 "ECAT_CONNECT" 6 "ANGLE_EX_CONNECT" 5 "BRAKE_EX_CONNECT" 4 "BLDC_FAULT" 3 "BLDC_TORQUE" 2 "BLDC_LIMIT" 1 "ESTOP" 0 "OK" ;
+VAL_ 2147713542 ReqState 240 "FAULT_RESET" 10 "QC" 9 "ESTOP" 8 "ERROR" 7 "ERR_OCCUR" 6 "PROC_OFF" 5 "RUN" 4 "TORQUE_ON" 3 "PROC_ON" 2 "READY" 1 "DISABLED" 0 "INIT" ;
+VAL_ 2147713542 DesiredMode 3 "TORQUE" 2 "POSITION" 1 "VELOCITY" 0 "IDLE" ;
+VAL_ 2147747458 PresentState 10 "QC" 9 "ESTOP" 8 "ERROR" 7 "ERR_OCCUR" 6 "PROC_OFF" 5 "RUN" 4 "TORQUE_ON" 3 "PROC_ON" 2 "READY" 1 "DISABLED" 0 "INIT" ;
+VAL_ 2147747458 PresentMode 3 "TORQUE" 2 "POSITION" 1 "VELOCITY" 0 "IDLE" ;
+VAL_ 2163279490 SubCode 34 "POWER" 33 "THOR" 32 "SAFETY" 31 "ECAT_ERR" 30 "BUZZER_CFG" 27 "ANGLE_MULTI" 26 "BAT_LATCH" 25 "SAFETY_SENSOR" 22 "HRMC" 19 "TOF" 18 "USS" 17 "ANGLE" 9 "TACTILE_G2" 5 "PING" ;
+VAL_ 2147616256 EvtCode 19 "CAN_ID_CHANGED" 18 "THOR_OFF" 17 "ROBOT_OFF" 16 "BLACKBOX_TRIG" 15 "BAT_WARN" 14 "ESTOP_UPDATE" 13 "ERR_CLEAR" 12 "ERR_CODE" 11 "WIZ_PHY_SNTP" 10 "WIZ_PHY_DHCP" 9 "WIZ_PHY_LINK" 8 "PAUSE" 7 "ECAT_CONNECT" 6 "ANGLE_EX_CONNECT" 5 "BRAKE_EX_CONNECT" 4 "BLDC_FAULT" 3 "BLDC_TORQUE" 2 "BLDC_LIMIT" 1 "ESTOP" 0 "OK" ;
+VAL_ 2147713543 ReqState 240 "FAULT_RESET" 10 "QC" 9 "ESTOP" 8 "ERROR" 7 "ERR_OCCUR" 6 "PROC_OFF" 5 "RUN" 4 "TORQUE_ON" 3 "PROC_ON" 2 "READY" 1 "DISABLED" 0 "INIT" ;
+VAL_ 2147713543 DesiredMode 3 "TORQUE" 2 "POSITION" 1 "VELOCITY" 0 "IDLE" ;
+VAL_ 2147747714 PresentState 10 "QC" 9 "ESTOP" 8 "ERROR" 7 "ERR_OCCUR" 6 "PROC_OFF" 5 "RUN" 4 "TORQUE_ON" 3 "PROC_ON" 2 "READY" 1 "DISABLED" 0 "INIT" ;
+VAL_ 2147747714 PresentMode 3 "TORQUE" 2 "POSITION" 1 "VELOCITY" 0 "IDLE" ;
+VAL_ 2163279746 SubCode 34 "POWER" 33 "THOR" 32 "SAFETY" 31 "ECAT_ERR" 30 "BUZZER_CFG" 27 "ANGLE_MULTI" 26 "BAT_LATCH" 25 "SAFETY_SENSOR" 22 "HRMC" 19 "TOF" 18 "USS" 17 "ANGLE" 9 "TACTILE_G2" 5 "PING" ;
+VAL_ 2147616512 EvtCode 19 "CAN_ID_CHANGED" 18 "THOR_OFF" 17 "ROBOT_OFF" 16 "BLACKBOX_TRIG" 15 "BAT_WARN" 14 "ESTOP_UPDATE" 13 "ERR_CLEAR" 12 "ERR_CODE" 11 "WIZ_PHY_SNTP" 10 "WIZ_PHY_DHCP" 9 "WIZ_PHY_LINK" 8 "PAUSE" 7 "ECAT_CONNECT" 6 "ANGLE_EX_CONNECT" 5 "BRAKE_EX_CONNECT" 4 "BLDC_FAULT" 3 "BLDC_TORQUE" 2 "BLDC_LIMIT" 1 "ESTOP" 0 "OK" ;
+VAL_ 2147713544 ReqState 240 "FAULT_RESET" 10 "QC" 9 "ESTOP" 8 "ERROR" 7 "ERR_OCCUR" 6 "PROC_OFF" 5 "RUN" 4 "TORQUE_ON" 3 "PROC_ON" 2 "READY" 1 "DISABLED" 0 "INIT" ;
+VAL_ 2147713544 DesiredMode 3 "TORQUE" 2 "POSITION" 1 "VELOCITY" 0 "IDLE" ;
+VAL_ 2147747970 PresentState 10 "QC" 9 "ESTOP" 8 "ERROR" 7 "ERR_OCCUR" 6 "PROC_OFF" 5 "RUN" 4 "TORQUE_ON" 3 "PROC_ON" 2 "READY" 1 "DISABLED" 0 "INIT" ;
+VAL_ 2147747970 PresentMode 3 "TORQUE" 2 "POSITION" 1 "VELOCITY" 0 "IDLE" ;
+VAL_ 2163280002 SubCode 34 "POWER" 33 "THOR" 32 "SAFETY" 31 "ECAT_ERR" 30 "BUZZER_CFG" 27 "ANGLE_MULTI" 26 "BAT_LATCH" 25 "SAFETY_SENSOR" 22 "HRMC" 19 "TOF" 18 "USS" 17 "ANGLE" 9 "TACTILE_G2" 5 "PING" ;
+VAL_ 2147616768 EvtCode 19 "CAN_ID_CHANGED" 18 "THOR_OFF" 17 "ROBOT_OFF" 16 "BLACKBOX_TRIG" 15 "BAT_WARN" 14 "ESTOP_UPDATE" 13 "ERR_CLEAR" 12 "ERR_CODE" 11 "WIZ_PHY_SNTP" 10 "WIZ_PHY_DHCP" 9 "WIZ_PHY_LINK" 8 "PAUSE" 7 "ECAT_CONNECT" 6 "ANGLE_EX_CONNECT" 5 "BRAKE_EX_CONNECT" 4 "BLDC_FAULT" 3 "BLDC_TORQUE" 2 "BLDC_LIMIT" 1 "ESTOP" 0 "OK" ;
+VAL_ 2163280641 SubCode 34 "POWER" 33 "THOR" 32 "SAFETY" 31 "ECAT_ERR" 30 "BUZZER_CFG" 27 "ANGLE_MULTI" 26 "BAT_LATCH" 25 "SAFETY_SENSOR" 22 "HRMC" 19 "TOF" 18 "USS" 17 "ANGLE" 9 "TACTILE_G2" 5 "PING" ;
+VAL_ 2163280770 SubCode 34 "POWER" 33 "THOR" 32 "SAFETY" 31 "ECAT_ERR" 30 "BUZZER_CFG" 27 "ANGLE_MULTI" 26 "BAT_LATCH" 25 "SAFETY_SENSOR" 22 "HRMC" 19 "TOF" 18 "USS" 17 "ANGLE" 9 "TACTILE_G2" 5 "PING" ;
+VAL_ 2163280651 SubCode 34 "POWER" 33 "THOR" 32 "SAFETY" 31 "ECAT_ERR" 30 "BUZZER_CFG" 27 "ANGLE_MULTI" 26 "BAT_LATCH" 25 "SAFETY_SENSOR" 22 "HRMC" 19 "TOF" 18 "USS" 17 "ANGLE" 9 "TACTILE_G2" 5 "PING" ;
+VAL_ 2163280898 SubCode 34 "POWER" 33 "THOR" 32 "SAFETY" 31 "ECAT_ERR" 30 "BUZZER_CFG" 27 "ANGLE_MULTI" 26 "BAT_LATCH" 25 "SAFETY_SENSOR" 22 "HRMC" 19 "TOF" 18 "USS" 17 "ANGLE" 9 "TACTILE_G2" 5 "PING" ;
+VAL_ 2163281026 SubCode 34 "POWER" 33 "THOR" 32 "SAFETY" 31 "ECAT_ERR" 30 "BUZZER_CFG" 27 "ANGLE_MULTI" 26 "BAT_LATCH" 25 "SAFETY_SENSOR" 22 "HRMC" 19 "TOF" 18 "USS" 17 "ANGLE" 9 "TACTILE_G2" 5 "PING" ;
+VAL_ 2163280908 SubCode 34 "POWER" 33 "THOR" 32 "SAFETY" 31 "ECAT_ERR" 30 "BUZZER_CFG" 27 "ANGLE_MULTI" 26 "BAT_LATCH" 25 "SAFETY_SENSOR" 22 "HRMC" 19 "TOF" 18 "USS" 17 "ANGLE" 9 "TACTILE_G2" 5 "PING" ;
+SIG_VALTYPE_ 2163291010 Enc0_AngleRad : 1;
+SIG_VALTYPE_ 2163291010 Enc1_AngleRad : 1;
+SIG_VALTYPE_ 2163291010 Enc2_AngleRad : 1;
+SIG_VALTYPE_ 2163291010 Enc3_AngleRad : 1;
+SIG_VALTYPE_ 2163291010 Enc4_AngleRad : 1;
+SIG_VALTYPE_ 2163291010 Enc5_AngleRad : 1;
+SIG_VALTYPE_ 2163291010 Enc6_AngleRad : 1;
+SIG_VALTYPE_ 2163291010 Enc7_AngleRad : 1;
+SIG_VALTYPE_ 2147713537 DesiredPosition : 1;
+SIG_VALTYPE_ 2147713537 DesiredVelocity : 1;
+SIG_VALTYPE_ 2147713537 DesiredTorque : 1;
+SIG_VALTYPE_ 2147746178 PresentPosition : 1;
+SIG_VALTYPE_ 2147746178 PresentVelocity : 1;
+SIG_VALTYPE_ 2147746178 PresentTorque : 1;
+SIG_VALTYPE_ 2147713538 DesiredPosition : 1;
+SIG_VALTYPE_ 2147713538 DesiredVelocity : 1;
+SIG_VALTYPE_ 2147713538 DesiredTorque : 1;
+SIG_VALTYPE_ 2147746434 PresentPosition : 1;
+SIG_VALTYPE_ 2147746434 PresentVelocity : 1;
+SIG_VALTYPE_ 2147746434 PresentTorque : 1;
+SIG_VALTYPE_ 2147713539 DesiredPosition : 1;
+SIG_VALTYPE_ 2147713539 DesiredVelocity : 1;
+SIG_VALTYPE_ 2147713539 DesiredTorque : 1;
+SIG_VALTYPE_ 2147746690 PresentPosition : 1;
+SIG_VALTYPE_ 2147746690 PresentVelocity : 1;
+SIG_VALTYPE_ 2147746690 PresentTorque : 1;
+SIG_VALTYPE_ 2147713540 DesiredPosition : 1;
+SIG_VALTYPE_ 2147713540 DesiredVelocity : 1;
+SIG_VALTYPE_ 2147713540 DesiredTorque : 1;
+SIG_VALTYPE_ 2147746946 PresentPosition : 1;
+SIG_VALTYPE_ 2147746946 PresentVelocity : 1;
+SIG_VALTYPE_ 2147746946 PresentTorque : 1;
+SIG_VALTYPE_ 2147713541 DesiredPosition : 1;
+SIG_VALTYPE_ 2147713541 DesiredVelocity : 1;
+SIG_VALTYPE_ 2147713541 DesiredTorque : 1;
+SIG_VALTYPE_ 2147747202 PresentPosition : 1;
+SIG_VALTYPE_ 2147747202 PresentVelocity : 1;
+SIG_VALTYPE_ 2147747202 PresentTorque : 1;
+SIG_VALTYPE_ 2147713542 DesiredPosition : 1;
+SIG_VALTYPE_ 2147713542 DesiredVelocity : 1;
+SIG_VALTYPE_ 2147713542 DesiredTorque : 1;
+SIG_VALTYPE_ 2147747458 PresentPosition : 1;
+SIG_VALTYPE_ 2147747458 PresentVelocity : 1;
+SIG_VALTYPE_ 2147747458 PresentTorque : 1;
+SIG_VALTYPE_ 2147713543 DesiredPosition : 1;
+SIG_VALTYPE_ 2147713543 DesiredVelocity : 1;
+SIG_VALTYPE_ 2147713543 DesiredTorque : 1;
+SIG_VALTYPE_ 2147747714 PresentPosition : 1;
+SIG_VALTYPE_ 2147747714 PresentVelocity : 1;
+SIG_VALTYPE_ 2147747714 PresentTorque : 1;
+SIG_VALTYPE_ 2147713544 DesiredPosition : 1;
+SIG_VALTYPE_ 2147713544 DesiredVelocity : 1;
+SIG_VALTYPE_ 2147713544 DesiredTorque : 1;
+SIG_VALTYPE_ 2147747970 PresentPosition : 1;
+SIG_VALTYPE_ 2147747970 PresentVelocity : 1;
+SIG_VALTYPE_ 2147747970 PresentTorque : 1;
+SIG_VALTYPE_ 2163280641 Ang_AngleRad : 1;
+SIG_VALTYPE_ 2163280651 Ang_AngleRad : 1;
+SIG_VALTYPE_ 2163280898 Ang_AngleRad : 1;
+SIG_VALTYPE_ 2163280908 Ang_AngleRad : 1;
+SG_MUL_VAL_ 2163291010 Ping_CanId SubCode 5-5;
+SG_MUL_VAL_ 2163291010 Ping_HostId SubCode 5-5;
+SG_MUL_VAL_ 2163291010 Ping_Pid SubCode 5-5;
+SG_MUL_VAL_ 2163291010 Ping_Bid SubCode 5-5;
+SG_MUL_VAL_ 2163291010 Ping_Mid SubCode 5-5;
+SG_MUL_VAL_ 2163291010 Ping_VerMajor SubCode 5-5;
+SG_MUL_VAL_ 2163291010 Ping_VerMinor SubCode 5-5;
+SG_MUL_VAL_ 2163291010 Ping_VerPatch SubCode 5-5;
+SG_MUL_VAL_ 2163291010 Ping_Name0 SubCode 5-5;
+SG_MUL_VAL_ 2163291010 Ping_Name1 SubCode 5-5;
+SG_MUL_VAL_ 2163291010 Ping_Name2 SubCode 5-5;
+SG_MUL_VAL_ 2163291010 Ping_Name3 SubCode 5-5;
+SG_MUL_VAL_ 2163291010 Ping_Name4 SubCode 5-5;
+SG_MUL_VAL_ 2163291010 Ping_Name5 SubCode 5-5;
+SG_MUL_VAL_ 2163291010 Ping_Name6 SubCode 5-5;
+SG_MUL_VAL_ 2163291010 Ping_Name7 SubCode 5-5;
+SG_MUL_VAL_ 2163291010 Ping_Name8 SubCode 5-5;
+SG_MUL_VAL_ 2163291010 Ping_Name9 SubCode 5-5;
+SG_MUL_VAL_ 2163291010 Ping_Name10 SubCode 5-5;
+SG_MUL_VAL_ 2163291010 Ping_Name11 SubCode 5-5;
+SG_MUL_VAL_ 2163291010 Ping_Name12 SubCode 5-5;
+SG_MUL_VAL_ 2163291010 Ping_Name13 SubCode 5-5;
+SG_MUL_VAL_ 2163291010 Ping_Name14 SubCode 5-5;
+SG_MUL_VAL_ 2163291010 Ping_Name15 SubCode 5-5;
+SG_MUL_VAL_ 2163291010 Ping_FmtVer SubCode 5-5;
+SG_MUL_VAL_ 2163291010 Ping_GitRev SubCode 5-5;
+SG_MUL_VAL_ 2163291010 Ping_FwCrc SubCode 5-5;
+SG_MUL_VAL_ 2163291010 Ping_UptimeS SubCode 5-5;
+SG_MUL_VAL_ 2163291010 G2_Type SubCode 9-9;
+SG_MUL_VAL_ 2163291010 G2p_PointIdx G2_Type 0-0;
+SG_MUL_VAL_ 2163291010 G2p_MsgCnt G2_Type 0-0;
+SG_MUL_VAL_ 2163291010 G2p_X0 G2_Type 0-0;
+SG_MUL_VAL_ 2163291010 G2p_Y0 G2_Type 0-0;
+SG_MUL_VAL_ 2163291010 G2p_Z0 G2_Type 0-0;
+SG_MUL_VAL_ 2163291010 G2p_X1 G2_Type 0-0;
+SG_MUL_VAL_ 2163291010 G2p_Y1 G2_Type 0-0;
+SG_MUL_VAL_ 2163291010 G2p_Z1 G2_Type 0-0;
+SG_MUL_VAL_ 2163291010 G2p_X2 G2_Type 0-0;
+SG_MUL_VAL_ 2163291010 G2p_Y2 G2_Type 0-0;
+SG_MUL_VAL_ 2163291010 G2p_Z2 G2_Type 0-0;
+SG_MUL_VAL_ 2163291010 G2p_X3 G2_Type 0-0;
+SG_MUL_VAL_ 2163291010 G2p_Y3 G2_Type 0-0;
+SG_MUL_VAL_ 2163291010 G2p_Z3 G2_Type 0-0;
+SG_MUL_VAL_ 2163291010 G2p_X4 G2_Type 0-0;
+SG_MUL_VAL_ 2163291010 G2p_Y4 G2_Type 0-0;
+SG_MUL_VAL_ 2163291010 G2p_Z4 G2_Type 0-0;
+SG_MUL_VAL_ 2163291010 G2p_X5 G2_Type 0-0;
+SG_MUL_VAL_ 2163291010 G2p_Y5 G2_Type 0-0;
+SG_MUL_VAL_ 2163291010 G2p_Z5 G2_Type 0-0;
+SG_MUL_VAL_ 2163291010 G2p_X6 G2_Type 0-0;
+SG_MUL_VAL_ 2163291010 G2p_Y6 G2_Type 0-0;
+SG_MUL_VAL_ 2163291010 G2p_Z6 G2_Type 0-0;
+SG_MUL_VAL_ 2163291010 G2p_X7 G2_Type 0-0;
+SG_MUL_VAL_ 2163291010 G2p_Y7 G2_Type 0-0;
+SG_MUL_VAL_ 2163291010 G2p_Z7 G2_Type 0-0;
+SG_MUL_VAL_ 2163291010 G2p_X8 G2_Type 0-0;
+SG_MUL_VAL_ 2163291010 G2p_Y8 G2_Type 0-0;
+SG_MUL_VAL_ 2163291010 G2p_Z8 G2_Type 0-0;
+SG_MUL_VAL_ 2163291010 G2p_X9 G2_Type 0-0;
+SG_MUL_VAL_ 2163291010 G2p_Y9 G2_Type 0-0;
+SG_MUL_VAL_ 2163291010 G2p_Z9 G2_Type 0-0;
+SG_MUL_VAL_ 2163291010 G2s_TactileNum G2_Type 1-1;
+SG_MUL_VAL_ 2163291010 G2s_EncoderNum G2_Type 1-1;
+SG_MUL_VAL_ 2163291010 G2s_I2cFault G2_Type 1-1;
+SG_MUL_VAL_ 2163291010 G2s_TactileOk G2_Type 1-1;
+SG_MUL_VAL_ 2163291010 G2s_MagnetFault G2_Type 1-1;
+SG_MUL_VAL_ 2163291010 G2s_EncoderOk G2_Type 1-1;
+SG_MUL_VAL_ 2163291010 G2s_EncoderFault G2_Type 1-1;
+SG_MUL_VAL_ 2163291010 Enc_Count SubCode 27-27;
+SG_MUL_VAL_ 2163291010 Enc0_Id SubCode 27-27;
+SG_MUL_VAL_ 2163291010 Enc0_Ready SubCode 27-27;
+SG_MUL_VAL_ 2163291010 Enc0_Angle SubCode 27-27;
+SG_MUL_VAL_ 2163291010 Enc0_Error SubCode 27-27;
+SG_MUL_VAL_ 2163291010 Enc0_I2cFault SubCode 27-27;
+SG_MUL_VAL_ 2163291010 Enc0_AngleRad SubCode 27-27;
+SG_MUL_VAL_ 2163291010 Enc1_Id SubCode 27-27;
+SG_MUL_VAL_ 2163291010 Enc1_Ready SubCode 27-27;
+SG_MUL_VAL_ 2163291010 Enc1_Angle SubCode 27-27;
+SG_MUL_VAL_ 2163291010 Enc1_Error SubCode 27-27;
+SG_MUL_VAL_ 2163291010 Enc1_I2cFault SubCode 27-27;
+SG_MUL_VAL_ 2163291010 Enc1_AngleRad SubCode 27-27;
+SG_MUL_VAL_ 2163291010 Enc2_Id SubCode 27-27;
+SG_MUL_VAL_ 2163291010 Enc2_Ready SubCode 27-27;
+SG_MUL_VAL_ 2163291010 Enc2_Angle SubCode 27-27;
+SG_MUL_VAL_ 2163291010 Enc2_Error SubCode 27-27;
+SG_MUL_VAL_ 2163291010 Enc2_I2cFault SubCode 27-27;
+SG_MUL_VAL_ 2163291010 Enc2_AngleRad SubCode 27-27;
+SG_MUL_VAL_ 2163291010 Enc3_Id SubCode 27-27;
+SG_MUL_VAL_ 2163291010 Enc3_Ready SubCode 27-27;
+SG_MUL_VAL_ 2163291010 Enc3_Angle SubCode 27-27;
+SG_MUL_VAL_ 2163291010 Enc3_Error SubCode 27-27;
+SG_MUL_VAL_ 2163291010 Enc3_I2cFault SubCode 27-27;
+SG_MUL_VAL_ 2163291010 Enc3_AngleRad SubCode 27-27;
+SG_MUL_VAL_ 2163291010 Enc4_Id SubCode 27-27;
+SG_MUL_VAL_ 2163291010 Enc4_Ready SubCode 27-27;
+SG_MUL_VAL_ 2163291010 Enc4_Angle SubCode 27-27;
+SG_MUL_VAL_ 2163291010 Enc4_Error SubCode 27-27;
+SG_MUL_VAL_ 2163291010 Enc4_I2cFault SubCode 27-27;
+SG_MUL_VAL_ 2163291010 Enc4_AngleRad SubCode 27-27;
+SG_MUL_VAL_ 2163291010 Enc5_Id SubCode 27-27;
+SG_MUL_VAL_ 2163291010 Enc5_Ready SubCode 27-27;
+SG_MUL_VAL_ 2163291010 Enc5_Angle SubCode 27-27;
+SG_MUL_VAL_ 2163291010 Enc5_Error SubCode 27-27;
+SG_MUL_VAL_ 2163291010 Enc5_I2cFault SubCode 27-27;
+SG_MUL_VAL_ 2163291010 Enc5_AngleRad SubCode 27-27;
+SG_MUL_VAL_ 2163291010 Enc6_Id SubCode 27-27;
+SG_MUL_VAL_ 2163291010 Enc6_Ready SubCode 27-27;
+SG_MUL_VAL_ 2163291010 Enc6_Angle SubCode 27-27;
+SG_MUL_VAL_ 2163291010 Enc6_Error SubCode 27-27;
+SG_MUL_VAL_ 2163291010 Enc6_I2cFault SubCode 27-27;
+SG_MUL_VAL_ 2163291010 Enc6_AngleRad SubCode 27-27;
+SG_MUL_VAL_ 2163291010 Enc7_Id SubCode 27-27;
+SG_MUL_VAL_ 2163291010 Enc7_Ready SubCode 27-27;
+SG_MUL_VAL_ 2163291010 Enc7_Angle SubCode 27-27;
+SG_MUL_VAL_ 2163291010 Enc7_Error SubCode 27-27;
+SG_MUL_VAL_ 2163291010 Enc7_I2cFault SubCode 27-27;
+SG_MUL_VAL_ 2163291010 Enc7_AngleRad SubCode 27-27;

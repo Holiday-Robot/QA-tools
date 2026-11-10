@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qatools"
+version = "0.1.0"
+description = "Holiday Robotics QA and verification tools"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["numpy", "cantools"]
+
+[project.optional-dependencies]
+gui = ["PyQt6", "pyqtgraph"]
+
+[project.scripts]
+qa = "qatools.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"qatools.shell" = ["logo.svg", "icons/*.png"]
+"qatools.tools.canmon" = ["hw/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

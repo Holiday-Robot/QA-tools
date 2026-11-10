@@ -1,0 +1,611 @@
+<title>FM26 CAN Monitor 사용 설명서</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: sticky contents rail on the left, one reading column; screenshots span the column, numbered legends sit under them. */
+:root {
+  --bg: #f4f6f8;
+  --surface: #ffffff;
+  --fg: #1c2530;
+  --muted: #5b6978;
+  --line: #dbe1e7;
+  --accent: #1f6f9f;
+  --accent-soft: #e1eef6;
+  --mark: #d6452f;
+  --ok: #2b8455;
+  --ok-soft: #e2f3ea;
+  --warn: #a56a12;
+  --warn-soft: #fcf1d8;
+  --danger: #bd3626;
+  --danger-soft: #fbe3df;
+  --code-bg: #eef2f5;
+  --font-body: "IBM Plex Sans KR", "Malgun Gothic", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  --font-mono: "IBM Plex Mono", "D2Coding", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #11161b; --surface: #192027; --fg: #e2e8ee; --muted: #9aa8b5; --line: #2b353f;
+    --accent: #62abd9; --accent-soft: #17303f; --mark: #f0674f; --ok: #5cc28c; --ok-soft: #173327;
+    --warn: #e0a64a; --warn-soft: #362a14; --danger: #f07a68; --danger-soft: #3a1d19; --code-bg: #212a33;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #11161b; --surface: #192027; --fg: #e2e8ee; --muted: #9aa8b5; --line: #2b353f;
+  --accent: #62abd9; --accent-soft: #17303f; --mark: #f0674f; --ok: #5cc28c; --ok-soft: #173327;
+  --warn: #e0a64a; --warn-soft: #362a14; --danger: #f07a68; --danger-soft: #3a1d19; --code-bg: #212a33;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--fg); font-family: var(--font-body); font-size: 15.5px; line-height: 1.7;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0 64px;
+}
+.wrap { max-width: 1260px; margin: 0 auto; display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 48px; }
+nav.toc { position: sticky; top: env(safe-area-inset-top, 0px); align-self: start; max-height: 100vh; overflow-y: auto; padding-block: 40px 24px; }
+nav.toc .brand { font-weight: 700; font-size: 15px; margin-bottom: 4px; }
+nav.toc .ver { color: var(--muted); font-size: 12.5px; margin-bottom: 20px; }
+nav.toc ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; counter-reset: toc; }
+nav.toc li { counter-increment: toc; }
+nav.toc a { display: flex; gap: 8px; padding: 4px 8px; border-radius: 6px; color: var(--muted); text-decoration: none; font-size: 14px; line-height: 1.45; }
+nav.toc a::before { content: counter(toc); font-family: var(--font-mono); font-size: 12px; color: var(--muted); min-width: 1.4em; padding-top: 1px; }
+nav.toc a:hover, nav.toc a:focus-visible { background: var(--accent-soft); color: var(--fg); outline: none; }
+main { min-width: 0; padding-block: 40px 0; max-width: 980px; }
+header.top { padding-bottom: 28px; border-bottom: 1px solid var(--line); margin-bottom: 8px; }
+.eyebrow { font-size: 12.5px; letter-spacing: .08em; color: var(--accent); font-weight: 600; }
+h1 { font-size: 34px; line-height: 1.25; margin: 6px 0 12px; text-wrap: balance; font-weight: 700; }
+.lede { color: var(--muted); max-width: 68ch; margin: 0; }
+.meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.pill { font-size: 12.5px; font-weight: 600; border-radius: 999px; padding: 3px 10px; }
+.pill.ok { background: var(--ok-soft); color: var(--ok); }
+.pill.warn { background: var(--warn-soft); color: var(--warn); }
+.pill.info { background: var(--accent-soft); color: var(--accent); }
+.pill.danger { background: var(--danger-soft); color: var(--danger); }
+section { padding-top: 44px; scroll-margin-top: 16px; }
+h2 { font-size: 24px; margin: 0 0 6px; text-wrap: balance; display: flex; align-items: baseline; gap: 12px; }
+h2 .no { font-family: var(--font-mono); font-size: 15px; color: var(--muted); font-weight: 500; }
+h3 { font-size: 17.5px; margin: 30px 0 6px; text-wrap: balance; }
+p, li { max-width: 72ch; }
+p { margin: 8px 0; }
+.sub { color: var(--muted); margin-top: 0; }
+a { color: var(--accent); }
+code, kbd { font-family: var(--font-mono); font-size: .88em; background: var(--code-bg); border-radius: 4px; padding: 1px 5px; }
+kbd { border: 1px solid var(--line); border-bottom-width: 2px; }
+pre { font-family: var(--font-mono); font-size: 13.5px; line-height: 1.6; background: var(--code-bg); border-radius: 8px; padding: 14px 16px; overflow-x: auto; margin: 12px 0; }
+pre code { background: none; padding: 0; font-size: inherit; }
+pre .c { color: var(--muted); }
+ul, ol { padding-left: 22px; }
+ul li, ol li { margin: 4px 0; }
+
+figure { margin: 20px 0 8px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+figure .shot { display: block; width: 100%; padding: 0; border: 0; background: #ffffff; cursor: zoom-in; }
+figure .shot img { display: block; width: 100%; height: auto; }
+figure .shot:focus-visible { outline: 3px solid var(--accent); outline-offset: -3px; }
+figure.narrow .shot { max-width: 420px; margin: 0 auto; }
+figure.mid .shot { max-width: 680px; margin: 0 auto; }
+figcaption { padding: 10px 16px 14px; border-top: 1px solid var(--line); font-size: 13.5px; color: var(--muted); display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+figcaption b { color: var(--fg); font-weight: 600; }
+
+ol.legend { list-style: none; padding: 0; margin: 10px 0 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px 28px; counter-reset: mk; }
+ol.legend.one { grid-template-columns: minmax(0, 1fr); }
+ol.legend > li { counter-increment: mk; display: grid; grid-template-columns: 26px minmax(0, 1fr); gap: 10px; align-items: start; margin: 0; padding: 8px 0; border-bottom: 1px solid var(--line); max-width: none; }
+ol.legend > li::before {
+  content: counter(mk); width: 24px; height: 24px; border-radius: 50%; background: var(--mark); color: #ffffff;
+  font-size: 12.5px; font-weight: 700; display: grid; place-items: center; font-variant-numeric: tabular-nums; margin-top: 1px;
+}
+ol.legend b { font-weight: 600; }
+ol.legend p { margin: 2px 0 0; color: var(--muted); font-size: 14.5px; }
+
+.callout { border-radius: 8px; padding: 12px 16px; margin: 16px 0; font-size: 14.5px; }
+.callout > :first-child { margin-top: 0; }
+.callout > :last-child { margin-bottom: 0; }
+.callout.danger { background: var(--danger-soft); color: var(--fg); border-left: 3px solid var(--danger); }
+.callout.warn { background: var(--warn-soft); color: var(--fg); border-left: 3px solid var(--warn); }
+.callout.info { background: var(--accent-soft); color: var(--fg); border-left: 3px solid var(--accent); }
+.callout strong { font-weight: 600; }
+
+.steps { counter-reset: st; list-style: none; padding: 0; margin: 14px 0; display: grid; gap: 10px; }
+.steps > li { counter-increment: st; display: grid; grid-template-columns: 32px minmax(0, 1fr); gap: 12px; margin: 0; max-width: none; }
+.steps > li::before { content: counter(st); font-family: var(--font-mono); font-weight: 500; color: var(--accent); border: 1.5px solid var(--accent); border-radius: 6px; height: 26px; display: grid; place-items: center; font-size: 13px; }
+.steps b { font-weight: 600; }
+
+.tablewrap { overflow-x: auto; margin: 12px 0; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+th, td { text-align: left; padding: 8px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-weight: 600; background: var(--code-bg); white-space: nowrap; }
+tr:last-child td { border-bottom: 0; }
+td code { white-space: nowrap; }
+.num { font-variant-numeric: tabular-nums; }
+
+.lightbox { position: fixed; inset: 0; z-index: 50; background: rgba(10, 14, 18, .88); display: grid; place-items: center; overflow: auto;
+  padding: max(16px, env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) max(16px, env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); cursor: zoom-out; }
+.lightbox img { max-width: none; width: auto; height: auto; border-radius: 6px; box-shadow: 0 10px 40px rgba(0,0,0,.4); }
+.lightbox .close { position: fixed; top: calc(12px + env(safe-area-inset-top, 0px)); right: calc(12px + env(safe-area-inset-right, 0px)); background: #ffffff; color: #1c2530; border: 0; border-radius: 6px; padding: 6px 12px; font: inherit; font-size: 14px; cursor: pointer; }
+
+@media (max-width: 960px) {
+  .wrap { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  nav.toc { position: static; max-height: none; padding-block: 24px 0; }
+  nav.toc ol { grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); }
+  ol.legend { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 480px) {
+  h1 { font-size: 27px; }
+  h2 { font-size: 21px; }
+  body { font-size: 15px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  nav.toc a { transition: background .15s; }
+}
+</style>
+
+<div class="wrap">
+  <nav class="toc" aria-label="목차">
+    <div class="brand">FM26 CAN Monitor</div>
+    <div class="ver">사용 설명서 · 2026-11-09</div>
+    <ol>
+      <li><a href="#start">처음 설치와 실행</a></li>
+      <li><a href="#connect">로봇에 연결하기 전</a></li>
+      <li><a href="#main">메인 창</a></li>
+      <li><a href="#trace">Trace</a></li>
+      <li><a href="#period">주기 통계</a></li>
+      <li><a href="#graph">그래프</a></li>
+      <li><a href="#hardware">하드웨어 설정</a></li>
+      <li><a href="#live">실시간 측정</a></li>
+      <li><a href="#tx">메시지 송신</a></li>
+      <li><a href="#tx-recipes">송신 예시</a></li>
+      <li><a href="#files">로그 파일과 명령줄 도구</a></li>
+      <li><a href="#trouble">문제 해결</a></li>
+      <li><a href="#status">검증 상태</a></li>
+    </ol>
+  </nav>
+
+  <main>
+    <header class="top">
+      <div class="eyebrow">HOLIDAY ROBOTICS · 품질·검증</div>
+      <h1>FM26 CAN Monitor 사용 설명서</h1>
+      <p class="lede">FM26 로봇의 CAN FD 버스를 기록하고, 메시지 주기와 신호를 분석하고, 시험용 메시지를 보내는 도구입니다. 화면마다 번호를 붙여 각 부분이 하는 일을 설명합니다.</p>
+      <div class="meta">
+        <span class="pill ok">오프라인 분석 · 완료</span>
+        <span class="pill ok">실시간 측정 · 완료</span>
+        <span class="pill ok">메시지 송신 · 완료</span>
+        <span class="pill warn">실제 분석기 확인 전</span>
+      </div>
+      <div class="callout info" style="margin-top:20px">
+        <p>화면 이미지는 모두 <strong>가상 데이터</strong>(<code>qa canmon sample</code>로 만든 HETC-L-TACT 12초 기록)로 찍었습니다. 실시간 측정 화면은 이 파일을 실제 속도로 흘려보내 연출했고, 메시지 송신 화면은 can1을 송신 가능 채널로 가정했습니다. 실제 로봇이나 분석기에서 나온 값이 아닙니다. 이미지를 누르면 원래 크기로 볼 수 있습니다.</p>
+      </div>
+    </header>
+
+    <!-- 1 -->
+    <section id="start">
+      <h2><span class="no">01</span>처음 설치와 실행</h2>
+      <p class="sub">명령은 저장소(<code>QA-tools</code>) 폴더에서 실행합니다. DBC는 저장소의 <code>data/dbc</code>에 있습니다.</p>
+      <h3>실행하기</h3>
+      <pre><code><span class="c"># QA Tools 창을 열고 왼쪽 목록에서 "CAN Monitor"를 고름</span>
+./qa
+
+<span class="c"># CAN Monitor를 바로 열고 캡처 파일과 채널별 DBC를 지정</span>
+./qa gui canmon ltact.csv --map can0=HETC-L-TACT_ch0 --map can1=HETC-L-TACT_ch1
+
+<span class="c"># QA Tools 창 없이 CAN Monitor만 실행</span>
+./qa canmon view
+
+<span class="c"># 앱 메뉴에 "QA Tools" 바로가기와 로고 아이콘 등록 (사용자별, 관리자 권한 필요 없음)</span>
+./install_shortcut.sh</code></pre>
+      <p>CAN Monitor는 QA Tools 창의 도구 중 하나입니다. 아래 화면 이미지는 CAN Monitor만 실행해 찍은 것이고, QA Tools 창에서는 같은 화면 왼쪽에 도구 목록이 하나 더 붙습니다.</p>
+      <ul>
+        <li><b>필요한 패키지:</b> <code>PyQt6</code>, <code>pyqtgraph</code>, <code>numpy</code>, <code>cantools</code>입니다. 저장소 폴더에서 <code>pip install -e ".[gui]"</code>로 설치합니다.</li>
+        <li><b>다른 폴더의 DBC를 쓸 때:</b> 환경변수 <code>CANMON_DBC_DIR</code>로 DBC 폴더를 지정하거나, 프로그램 안에서 "DBC 폴더 변경…"을 누릅니다.</li>
+        <li><b>WSL:</b> X11용 라이브러리가 없어 Wayland(WSLg)로 띄웁니다. <code>qa</code> 스크립트가 알아서 설정합니다. WSL과 Windows에서는 CAN 장치를 쓸 수 없어서 파일 분석만 됩니다.</li>
+      </ul>
+      <h3>측정용 노트북에서 한 번만 할 일</h3>
+      <ol class="steps">
+        <li><div><b>Linux 설치.</b> Ubuntu 같은 Linux를 설치합니다. PEAK PCAN-USB Pro FD 드라이버(<code>peak_usb</code>)는 커널에 들어 있습니다.</div></li>
+        <li><div><b>분석기 확인.</b> 분석기를 꽂고 터미널에서 <code>ip link</code>를 실행해 <code>can0</code>, <code>can1</code>이 보이는지 확인합니다.</div></li>
+        <li><div><b>CAN 설정 권한 설치.</b> 메뉴 "도구 → CAN 설정 권한 설치…"를 엽니다(<a href="#access">아래 화면</a>). 설치한 뒤 한 번 로그아웃해야 적용되고, 그 뒤로는 속도를 바꿀 때 관리자 암호를 묻지 않습니다.</div></li>
+        <li><div><b>바로가기 등록.</b> <code>./install_shortcut.sh</code>로 앱 메뉴에 등록합니다.</div></li>
+      </ol>
+
+      <figure class="mid" id="access">
+        <button class="shot" type="button" aria-label="CAN 설정 권한 설치 화면 크게 보기"><img src="img/07_access.png" alt="CAN 설정 권한 설치 창" loading="lazy" width="640" height="410"></button>
+        <figcaption><b>도구 → CAN 설정 권한 설치…</b><span>측정용 노트북에서 한 번</span></figcaption>
+      </figure>
+      <ol class="legend">
+        <li><div><b>현재 상태</b><p>"설치되지 않았습니다", "설치는 되어 있지만 지금 사용자에게 권한이 없습니다", "설치되어 있습니다" 중 하나가 나옵니다. Linux가 아닌 PC에서는 "CAN 측정은 Linux에서만 됩니다"가 나오고 버튼이 꺼집니다.</p></div></li>
+        <li><div><b>등록할 사용자</b><p>지금 로그인한 사용자가 기본값입니다. 여러 명은 쉼표나 띄어쓰기로 구분합니다. 영문 소문자, 숫자, <code>_</code>, <code>-</code>만 받습니다.</p></div></li>
+        <li><div><b>설치</b><p>관리자 암호 창(pkexec)이 한 번 뜹니다. 등록된 사용자는 CAN 장치의 속도, 샘플 포인트, 수신 전용 여부만 바꾸는 스크립트 하나를 암호 없이 실행할 수 있게 됩니다.</p></div></li>
+        <li><div><b>터미널 명령 복사</b><p>pkexec이 없는 PC에서는 이 버튼으로 <code>sudo src/qatools/tools/canmon/hw/install_can_access.sh 사용자</code> 명령을 복사해 터미널에서 실행합니다.</p></div></li>
+        <li><div><b>진행 기록</b><p>설치 결과와 오류가 표시됩니다. 되돌릴 때는 <code>sudo rm /etc/sudoers.d/canmon /usr/local/sbin/canmon-setup</code>을 실행합니다.</p></div></li>
+      </ol>
+    </section>
+
+    <!-- 2 -->
+    <section id="connect">
+      <h2><span class="no">02</span>로봇에 연결하기 전</h2>
+      <div class="callout danger">
+        <p><strong>로봇이 정지한 상태에서 연결합니다.</strong> 처음 연결할 때는 하드웨어 설정에서 모든 채널을 <strong>수신 전용</strong>으로 둡니다. 수신 전용이면 분석기는 버스에 아무것도 보내지 않고 ACK도 하지 않습니다.</p>
+      </div>
+      <ul>
+        <li><b>변환 케이블:</b> HETC 5핀 커넥터를 D-Sub 9핀에 연결합니다. D-Sub는 2번이 CAN-L, 3번이 GND, 7번이 CAN-H입니다. 5V와 ESTOP 핀은 연결하지 않습니다. HETC 쪽 핀 배열은 멀티미터로 먼저 확인합니다.</li>
+        <li><b>종단저항:</b> 분석기 쪽 종단저항은 꺼 둡니다. 이 프로그램에서는 바꿀 수 없으니 분석기 설정을 확인합니다.</li>
+        <li><b>저항 확인:</b> 연결 전후로 CAN-H와 CAN-L 사이가 약 60 Ω인지 확인합니다.</li>
+      </ul>
+    </section>
+
+    <!-- 3 -->
+    <section id="main">
+      <h2><span class="no">03</span>메인 창</h2>
+      <p class="sub">캡처 파일을 열면 보이는 첫 화면입니다. 위에는 도구 줄, 왼쪽에는 측정 설정, 가운데에는 분석 탭, 아래에는 상태 줄이 있습니다.</p>
+      <figure>
+        <button class="shot" type="button" aria-label="메인 창 크게 보기"><img src="img/01_main.png" alt="메인 창 전체" loading="lazy" width="1600" height="950"></button>
+        <figcaption><b>메인 창</b><span>캡처 파일을 연 상태, Trace 탭</span></figcaption>
+      </figure>
+      <ol class="legend">
+        <li><div><b>메뉴</b><p>"파일"에서 열기와 끝내기, "도구"에서 하드웨어 설정, 측정 시작, 실시간 화면 미리 보기, CAN 설정 권한 설치를 고릅니다.</p></div></li>
+        <li><div><b>캡처 파일 열기</b><p><code>qa canmon capture</code>나 실시간 측정이 저장한 CSV를 엽니다. 마지막으로 연 폴더를 기억합니다.</p></div></li>
+        <li><div><b>하드웨어 설정</b><p>분석기 채널의 속도, 샘플 포인트, 모드, DBC를 정합니다. <a href="#hardware">하드웨어 설정</a>에서 자세히 설명합니다.</p></div></li>
+        <li><div><b>측정 시작 / 정지</b><p>하드웨어 설정에서 적용한 채널로 실시간 측정을 시작합니다. 측정 중에는 "■ 측정 정지"로 바뀝니다.</p></div></li>
+        <li><div><b>재생과 배속</b><p>연 파일을 시간 순서대로 재생합니다. 배속은 0.1배에서 5배까지 고릅니다. Trace의 최신 프레임과 그래프의 초록 세로선이 재생 시각을 따라갑니다.</p></div></li>
+        <li><div><b>시각 슬라이더</b><p>끌어서 원하는 시각으로 갑니다. 오른쪽에 현재 시각과 전체 길이가 나옵니다.</p></div></li>
+        <li><div><b>모드 표시</b><p>지금 상태를 색으로 보여 줍니다. 초록은 파일 재생, 파랑은 실시간 측정(수신 전용), 노랑은 미리 보기, 빨강은 송신 모드 켜짐입니다.</p></div></li>
+        <li><div><b>채널과 DBC</b><p>파일의 채널마다 DBC를 고릅니다. 목록에는 DBC 폴더의 파일이 나오고, "파일에서 선택…"으로 다른 위치의 DBC도 고를 수 있습니다. DBC를 고친 뒤에는 "DBC 다시 읽기"를 누릅니다. 마지막 선택은 저장됩니다.</p></div></li>
+        <li><div><b>DBC 탐색</b><p>DBC에 있는 메시지와 신호 목록입니다. 신호 이름으로 검색하고, 메시지를 펼쳐 신호를 체크하면 그래프에 추가됩니다.</p></div></li>
+        <li><div><b>화면 탭</b><p>Trace, 주기 통계, 그래프를 오갑니다.</p></div></li>
+        <li><div><b>상태 줄</b><p>채널별 버스 부하, 초당 프레임 수, 오류 프레임 수, 타임스탬프 종류(하드웨어 / 소프트웨어), 기록 길이와 프레임 수를 보여 줍니다.</p></div></li>
+      </ol>
+      <div class="callout warn">
+        <p><strong>타임스탬프가 "소프트웨어"로 나오면</strong> USB와 OS 스케줄링 지연이 섞인 시각입니다. 1 ms 미만의 간격 차이는 믿지 않습니다.</p>
+      </div>
+    </section>
+
+    <!-- 4 -->
+    <section id="trace">
+      <h2><span class="no">04</span>Trace</h2>
+      <p class="sub">받은 프레임을 그대로 봅니다. 메시지별 최신 프레임을 보는 "ID별 고정"과 모든 프레임을 순서대로 보는 "시간순"이 있습니다.</p>
+      <h3>ID별 고정</h3>
+      <figure>
+        <button class="shot" type="button" aria-label="Trace ID별 고정 크게 보기"><img src="img/02_trace_fixed.png" alt="Trace ID별 고정 화면" loading="lazy" width="1270" height="840"></button>
+        <figcaption><b>Trace · ID별 고정</b><span>재생 시각 8.205 s, HTAC_51 ANGLE_MULTI를 펼친 상태</span></figcaption>
+      </figure>
+      <ol class="legend">
+        <li><div><b>표시 방식</b><p>"ID별 고정"과 "시간순" 중에서 고릅니다.</p></div></li>
+        <li><div><b>거르기</b><p>채널, CAN ID, 메시지 이름, 형식(SubCode 이름)의 일부를 입력하면 맞는 줄만 남습니다. 대소문자는 구분하지 않습니다. <code>tx</code>를 입력하면 이 PC가 보낸 메시지만 남습니다.</p></div></li>
+        <li><div><b>보이는 메시지 수</b><p>거르고 남은 줄 수입니다.</p></div></li>
+        <li><div><b>시각</b><p>재생 시각 이전에 받은 그 메시지의 마지막 프레임 시각(초)입니다. 파일의 첫 프레임이 0입니다.</p></div></li>
+        <li><div><b>주기</b><p>그 프레임과 직전 같은 메시지 사이의 간격(ms)입니다. STATUS·CTRL은 SubCode별로, 촉각 메시지는 포인트별로 따로 셉니다.</p></div></li>
+        <li><div><b>신호 값</b><p>줄 앞의 화살표를 누르면 DBC로 해석한 신호 값이 단위와 함께 나옵니다. DBC에 없는 ID는 주황색 "(DBC에 없음)"으로 표시됩니다.</p></div></li>
+      </ol>
+      <h3>시간순</h3>
+      <figure>
+        <button class="shot" type="button" aria-label="Trace 시간순 크게 보기"><img src="img/03_trace_chrono.png" alt="Trace 시간순 화면" loading="lazy" width="1270" height="840"></button>
+        <figcaption><b>Trace · 시간순</b><span>0xF13D82로 거른 상태에서 한 프레임을 선택</span></figcaption>
+      </figure>
+      <ol class="legend">
+        <li><div><b>시간순</b><p>파일의 모든 프레임을 시각 순서대로 보여 줍니다. 수십만 프레임도 스크롤할 수 있습니다.</p></div></li>
+        <li><div><b>거르기</b><p>ID별 고정과 같은 방식입니다. 오른쪽에 남은 프레임 수가 나옵니다.</p></div></li>
+        <li><div><b>프레임 목록</b><p>시각, 채널, CAN ID, 메시지, 형식, 길이, 데이터(16진수)입니다. 이 PC가 보낸 프레임은 채널이 "can1 Tx"처럼 파란색으로 나옵니다.</p></div></li>
+        <li><div><b>선택한 프레임</b><p>시각, 채널, 길이, 전체 데이터와 DBC로 해석한 모든 신호 값을 보여 줍니다.</p></div></li>
+      </ol>
+    </section>
+
+    <!-- 5 -->
+    <section id="period">
+      <h2><span class="no">05</span>주기 통계</h2>
+      <p class="sub">메시지마다 수신 간격을 재고 DBC의 설계 주기와 비교합니다. 엔코더나 통신이 끊긴 곳을 찾는 데 씁니다.</p>
+      <figure>
+        <button class="shot" type="button" aria-label="주기 통계 크게 보기"><img src="img/04_period.png" alt="주기 통계 화면" loading="lazy" width="1270" height="840"></button>
+        <figcaption><b>주기 통계</b><span>"최대/설계" 열로 정렬, HTAC_61의 12 ms 끊김이 맨 위</span></figcaption>
+      </figure>
+      <ol class="legend">
+        <li><div><b>통계 범위</b><p>"측정 전체", "커서 A–B 구간", 그래프에서 저장한 구간 중에서 고릅니다. 정지 구간과 동작 구간을 나눠 볼 때 씁니다.</p></div></li>
+        <li><div><b>한계</b><p>간격이 "설계 주기 × 이 값"을 넘으면 한계 초과로 셉니다. 기본은 5배입니다.</p></div></li>
+        <li><div><b>한계 초과 건수</b><p>한계를 넘은 메시지 수입니다. 없으면 초록, 있으면 빨강입니다.</p></div></li>
+        <li><div><b>CSV 내보내기</b><p>지금 표를 CSV로 저장합니다. 엑셀에서 한글이 깨지지 않게 저장합니다.</p></div></li>
+        <li><div><b>한계를 넘은 메시지</b><p>빨간 배경으로 강조합니다. 열 제목을 누르면 정렬됩니다.</p></div></li>
+        <li><div><b>통계 열</b><p>수신 수, 평균·최소·최대 간격, p99, 설계 주기(ms)입니다. 오른쪽에 최대/설계 비율과 한계 초과 횟수가 이어집니다. 설계 주기는 DBC의 <code>SubCodeCycles</code> 속성이나 <code>GenMsgCycleTime</code>에서 읽습니다.</p></div></li>
+        <li><div><b>간격 분포</b><p>선택한 메시지의 수신 간격 히스토그램입니다(프레임 수는 로그 눈금). 빨간 점선이 한계입니다.</p></div></li>
+        <li><div><b>세부 값</b><p>최대 간격, 그 간격이 끝난 시각, 한계 초과 횟수, p99, 프레임 길이별 수를 보여 줍니다.</p></div></li>
+        <li><div><b>그래프로 보기</b><p>"그래프에 간격 표시"는 이 메시지의 수신 간격을 그래프 아래 칸에 그립니다. "최대 간격 위치로 이동"은 그래프를 열고 최대 간격이 생긴 곳을 확대합니다.</p></div></li>
+      </ol>
+    </section>
+
+    <!-- 6 -->
+    <section id="graph">
+      <h2><span class="no">06</span>그래프</h2>
+      <p class="sub">신호 값, 상태 신호, 수신 간격을 한 시간축에 겹쳐 봅니다. 저장한 로그를 볼 때만 씁니다. 측정 중에는 꺼져 있습니다.</p>
+      <figure>
+        <button class="shot" type="button" aria-label="그래프 크게 보기"><img src="img/05_graph.png" alt="그래프 화면" loading="lazy" width="1270" height="840"></button>
+        <figcaption><b>그래프</b><span>HTAC_61 끊김 위치(8.21 s)를 확대한 상태</span></figcaption>
+      </figure>
+      <ol class="legend">
+        <li><div><b>샘플 점, 선 모양</b><p>확대해서 점 사이가 충분히 벌어지면 받은 프레임마다 점을 찍습니다. 선 모양은 직선과 계단 중에서 고릅니다.</p></div></li>
+        <li><div><b>전체 보기</b><p>기록 전체가 보이도록 축을 되돌립니다.</p></div></li>
+        <li><div><b>CSV · 이미지 저장</b><p>그린 신호를 CSV로 내보내거나 그래프를 이미지로 저장합니다.</p></div></li>
+        <li><div><b>신호 값</b><p>숫자 신호를 그립니다. 점선 A·B가 커서이고, 끌어서 옮깁니다. 두 커서 사이는 옅은 파랑으로 칠해집니다.</p></div></li>
+        <li><div><b>상태 신호</b><p>RUN, ERROR 같은 이름이 있는 신호는 별도 칸에 이름으로 그립니다.</p></div></li>
+        <li><div><b>수신 간격</b><p>주기 통계에서 고른 메시지의 프레임 간격(ms)입니다. 빨간 점선이 한계, 빨간 점이 한계를 넘은 곳입니다.</p></div></li>
+        <li><div><b>점 정보</b><p>그래프의 점에 마우스를 올리면 신호 이름, 시각, 값, 직전 프레임과의 간격이 나옵니다.</p></div></li>
+        <li><div><b>신호 표</b><p>신호마다 커서 A와 B의 값, 차이(B − A), 최소·평균·최대입니다.</p></div></li>
+        <li><div><b>통계 범위, 신호 빼기</b><p>표의 최소·평균·최대를 화면 범위, 커서 A–B 구간, 측정 전체 중 어디서 계산할지 고릅니다. 표에서 신호를 고르고 "선택한 신호 빼기"를 누르면 그래프에서 빠집니다.</p></div></li>
+        <li><div><b>구간 저장</b><p>이름을 쓰고 "커서 구간 저장"을 누르면 지금 A–B 구간이 저장됩니다. 목록을 누르면 커서가 그 구간으로 옮겨지고, 주기 통계의 범위에서도 고를 수 있습니다.</p></div></li>
+        <li><div><b>커서 시각</b><p>커서 A, B의 시각과 둘 사이 간격 Δt(ms)입니다.</p></div></li>
+      </ol>
+      <h3>마우스 조작</h3>
+      <div class="tablewrap"><table>
+        <thead><tr><th>동작</th><th>결과</th></tr></thead>
+        <tbody>
+          <tr><td>휠</td><td>시간축 확대 / 축소 (세로축은 자동)</td></tr>
+          <tr><td>그래프 끌기</td><td>시간축 이동. 세 칸이 함께 움직입니다.</td></tr>
+          <tr><td>점선 A · B 끌기</td><td>커서 이동. 신호 표와 주기 통계의 "커서 A–B 구간"이 따라 바뀝니다.</td></tr>
+          <tr><td>점 위에 올리기</td><td>시각, 값, 직전 프레임과의 간격 표시</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <!-- 7 -->
+    <section id="hardware">
+      <h2><span class="no">07</span>하드웨어 설정</h2>
+      <p class="sub">"도구 → 하드웨어 설정…" 또는 도구 줄의 "하드웨어 설정"으로 엽니다. 측정 중에는 열 수 없습니다.</p>
+      <figure>
+        <button class="shot" type="button" aria-label="하드웨어 설정 크게 보기"><img src="img/06_hardware.png" alt="하드웨어 설정 창" loading="lazy" width="1400" height="560"></button>
+        <figcaption><b>하드웨어 설정</b><span>can0 수신 전용, can1 송신 가능으로 적용한 예</span></figcaption>
+      </figure>
+      <ol class="legend">
+        <li><div><b>장치 다시 찾기</b><p>분석기를 꽂은 뒤 누르면 CAN 장치 목록을 다시 읽습니다. 장치가 없으면 "CAN 장치를 찾지 못했습니다"가 나옵니다.</p></div></li>
+        <li><div><b>프로필</b><p>지금 표의 구성을 이름을 붙여 저장하고 불러옵니다. 예를 들어 "왼팔 촉각 로컬 CAN"처럼 저장해 둡니다.</p></div></li>
+        <li><div><b>권한 설치</b><p><a href="#access">CAN 설정 권한 설치</a> 창을 엽니다.</p></div></li>
+        <li><div><b>사용, 채널, 장치</b><p>체크한 채널만 설정하고 측정합니다. 장치 칸에는 USB 제품명, 일련번호, 분석기 채널 번호가 나옵니다.</p></div></li>
+        <li><div><b>프리셋과 속도</b><p>"로컬 CAN (1 M / 5 M)"은 87.5 % / 62.5 % 샘플 포인트, "D-CAN (125 k / 1 M)"은 드라이버 자동입니다. 값을 직접 바꾸면 프리셋이 "직접 입력"으로 바뀝니다. 샘플 포인트 0은 "자동"입니다.</p></div></li>
+        <li><div><b>모드</b><p><b>수신 전용</b>이 기본입니다. 메시지를 보낼 채널만 <b>송신 가능</b>(빨간 글씨)으로 바꿉니다. 이 선택은 저장되지 않아서, 창을 다시 열면 수신 전용으로 돌아와 있습니다.</p></div></li>
+        <li><div><b>DBC</b><p>채널마다 실시간 측정에 쓸 DBC를 고릅니다.</p></div></li>
+        <li><div><b>현재 상태</b><p>장치에서 다시 읽은 실제 값입니다. 켜짐/꺼짐, 버스 상태(ERROR-ACTIVE, ERROR-PASSIVE, BUS-OFF), 속도, 모드, 오류 카운터를 보여 줍니다.</p></div></li>
+        <li><div><b>적용 결과</b><p>채널마다 ✔ 또는 ✖입니다. 적용한 뒤 장치 값을 다시 읽어 요청과 다르면 무엇이 다른지 적습니다.</p></div></li>
+        <li><div><b>적용</b><p>체크한 채널에 설정을 보내고 다시 읽어 확인합니다. 저장된 설정은 다음 측정에 쓰입니다.</p></div></li>
+      </ol>
+      <div class="callout warn">
+        <p><strong>송신 가능 채널은 보내지 않을 때도 버스에 참여합니다.</strong> 다른 노드의 프레임에 ACK를 하고, 속도나 샘플 포인트가 틀리면 오류 프레임을 낼 수 있습니다. 로봇 버스에서는 송신이 필요한 채널만, 필요한 동안만 송신 가능으로 둡니다.</p>
+      </div>
+    </section>
+
+    <!-- 8 -->
+    <section id="live">
+      <h2><span class="no">08</span>실시간 측정</h2>
+      <ol class="steps">
+        <li><div><b>하드웨어 설정에서 적용.</b> 채널, 속도, DBC를 정하고 "적용"을 누릅니다.</div></li>
+        <li><div><b>"● 측정 시작".</b> 적용한 채널을 읽기 시작하고, 로그를 <code>~/canmon_logs/can_날짜_시각.csv</code>에 저장합니다.</div></li>
+        <li><div><b>보기.</b> Trace, 주기 통계, 메시지 송신 탭이 초당 10회 갱신됩니다. 그래프 탭은 측정 중에는 꺼져 있습니다.</div></li>
+        <li><div><b>"■ 측정 정지".</b> 저장한 로그가 자동으로 열려 그래프까지 볼 수 있습니다. 150만 프레임이 넘으면 열지 먼저 묻습니다.</div></li>
+      </ol>
+      <figure>
+        <button class="shot" type="button" aria-label="실시간 측정 Trace 크게 보기"><img src="img/08_live_trace.png" alt="실시간 측정 중 Trace 화면" loading="lazy" width="1600" height="950"></button>
+        <figcaption><b>실시간 측정 · Trace</b><span>측정 시작 4초 뒤</span></figcaption>
+      </figure>
+      <ol class="legend">
+        <li><div><b>측정 정지</b><p>측정을 끝내고 로그를 엽니다. 측정 중에는 파일 열기, 재생, 하드웨어 설정, 왼쪽 패널이 잠깁니다.</p></div></li>
+        <li><div><b>측정 시간과 프레임 수</b><p>측정을 시작한 뒤 지난 시간과 받은 전체 프레임 수입니다.</p></div></li>
+        <li><div><b>실시간 측정 표시</b><p>파랑은 "실시간 측정 · 수신 전용"입니다. 송신 모드를 켜면 빨강으로 바뀝니다.</p></div></li>
+        <li><div><b>측정 중 화면</b><p>Trace, 주기 통계, 메시지 송신을 씁니다. 그래프는 측정 후에 저장한 로그로 봅니다.</p></div></li>
+        <li><div><b>메시지별 최신 프레임</b><p>새 메시지가 들어오면 줄이 추가됩니다. 펼치면 최신 신호 값이 나옵니다.</p></div></li>
+        <li><div><b>상태 줄</b><p>채널별 부하와 초당 프레임 수(최근 1초), 오류 프레임, 수신 누락(커널이 버린 프레임), 이 PC의 송신 수, 타임스탬프 종류, 로그 파일 위치입니다.</p></div></li>
+      </ol>
+      <figure>
+        <button class="shot" type="button" aria-label="실시간 주기 통계 크게 보기"><img src="img/09_live_period.png" alt="실시간 측정 중 주기 통계 화면" loading="lazy" width="1274" height="868"></button>
+        <figcaption><b>실시간 측정 · 주기 통계</b><span>측정 시작 5.4초 뒤</span></figcaption>
+      </figure>
+      <ol class="legend">
+        <li><div><b>통계 범위</b><p>측정 시작 또는 마지막 초기화 이후의 프레임으로 계산합니다. 괄호 안은 그동안 지난 시간입니다.</p></div></li>
+        <li><div><b>한계</b><p>바꾸면 그 뒤에 받은 프레임부터 적용됩니다.</p></div></li>
+        <li><div><b>한계 초과 건수</b><p>한계를 넘은 메시지 수입니다.</p></div></li>
+        <li><div><b>통계 초기화</b><p>통계를 지금부터 다시 셉니다. 로그 저장은 계속됩니다. 로봇을 정지에서 동작으로 바꿀 때 누르면 구간을 나눠 볼 수 있습니다.</p></div></li>
+        <li><div><b>CSV 내보내기</b><p>지금까지의 통계를 저장합니다.</p></div></li>
+        <li><div><b>메시지별 통계</b><p>오프라인 주기 통계와 같은 열입니다. 실시간에서는 p99를 히스토그램으로 추정한 근삿값(위쪽 값)으로 보여 줍니다. 정확한 값은 측정 후 로그에서 봅니다.</p></div></li>
+        <li><div><b>간격 분포</b><p>선택한 메시지의 수신 간격 분포입니다.</p></div></li>
+      </ol>
+      <div class="callout info">
+        <p><strong>장비 없이 화면 미리 보기:</strong> 캡처 파일을 연 뒤 "도구 → 실시간 화면 미리 보기"를 누르면 그 파일을 기록된 속도로 흘려보냅니다. 측정이 아니라서 로그를 저장하지 않고, 모드 표시가 노랑입니다. 메시지 송신 탭도 써 볼 수 있으며 보낸 프레임은 버스로 가지 않습니다.</p>
+      </div>
+    </section>
+
+    <!-- 9 -->
+    <section id="tx">
+      <h2><span class="no">09</span>메시지 송신</h2>
+      <p class="sub">측정 중에 시험용 메시지를 보냅니다. DBC 메시지를 신호 값과 주기로 보내거나, 직접 만든 프레임을 보내거나, 더미 프레임으로 버스 부하를 올립니다.</p>
+      <div class="callout danger">
+        <p><strong>로봇 버스에 프레임을 보내는 기능입니다.</strong> 로봇이 움직이는 중이면 먼저 멈춥니다. 언제든 <kbd>Esc</kbd>로 모든 송신을 멈출 수 있습니다.</p>
+      </div>
+      <h3>보내기 전에</h3>
+      <ol class="steps">
+        <li><div><b>송신 가능 채널 만들기.</b> 측정을 멈춘 상태에서 하드웨어 설정을 열고, 보낼 채널의 모드만 "송신 가능"으로 바꾼 뒤 "적용"을 누릅니다.</div></li>
+        <li><div><b>측정 시작.</b> 보낸 프레임도 로그에 함께 기록되도록, 송신은 측정 중에만 할 수 있습니다.</div></li>
+        <li><div><b>송신 모드 켜기.</b> "메시지 송신" 탭에서 "송신 모드 켜기"를 누르고 확인 창에서 "예"를 누릅니다. 측정을 시작할 때마다 송신 모드는 꺼져 있습니다.</div></li>
+      </ol>
+      <figure>
+        <button class="shot" type="button" aria-label="메시지 송신 크게 보기"><img src="img/10_tx.png" alt="메시지 송신 화면" loading="lazy" width="1600" height="950"></button>
+        <figcaption><b>메시지 송신</b><span>직접 입력 20 ms와 부하 20 %를 보내는 중, CTRL 메시지를 편집 중</span></figcaption>
+      </figure>
+      <ol class="legend">
+        <li><div><b>송신 모드 켜기 / 끄기</b><p>켜야만 보낼 수 있습니다. 끄면 보내던 것이 모두 멈춥니다. 측정을 멈추거나 프로그램을 닫아도 꺼집니다.</p></div></li>
+        <li><div><b>송신 모드 상태</b><p>꺼져 있으면 초록 "분석기는 아무것도 보내지 않습니다", 켜져 있으면 빨강으로 보낼 수 있는 채널이 나옵니다.</p></div></li>
+        <li><div><b>자동 정지</b><p>주기 송신은 시작하고 이 시간이 지나면 저절로 멈춥니다. 기본 60초이고, 0("끔")이면 멈추지 않습니다.</p></div></li>
+        <li><div><b>전체 정지 (Esc)</b><p>보내는 중인 모든 항목을 멈춥니다. 몇 개가 보내는 중인지 버튼에 표시됩니다.</p></div></li>
+        <li><div><b>목록 저장 · 불러오기</b><p>송신 목록은 자동으로 저장되어 다음에도 남습니다. 시험 절차별로 JSON 파일로 저장해 두고 불러올 수 있습니다.</p></div></li>
+        <li><div><b>항목 추가</b><p>"+ DBC 메시지", "+ 직접 입력", "+ 부하 메시지" 중에서 고릅니다. 아래 표에 종류별 차이를 정리했습니다.</p></div></li>
+        <li><div><b>복제 · 삭제</b><p>선택한 항목을 복사하거나 지웁니다. 보내는 중인 항목을 지우면 멈춥니다.</p></div></li>
+        <li><div><b>선택 1회 송신</b><p>선택한 항목을 주기와 상관없이 한 번만 보냅니다.</p></div></li>
+        <li><div><b>송신 체크</b><p>체크하면 보내기 시작하고, 해제하면 멈춥니다. 주기가 "1회"인 항목은 체크하면 한 번 보내고 저절로 해제됩니다. 횟수를 다 채우거나 자동 정지되어도 해제됩니다.</p></div></li>
+        <li><div><b>보낸 수와 상태</b><p>"보내는 중", "1회 송신함", "횟수 완료", "자동 정지", "정지"가 나옵니다. 송신 큐가 차서 잠시 쉰 횟수("큐 가득")와 늦어서 건너뛴 횟수도 붙습니다. 값이 잘못되면 빨간 글씨로 이유가 나옵니다.</p></div></li>
+        <li><div><b>추가 부하 계산값</b><p>보내는 중인 주기 항목이 채널마다 더하는 부하의 합입니다. 50 %가 넘으면 빨강입니다. 실제 부하는 상태 줄의 측정값으로 확인합니다.</p></div></li>
+        <li><div><b>선택한 항목 편집</b><p>채널, 메시지, 주기, 횟수, 메모를 바꿉니다. 보내는 중에 바꿔도 바로 반영되고, 보낸 수와 자동 정지 시간은 이어집니다.</p></div></li>
+        <li><div><b>신호 값</b><p>DBC 메시지의 신호를 입력합니다. 이름이 있는 값(예: ESTOP)은 목록에서 고릅니다. SubCode 같은 다중화 신호를 바꾸면 그에 맞는 신호만 다시 나오고, 주기도 그 SubCode의 설계 주기로 바뀝니다. 비워 둔 신호는 DBC 초기값이나 0을 씁니다.</p></div></li>
+        <li><div><b>미리 보기</b><p>실제로 보낼 CAN ID, 길이, FD/BRS, 데이터 바이트와 주기에 따른 초당 프레임 수, 추가 부하입니다. 값이 범위를 벗어나면 빨간 글씨로 이유가 나오고 보내지 않습니다.</p></div></li>
+      </ol>
+
+      <h3>항목 종류</h3>
+      <div class="tablewrap"><table>
+        <thead><tr><th>종류</th><th>정하는 것</th><th>쓰임</th></tr></thead>
+        <tbody>
+          <tr><td>DBC 메시지</td><td>채널 DBC의 메시지, 신호 값, 주기, 횟수</td><td>QUIET, EVENT, CTRL처럼 DBC에 있는 메시지를 정확한 값으로 보낼 때</td></tr>
+          <tr><td>직접 입력</td><td>CAN ID(16진수), 29비트·FD·BRS, 데이터 바이트, 길이, 주기, 횟수</td><td>DBC에 없는 프레임, 잘못된 길이 같은 비정상 프레임</td></tr>
+          <tr><td>부하 메시지</td><td>더미 CAN ID(기본 <code>0x1FFFFF00</code>), 길이(기본 64), 목표 부하 %</td><td>버스 부하를 원하는 만큼 올려 다른 메시지의 주기가 어떻게 되는지 볼 때</td></tr>
+        </tbody>
+      </table></div>
+
+      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px;">
+        <div>
+          <figure class="narrow" style="margin-bottom:0">
+            <button class="shot" type="button" aria-label="부하 메시지 편집 크게 보기"><img src="img/11_tx_load.png" alt="부하 메시지 편집" loading="lazy" width="398" height="360"></button>
+            <figcaption><b>부하 메시지 편집</b></figcaption>
+          </figure>
+          <ol class="legend one">
+            <li><div><b>더미 CAN ID와 형식</b><p>29비트 ID 중 우선순위가 가장 낮은 쪽을 기본으로 씁니다. 중재에서 로봇 메시지에 밀리도록 하기 위해서입니다.</p></div></li>
+            <li><div><b>길이</b><p>길수록 프레임 하나가 버스를 오래 씁니다.</p></div></li>
+            <li><div><b>목표 부하</b><p>원하는 추가 부하(%)입니다. 송신 간격은 DBC 속도(<code>Baudrate</code>, <code>BaudRateCANFD</code>)와 길이로 계산합니다.</p></div></li>
+            <li><div><b>계산 결과</b><p>송신 간격, 초당 프레임 수, 추가 부하를 보여 줍니다.</p></div></li>
+          </ol>
+        </div>
+        <div>
+          <figure class="narrow" style="margin-bottom:0">
+            <button class="shot" type="button" aria-label="직접 입력 편집 크게 보기"><img src="img/12_tx_raw.png" alt="직접 입력 편집" loading="lazy" width="398" height="390"></button>
+            <figcaption><b>직접 입력 편집</b></figcaption>
+          </figure>
+          <ol class="legend one">
+            <li><div><b>CAN ID</b><p>16진수로 입력합니다(<code>0x</code>는 붙여도 되고 빼도 됩니다).</p></div></li>
+            <li><div><b>형식</b><p>29비트 확장 ID, CAN FD, BRS(데이터 구간 고속)를 정합니다. 8바이트가 넘으면 FD로 보냅니다.</p></div></li>
+            <li><div><b>데이터</b><p><code>01 02 0A</code>처럼 바이트를 띄어 씁니다. 길이를 정하면 모자란 만큼 0으로 채우고 넘는 만큼 자릅니다. FD는 유효한 길이(12, 16, 20, 24, 32, 48, 64)로 맞춥니다.</p></div></li>
+            <li><div><b>주기와 횟수</b><p>주기 0은 1회, 횟수 0은 멈출 때까지입니다.</p></div></li>
+          </ol>
+        </div>
+      </div>
+
+      <h3>송신 한계와 기록</h3>
+      <ul>
+        <li><b>속도:</b> 한 항목은 초당 최대 20,000 프레임입니다. 1 M / 5 M에서 64바이트 프레임으로 부하 100 %가 초당 약 6,300 프레임입니다.</li>
+        <li><b>송신 큐가 찰 때:</b> 1 ms 쉬었다가 다시 보내고 그 횟수를 "큐 가득"으로 셉니다. 버스가 포화되면 늘어납니다.</li>
+        <li><b>기록:</b> 보낸 프레임은 같은 로그에 <code>dir</code> 열 값 <code>tx</code>로 기록됩니다. 받은 프레임과 같은 방식으로 시각이 찍히도록, 분석기가 돌려준 송신 확인(에코)을 기록합니다.</li>
+        <li><b>ID가 겹칠 때:</b> 로봇 보드와 같은 ID를 보내면 주기 통계에서 두 프레임이 한 메시지로 합쳐집니다. 주기 분석을 할 메시지와 겹치지 않는 ID를 씁니다.</li>
+      </ul>
+    </section>
+
+    <!-- 10 -->
+    <section id="tx-recipes">
+      <h2><span class="no">10</span>송신 예시</h2>
+      <p class="sub">HETC-L-TACT ch1 DBC 기준입니다. 다른 채널은 메시지 이름의 노드 이름만 바뀝니다.</p>
+      <div class="tablewrap"><table>
+        <thead><tr><th>하려는 것</th><th>항목</th><th>설정</th><th>미리 보기</th></tr></thead>
+        <tbody>
+          <tr><td>보드 주기 송신을 3초 멈추게 하기</td><td>DBC 메시지</td><td><code>QUIET_HETC_L_TACT_to_ALL</code>, Divider 0, HoldMs 3000, 주기 1회</td><td class="num"><code>0xF282FF [6] 00 00 B8 0B 00 00</code></td></tr>
+          <tr><td>E-Stop 이벤트 한 번 보내기</td><td>DBC 메시지</td><td><code>EVENT_HETC_L_TACT_to_ALL</code>, EvtCode = ESTOP, 주기 1회</td><td class="num"><code>0x282FF [7] 00 01 00 …</code></td></tr>
+          <tr><td>버스 부하 30 % 올리기</td><td>부하 메시지</td><td>can1, 64바이트, 목표 부하 30 %</td><td class="num">약 0.53 ms 간격, 초당 약 1,900 프레임</td></tr>
+          <tr><td>DBC에 없는 프레임 500번</td><td>직접 입력</td><td>ID <code>1FFFFE00</code>, 데이터 8바이트, 주기 20 ms, 횟수 500</td><td class="num">10초 동안 송신 후 "횟수 완료"</td></tr>
+        </tbody>
+      </table></div>
+      <p>각 예시는 송신 직후 Trace에서 "can1 Tx" 줄이 생기는지, 주기 통계에서 대상 메시지의 간격이 어떻게 바뀌는지 함께 봅니다. 측정을 멈추면 로그가 열리므로, 그래프에서 송신 시점 전후의 신호와 수신 간격을 확인합니다.</p>
+    </section>
+
+    <!-- 11 -->
+    <section id="files">
+      <h2><span class="no">11</span>로그 파일과 명령줄 도구</h2>
+      <h3>로그 형식</h3>
+      <p>실시간 측정과 <code>qa canmon capture</code>가 같은 CSV 형식으로 저장합니다. 실시간 측정 로그에는 <code>dir</code> 열이 하나 더 있습니다.</p>
+      <div class="tablewrap"><table>
+        <thead><tr><th>열</th><th>내용</th></tr></thead>
+        <tbody>
+          <tr><td><code>t_hw</code></td><td>하드웨어 타임스탬프(초). 분석기가 주지 않으면 비어 있습니다.</td></tr>
+          <tr><td><code>t_sw</code></td><td>PC가 받은 시각(초)</td></tr>
+          <tr><td><code>iface</code></td><td>채널 이름(<code>can0</code> 등)</td></tr>
+          <tr><td><code>can_id</code></td><td>CAN ID(16진수)</td></tr>
+          <tr><td><code>ext</code>, <code>fd</code>, <code>brs</code>, <code>esi</code>, <code>err</code></td><td>29비트, CAN FD, BRS, ESI, 오류 프레임 여부(0/1)</td></tr>
+          <tr><td><code>len</code>, <code>data</code></td><td>데이터 길이와 16진수 데이터</td></tr>
+          <tr><td><code>dir</code></td><td>이 PC가 보낸 프레임이면 <code>tx</code>, 받은 프레임이면 비어 있음</td></tr>
+        </tbody>
+      </table></div>
+      <h3>화면 없이 캡처하고 보고서 만들기</h3>
+      <pre><code><span class="c"># 채널 설정 (수신 전용). 로컬 CAN은 local, D-CAN은 dcan</span>
+sudo ./qa canmon setup can0 local
+sudo ./qa canmon setup can1 local
+
+<span class="c"># 60초 캡처 (Ctrl+C로 먼저 끝낼 수 있음)</span>
+./qa canmon capture can0 can1 -o ltact.csv --seconds 60
+
+<span class="c"># 주기 분석 보고서 (Markdown). --limit으로 한계 배수 변경</span>
+./qa canmon analyze ltact.csv --map can0=HETC-L-TACT_ch0 --map can1=HETC-L-TACT_ch1 -o ltact.md
+
+<span class="c"># 한 메시지의 신호를 CSV로 내보내기 (예: 손바닥 HTAC 엔코더)</span>
+./qa canmon analyze ltact.csv --map can1=HETC-L-TACT_ch1 --decode 0xF13382 -o enc51.csv</code></pre>
+    </section>
+
+    <!-- 12 -->
+    <section id="trouble">
+      <h2><span class="no">12</span>문제 해결</h2>
+      <div class="tablewrap"><table>
+        <thead><tr><th>증상</th><th>확인할 것</th></tr></thead>
+        <tbody>
+          <tr><td>"CAN 장치를 찾지 못했습니다"</td><td>분석기가 꽂혀 있는지, <code>ip link</code>에 <code>can0</code>이 보이는지 확인합니다. Windows와 WSL에서는 항상 이렇게 나옵니다.</td></tr>
+          <tr><td>적용하면 "설정 실패 … password is required"</td><td>CAN 설정 권한을 설치하지 않았거나, 설치 후 로그아웃하지 않았습니다.</td></tr>
+          <tr><td>"적용했지만 요청과 다릅니다"</td><td>드라이버가 그 속도나 샘플 포인트를 정확히 맞추지 못한 것입니다. 메시지에 나온 실제 값을 보고 샘플 포인트를 조정합니다.</td></tr>
+          <tr><td>"측정할 채널이 없습니다"</td><td>하드웨어 설정에서 채널을 체크하고 "적용"을 눌렀는지 확인합니다. 켜져 있는 채널만 측정합니다.</td></tr>
+          <tr><td>"보낼 수 있는 채널이 없습니다"</td><td>측정 중인 채널이 모두 수신 전용입니다. 측정을 멈추고 하드웨어 설정에서 그 채널만 송신 가능으로 적용합니다.</td></tr>
+          <tr><td>상태 줄에 "수신 누락"이 늘어남</td><td>PC가 프레임을 다 읽지 못해 커널이 버리고 있습니다. 다른 프로그램을 닫고, 그래도 늘면 그 구간의 통계는 믿지 않습니다.</td></tr>
+          <tr><td>타임스탬프가 "소프트웨어"</td><td>분석기가 하드웨어 시각을 주지 않습니다. 1 ms 미만의 간격 차이는 해석하지 않습니다.</td></tr>
+          <tr><td>메시지 이름이 "(DBC에 없음)"</td><td>채널에 맞는 DBC를 골랐는지 확인합니다. DBC를 고쳤으면 "DBC 다시 읽기"를 누릅니다.</td></tr>
+          <tr><td>한글이 네모로 나옴</td><td>한글 글꼴이 없는 PC입니다. 프로그램이 Windows의 맑은 고딕을 찾아 씁니다. Linux 노트북이면 <code>fonts-noto-cjk</code>를 설치합니다.</td></tr>
+          <tr><td>작업 표시줄 아이콘이 기본 아이콘</td><td><code>./install_shortcut.sh</code>를 실행하고 창을 다시 엽니다.</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <!-- 13 -->
+    <section id="status">
+      <h2><span class="no">13</span>검증 상태</h2>
+      <p class="sub">2026-11-09 기준입니다. 분석기가 도착하면 아래 "확인 전" 항목부터 확인합니다.</p>
+      <div class="tablewrap"><table>
+        <thead><tr><th>항목</th><th>상태</th><th>근거</th></tr></thead>
+        <tbody>
+          <tr><td>파일 해석, 주기 통계, 신호 해석</td><td><span class="pill ok">검사 통과</span></td><td><code>check_core.py</code>, <code>check_tools.py</code> (가상 데이터)</td></tr>
+          <tr><td>화면 동작</td><td><span class="pill ok">검사 통과</span></td><td><code>check_ui.py</code> (화면 없이 실행)</td></tr>
+          <tr><td>실시간 통계와 로그 저장</td><td><span class="pill ok">검사 통과</span></td><td><code>check_live.py</code> (파일을 흘려보내는 방식)</td></tr>
+          <tr><td>송신 인코딩, 주기 정확도, 정지 처리</td><td><span class="pill ok">검사 통과</span></td><td><code>check_tx.py</code> (가짜 송신 장치, 2 ms 주기와 초당 6,000 프레임 확인)</td></tr>
+          <tr><td>하드웨어 설정 화면</td><td><span class="pill ok">검사 통과</span></td><td><code>check_hw.py</code> (가짜 장치 정보)</td></tr>
+          <tr><td>SocketCAN 실제 수신</td><td><span class="pill warn">확인 전</span></td><td>분석기 필요</td></tr>
+          <tr><td>하드웨어 타임스탬프 (수신, 송신 에코)</td><td><span class="pill warn">확인 전</span></td><td>분석기 필요</td></tr>
+          <tr><td>실제 송신, 수신 전용 채널의 송신 차단</td><td><span class="pill warn">확인 전</span></td><td>분석기 필요</td></tr>
+          <tr><td>부하 메시지의 실제 부하율</td><td><span class="pill warn">확인 전</span></td><td>상태 줄 측정값과 비교 필요</td></tr>
+          <tr><td>CAN 설정 권한 스크립트</td><td><span class="pill warn">확인 전</span></td><td>측정용 노트북에서 실행 필요</td></tr>
+          <tr><td>D-CAN 샘플 포인트</td><td><span class="pill warn">확인 전</span></td><td>드라이버 자동값 사용 중</td></tr>
+        </tbody>
+      </table></div>
+      <p>화면 이미지는 <code>docs/make_shots.py</code>로 다시 만들 수 있습니다. 화면을 바꾼 뒤 실행하면 번호 위치도 새 화면에 맞춰집니다.</p>
+    </section>
+  </main>
+</div>
+
+<script>
+(function () {
+  var box = null;
+  function close() { if (box) { box.remove(); box = null; } }
+  document.querySelectorAll("figure .shot").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var img = btn.querySelector("img");
+      box = document.createElement("div");
+      box.className = "lightbox";
+      box.setAttribute("role", "dialog");
+      box.setAttribute("aria-label", img.alt);
+      var big = document.createElement("img");
+      big.src = img.src;
+      big.alt = img.alt;
+      var x = document.createElement("button");
+      x.className = "close";
+      x.type = "button";
+      x.textContent = "닫기 (Esc)";
+      box.appendChild(big);
+      box.appendChild(x);
+      box.addEventListener("click", close);
+      document.body.appendChild(box);
+      x.focus();
+    });
+  });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
+})();
+</script>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="825" height="825" viewBox="0 0 825 825" xmlns="http://www.w3.org/2000/svg" version="1.1">
+	<rect width="825" height="825" fill="#ffffff" />
+	<rect width="825" height="825" fill="#24d17c" mask="url(#h)" />
+
+	<mask id="h">
+		<rect x="0" y="0" width="825" height="825" fill="white" />
+		<circle cx="240" cy="210" r="90" fill="black" />
+		<circle cx="585" cy="210" r="90" fill="black" />
+		<rect x="100" y="370" width="625" height="165" fill="black" />
+		<path transform="translate(240,705)" d="M -100 0 A 1 1 0 0 1 100 0" fill="black" />
+		<path transform="translate(585,705)" d="M -100 0 A 1 1 0 0 1 100 0" fill="black" />
+	</mask>
+</svg>

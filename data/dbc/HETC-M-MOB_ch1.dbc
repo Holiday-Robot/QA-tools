@@ -1,0 +1,677 @@
+VERSION ""
+
+NS_ :
+
+BS_:
+
+BU_: HETC_M_MOB HUSS_1 HUSS_2 HUSS_3 HUSS_4 HUSS_5 HUSS_6 HTOF_11 HTOF_12 HTOF_13 HTOF_14 HTOF_15 HTOF_16 HTOF_17 HTOF_18
+
+BO_ 2163238143 CTRL_HETC_M_MOB_to_ALL: 7 HETC_M_MOB
+ SG_ SubCode M : 0|8@1+ (1,0) [0|0] "" HUSS_1,HUSS_2,HUSS_3,HUSS_4,HUSS_5,HUSS_6,HTOF_11,HTOF_12,HTOF_13,HTOF_14,HTOF_15,HTOF_16,HTOF_17,HTOF_18
+ SG_ Rtc_Year2000 m9 : 8|8@1+ (1,0) [0|0] "" HUSS_1,HUSS_2,HUSS_3,HUSS_4,HUSS_5,HUSS_6,HTOF_11,HTOF_12,HTOF_13,HTOF_14,HTOF_15,HTOF_16,HTOF_17,HTOF_18
+ SG_ Rtc_Month m9 : 16|8@1+ (1,0) [0|0] "" HUSS_1,HUSS_2,HUSS_3,HUSS_4,HUSS_5,HUSS_6,HTOF_11,HTOF_12,HTOF_13,HTOF_14,HTOF_15,HTOF_16,HTOF_17,HTOF_18
+ SG_ Rtc_Day m9 : 24|8@1+ (1,0) [0|0] "" HUSS_1,HUSS_2,HUSS_3,HUSS_4,HUSS_5,HUSS_6,HTOF_11,HTOF_12,HTOF_13,HTOF_14,HTOF_15,HTOF_16,HTOF_17,HTOF_18
+ SG_ Rtc_Hour m9 : 32|8@1+ (1,0) [0|0] "" HUSS_1,HUSS_2,HUSS_3,HUSS_4,HUSS_5,HUSS_6,HTOF_11,HTOF_12,HTOF_13,HTOF_14,HTOF_15,HTOF_16,HTOF_17,HTOF_18
+ SG_ Rtc_Min m9 : 40|8@1+ (1,0) [0|0] "" HUSS_1,HUSS_2,HUSS_3,HUSS_4,HUSS_5,HUSS_6,HTOF_11,HTOF_12,HTOF_13,HTOF_14,HTOF_15,HTOF_16,HTOF_17,HTOF_18
+ SG_ Rtc_Sec m9 : 48|8@1+ (1,0) [0|0] "" HUSS_1,HUSS_2,HUSS_3,HUSS_4,HUSS_5,HUSS_6,HTOF_11,HTOF_12,HTOF_13,HTOF_14,HTOF_15,HTOF_16,HTOF_17,HTOF_18
+
+BO_ 2163369215 QUIET_HETC_M_MOB_to_ALL: 6 HETC_M_MOB
+ SG_ Divider : 0|16@1+ (1,0) [0|0] "" HUSS_1,HUSS_2,HUSS_3,HUSS_4,HUSS_5,HUSS_6,HTOF_11,HTOF_12,HTOF_13,HTOF_14,HTOF_15,HTOF_16,HTOF_17,HTOF_18
+ SG_ HoldMs : 16|32@1+ (1,0) [0|0] "ms" HUSS_1,HUSS_2,HUSS_3,HUSS_4,HUSS_5,HUSS_6,HTOF_11,HTOF_12,HTOF_13,HTOF_14,HTOF_15,HTOF_16,HTOF_17,HTOF_18
+
+BO_ 2147640575 EVENT_HETC_M_MOB_to_ALL: 7 HETC_M_MOB
+ SG_ EvtType : 0|8@1+ (1,0) [0|0] "" HUSS_1,HUSS_2,HUSS_3,HUSS_4,HUSS_5,HUSS_6,HTOF_11,HTOF_12,HTOF_13,HTOF_14,HTOF_15,HTOF_16,HTOF_17,HTOF_18
+ SG_ EvtCode : 8|16@1+ (1,0) [0|0] "" HUSS_1,HUSS_2,HUSS_3,HUSS_4,HUSS_5,HUSS_6,HTOF_11,HTOF_12,HTOF_13,HTOF_14,HTOF_15,HTOF_16,HTOF_17,HTOF_18
+ SG_ EvtData : 24|32@1+ (1,0) [0|0] "" HUSS_1,HUSS_2,HUSS_3,HUSS_4,HUSS_5,HUSS_6,HTOF_11,HTOF_12,HTOF_13,HTOF_14,HTOF_15,HTOF_16,HTOF_17,HTOF_18
+
+BO_ 2163278335 STATUS_HUSS_1_to_ALL: 5 HUSS_1
+ SG_ SubCode M : 0|8@1+ (1,0) [0|0] "" HETC_M_MOB,HUSS_2,HUSS_3,HUSS_4,HUSS_5,HUSS_6,HTOF_11,HTOF_12,HTOF_13,HTOF_14,HTOF_15,HTOF_16,HTOF_17,HTOF_18
+ SG_ Uss_Connected m18 : 8|1@1+ (1,0) [0|0] "" HETC_M_MOB,HUSS_2,HUSS_3,HUSS_4,HUSS_5,HUSS_6,HTOF_11,HTOF_12,HTOF_13,HTOF_14,HTOF_15,HTOF_16,HTOF_17,HTOF_18
+ SG_ Uss_Freq m18 : 16|8@1+ (1,0) [0|0] "" HETC_M_MOB,HUSS_2,HUSS_3,HUSS_4,HUSS_5,HUSS_6,HTOF_11,HTOF_12,HTOF_13,HTOF_14,HTOF_15,HTOF_16,HTOF_17,HTOF_18
+ SG_ Uss_DistanceMm m18 : 24|16@1+ (1,0) [0|0] "mm" HETC_M_MOB,HUSS_2,HUSS_3,HUSS_4,HUSS_5,HUSS_6,HTOF_11,HTOF_12,HTOF_13,HTOF_14,HTOF_15,HTOF_16,HTOF_17,HTOF_18
+
+BO_ 2163278180 STATUS_HUSS_1_to_HETC_M_MOB: 48 HUSS_1
+ SG_ SubCode M : 0|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_CanId m5 : 8|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_HostId m5 : 16|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Pid m5 : 24|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Bid m5 : 40|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Mid m5 : 56|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_VerMajor m5 : 72|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_VerMinor m5 : 80|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_VerPatch m5 : 88|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name0 m5 : 96|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name1 m5 : 104|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name2 m5 : 112|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name3 m5 : 120|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name4 m5 : 128|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name5 m5 : 136|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name6 m5 : 144|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name7 m5 : 152|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name8 m5 : 160|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name9 m5 : 168|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name10 m5 : 176|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name11 m5 : 184|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name12 m5 : 192|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name13 m5 : 200|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name14 m5 : 208|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name15 m5 : 216|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_FmtVer m5 : 224|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_GitRev m5 : 232|32@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_FwCrc m5 : 264|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_UptimeS m5 : 280|16@1+ (1,0) [0|0] "s" HETC_M_MOB
+
+BO_ 2163278591 STATUS_HUSS_2_to_ALL: 5 HUSS_2
+ SG_ SubCode M : 0|8@1+ (1,0) [0|0] "" HETC_M_MOB,HUSS_1,HUSS_3,HUSS_4,HUSS_5,HUSS_6,HTOF_11,HTOF_12,HTOF_13,HTOF_14,HTOF_15,HTOF_16,HTOF_17,HTOF_18
+ SG_ Uss_Connected m18 : 8|1@1+ (1,0) [0|0] "" HETC_M_MOB,HUSS_1,HUSS_3,HUSS_4,HUSS_5,HUSS_6,HTOF_11,HTOF_12,HTOF_13,HTOF_14,HTOF_15,HTOF_16,HTOF_17,HTOF_18
+ SG_ Uss_Freq m18 : 16|8@1+ (1,0) [0|0] "" HETC_M_MOB,HUSS_1,HUSS_3,HUSS_4,HUSS_5,HUSS_6,HTOF_11,HTOF_12,HTOF_13,HTOF_14,HTOF_15,HTOF_16,HTOF_17,HTOF_18
+ SG_ Uss_DistanceMm m18 : 24|16@1+ (1,0) [0|0] "mm" HETC_M_MOB,HUSS_1,HUSS_3,HUSS_4,HUSS_5,HUSS_6,HTOF_11,HTOF_12,HTOF_13,HTOF_14,HTOF_15,HTOF_16,HTOF_17,HTOF_18
+
+BO_ 2163278436 STATUS_HUSS_2_to_HETC_M_MOB: 48 HUSS_2
+ SG_ SubCode M : 0|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_CanId m5 : 8|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_HostId m5 : 16|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Pid m5 : 24|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Bid m5 : 40|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Mid m5 : 56|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_VerMajor m5 : 72|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_VerMinor m5 : 80|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_VerPatch m5 : 88|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name0 m5 : 96|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name1 m5 : 104|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name2 m5 : 112|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name3 m5 : 120|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name4 m5 : 128|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name5 m5 : 136|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name6 m5 : 144|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name7 m5 : 152|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name8 m5 : 160|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name9 m5 : 168|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name10 m5 : 176|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name11 m5 : 184|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name12 m5 : 192|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name13 m5 : 200|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name14 m5 : 208|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name15 m5 : 216|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_FmtVer m5 : 224|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_GitRev m5 : 232|32@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_FwCrc m5 : 264|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_UptimeS m5 : 280|16@1+ (1,0) [0|0] "s" HETC_M_MOB
+
+BO_ 2163278847 STATUS_HUSS_3_to_ALL: 5 HUSS_3
+ SG_ SubCode M : 0|8@1+ (1,0) [0|0] "" HETC_M_MOB,HUSS_1,HUSS_2,HUSS_4,HUSS_5,HUSS_6,HTOF_11,HTOF_12,HTOF_13,HTOF_14,HTOF_15,HTOF_16,HTOF_17,HTOF_18
+ SG_ Uss_Connected m18 : 8|1@1+ (1,0) [0|0] "" HETC_M_MOB,HUSS_1,HUSS_2,HUSS_4,HUSS_5,HUSS_6,HTOF_11,HTOF_12,HTOF_13,HTOF_14,HTOF_15,HTOF_16,HTOF_17,HTOF_18
+ SG_ Uss_Freq m18 : 16|8@1+ (1,0) [0|0] "" HETC_M_MOB,HUSS_1,HUSS_2,HUSS_4,HUSS_5,HUSS_6,HTOF_11,HTOF_12,HTOF_13,HTOF_14,HTOF_15,HTOF_16,HTOF_17,HTOF_18
+ SG_ Uss_DistanceMm m18 : 24|16@1+ (1,0) [0|0] "mm" HETC_M_MOB,HUSS_1,HUSS_2,HUSS_4,HUSS_5,HUSS_6,HTOF_11,HTOF_12,HTOF_13,HTOF_14,HTOF_15,HTOF_16,HTOF_17,HTOF_18
+
+BO_ 2163278692 STATUS_HUSS_3_to_HETC_M_MOB: 48 HUSS_3
+ SG_ SubCode M : 0|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_CanId m5 : 8|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_HostId m5 : 16|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Pid m5 : 24|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Bid m5 : 40|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Mid m5 : 56|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_VerMajor m5 : 72|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_VerMinor m5 : 80|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_VerPatch m5 : 88|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name0 m5 : 96|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name1 m5 : 104|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name2 m5 : 112|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name3 m5 : 120|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name4 m5 : 128|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name5 m5 : 136|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name6 m5 : 144|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name7 m5 : 152|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name8 m5 : 160|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name9 m5 : 168|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name10 m5 : 176|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name11 m5 : 184|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name12 m5 : 192|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name13 m5 : 200|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name14 m5 : 208|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name15 m5 : 216|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_FmtVer m5 : 224|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_GitRev m5 : 232|32@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_FwCrc m5 : 264|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_UptimeS m5 : 280|16@1+ (1,0) [0|0] "s" HETC_M_MOB
+
+BO_ 2163279103 STATUS_HUSS_4_to_ALL: 5 HUSS_4
+ SG_ SubCode M : 0|8@1+ (1,0) [0|0] "" HETC_M_MOB,HUSS_1,HUSS_2,HUSS_3,HUSS_5,HUSS_6,HTOF_11,HTOF_12,HTOF_13,HTOF_14,HTOF_15,HTOF_16,HTOF_17,HTOF_18
+ SG_ Uss_Connected m18 : 8|1@1+ (1,0) [0|0] "" HETC_M_MOB,HUSS_1,HUSS_2,HUSS_3,HUSS_5,HUSS_6,HTOF_11,HTOF_12,HTOF_13,HTOF_14,HTOF_15,HTOF_16,HTOF_17,HTOF_18
+ SG_ Uss_Freq m18 : 16|8@1+ (1,0) [0|0] "" HETC_M_MOB,HUSS_1,HUSS_2,HUSS_3,HUSS_5,HUSS_6,HTOF_11,HTOF_12,HTOF_13,HTOF_14,HTOF_15,HTOF_16,HTOF_17,HTOF_18
+ SG_ Uss_DistanceMm m18 : 24|16@1+ (1,0) [0|0] "mm" HETC_M_MOB,HUSS_1,HUSS_2,HUSS_3,HUSS_5,HUSS_6,HTOF_11,HTOF_12,HTOF_13,HTOF_14,HTOF_15,HTOF_16,HTOF_17,HTOF_18
+
+BO_ 2163278948 STATUS_HUSS_4_to_HETC_M_MOB: 48 HUSS_4
+ SG_ SubCode M : 0|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_CanId m5 : 8|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_HostId m5 : 16|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Pid m5 : 24|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Bid m5 : 40|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Mid m5 : 56|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_VerMajor m5 : 72|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_VerMinor m5 : 80|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_VerPatch m5 : 88|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name0 m5 : 96|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name1 m5 : 104|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name2 m5 : 112|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name3 m5 : 120|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name4 m5 : 128|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name5 m5 : 136|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name6 m5 : 144|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name7 m5 : 152|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name8 m5 : 160|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name9 m5 : 168|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name10 m5 : 176|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name11 m5 : 184|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name12 m5 : 192|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name13 m5 : 200|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name14 m5 : 208|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name15 m5 : 216|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_FmtVer m5 : 224|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_GitRev m5 : 232|32@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_FwCrc m5 : 264|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_UptimeS m5 : 280|16@1+ (1,0) [0|0] "s" HETC_M_MOB
+
+BO_ 2163279359 STATUS_HUSS_5_to_ALL: 5 HUSS_5
+ SG_ SubCode M : 0|8@1+ (1,0) [0|0] "" HETC_M_MOB,HUSS_1,HUSS_2,HUSS_3,HUSS_4,HUSS_6,HTOF_11,HTOF_12,HTOF_13,HTOF_14,HTOF_15,HTOF_16,HTOF_17,HTOF_18
+ SG_ Uss_Connected m18 : 8|1@1+ (1,0) [0|0] "" HETC_M_MOB,HUSS_1,HUSS_2,HUSS_3,HUSS_4,HUSS_6,HTOF_11,HTOF_12,HTOF_13,HTOF_14,HTOF_15,HTOF_16,HTOF_17,HTOF_18
+ SG_ Uss_Freq m18 : 16|8@1+ (1,0) [0|0] "" HETC_M_MOB,HUSS_1,HUSS_2,HUSS_3,HUSS_4,HUSS_6,HTOF_11,HTOF_12,HTOF_13,HTOF_14,HTOF_15,HTOF_16,HTOF_17,HTOF_18
+ SG_ Uss_DistanceMm m18 : 24|16@1+ (1,0) [0|0] "mm" HETC_M_MOB,HUSS_1,HUSS_2,HUSS_3,HUSS_4,HUSS_6,HTOF_11,HTOF_12,HTOF_13,HTOF_14,HTOF_15,HTOF_16,HTOF_17,HTOF_18
+
+BO_ 2163279204 STATUS_HUSS_5_to_HETC_M_MOB: 48 HUSS_5
+ SG_ SubCode M : 0|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_CanId m5 : 8|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_HostId m5 : 16|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Pid m5 : 24|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Bid m5 : 40|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Mid m5 : 56|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_VerMajor m5 : 72|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_VerMinor m5 : 80|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_VerPatch m5 : 88|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name0 m5 : 96|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name1 m5 : 104|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name2 m5 : 112|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name3 m5 : 120|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name4 m5 : 128|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name5 m5 : 136|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name6 m5 : 144|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name7 m5 : 152|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name8 m5 : 160|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name9 m5 : 168|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name10 m5 : 176|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name11 m5 : 184|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name12 m5 : 192|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name13 m5 : 200|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name14 m5 : 208|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name15 m5 : 216|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_FmtVer m5 : 224|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_GitRev m5 : 232|32@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_FwCrc m5 : 264|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_UptimeS m5 : 280|16@1+ (1,0) [0|0] "s" HETC_M_MOB
+
+BO_ 2163279615 STATUS_HUSS_6_to_ALL: 5 HUSS_6
+ SG_ SubCode M : 0|8@1+ (1,0) [0|0] "" HETC_M_MOB,HUSS_1,HUSS_2,HUSS_3,HUSS_4,HUSS_5,HTOF_11,HTOF_12,HTOF_13,HTOF_14,HTOF_15,HTOF_16,HTOF_17,HTOF_18
+ SG_ Uss_Connected m18 : 8|1@1+ (1,0) [0|0] "" HETC_M_MOB,HUSS_1,HUSS_2,HUSS_3,HUSS_4,HUSS_5,HTOF_11,HTOF_12,HTOF_13,HTOF_14,HTOF_15,HTOF_16,HTOF_17,HTOF_18
+ SG_ Uss_Freq m18 : 16|8@1+ (1,0) [0|0] "" HETC_M_MOB,HUSS_1,HUSS_2,HUSS_3,HUSS_4,HUSS_5,HTOF_11,HTOF_12,HTOF_13,HTOF_14,HTOF_15,HTOF_16,HTOF_17,HTOF_18
+ SG_ Uss_DistanceMm m18 : 24|16@1+ (1,0) [0|0] "mm" HETC_M_MOB,HUSS_1,HUSS_2,HUSS_3,HUSS_4,HUSS_5,HTOF_11,HTOF_12,HTOF_13,HTOF_14,HTOF_15,HTOF_16,HTOF_17,HTOF_18
+
+BO_ 2163279460 STATUS_HUSS_6_to_HETC_M_MOB: 48 HUSS_6
+ SG_ SubCode M : 0|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_CanId m5 : 8|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_HostId m5 : 16|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Pid m5 : 24|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Bid m5 : 40|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Mid m5 : 56|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_VerMajor m5 : 72|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_VerMinor m5 : 80|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_VerPatch m5 : 88|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name0 m5 : 96|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name1 m5 : 104|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name2 m5 : 112|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name3 m5 : 120|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name4 m5 : 128|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name5 m5 : 136|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name6 m5 : 144|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name7 m5 : 152|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name8 m5 : 160|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name9 m5 : 168|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name10 m5 : 176|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name11 m5 : 184|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name12 m5 : 192|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name13 m5 : 200|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name14 m5 : 208|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name15 m5 : 216|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_FmtVer m5 : 224|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_GitRev m5 : 232|32@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_FwCrc m5 : 264|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_UptimeS m5 : 280|16@1+ (1,0) [0|0] "s" HETC_M_MOB
+
+BO_ 2163280740 STATUS_HTOF_11_to_HETC_M_MOB: 48 HTOF_11
+ SG_ SubCode M : 0|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_CanId m5 : 8|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_HostId m5 : 16|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Pid m5 : 24|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Bid m5 : 40|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Mid m5 : 56|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_VerMajor m5 : 72|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_VerMinor m5 : 80|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_VerPatch m5 : 88|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name0 m5 : 96|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name1 m5 : 104|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name2 m5 : 112|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name3 m5 : 120|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name4 m5 : 128|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name5 m5 : 136|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name6 m5 : 144|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name7 m5 : 152|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name8 m5 : 160|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name9 m5 : 168|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name10 m5 : 176|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name11 m5 : 184|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name12 m5 : 192|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name13 m5 : 200|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name14 m5 : 208|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name15 m5 : 216|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_FmtVer m5 : 224|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_GitRev m5 : 232|32@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_FwCrc m5 : 264|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_UptimeS m5 : 280|16@1+ (1,0) [0|0] "s" HETC_M_MOB
+ SG_ Tof_Ready m19 : 8|1@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Tof_Valid m19 : 9|1@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Tof_SignalRate m19 : 16|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Tof_DistanceMm m19 : 24|16@1+ (1,0) [0|0] "mm" HETC_M_MOB
+
+BO_ 2163280996 STATUS_HTOF_12_to_HETC_M_MOB: 48 HTOF_12
+ SG_ SubCode M : 0|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_CanId m5 : 8|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_HostId m5 : 16|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Pid m5 : 24|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Bid m5 : 40|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Mid m5 : 56|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_VerMajor m5 : 72|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_VerMinor m5 : 80|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_VerPatch m5 : 88|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name0 m5 : 96|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name1 m5 : 104|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name2 m5 : 112|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name3 m5 : 120|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name4 m5 : 128|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name5 m5 : 136|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name6 m5 : 144|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name7 m5 : 152|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name8 m5 : 160|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name9 m5 : 168|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name10 m5 : 176|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name11 m5 : 184|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name12 m5 : 192|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name13 m5 : 200|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name14 m5 : 208|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name15 m5 : 216|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_FmtVer m5 : 224|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_GitRev m5 : 232|32@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_FwCrc m5 : 264|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_UptimeS m5 : 280|16@1+ (1,0) [0|0] "s" HETC_M_MOB
+ SG_ Tof_Ready m19 : 8|1@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Tof_Valid m19 : 9|1@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Tof_SignalRate m19 : 16|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Tof_DistanceMm m19 : 24|16@1+ (1,0) [0|0] "mm" HETC_M_MOB
+
+BO_ 2163281252 STATUS_HTOF_13_to_HETC_M_MOB: 48 HTOF_13
+ SG_ SubCode M : 0|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_CanId m5 : 8|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_HostId m5 : 16|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Pid m5 : 24|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Bid m5 : 40|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Mid m5 : 56|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_VerMajor m5 : 72|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_VerMinor m5 : 80|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_VerPatch m5 : 88|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name0 m5 : 96|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name1 m5 : 104|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name2 m5 : 112|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name3 m5 : 120|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name4 m5 : 128|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name5 m5 : 136|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name6 m5 : 144|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name7 m5 : 152|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name8 m5 : 160|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name9 m5 : 168|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name10 m5 : 176|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name11 m5 : 184|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name12 m5 : 192|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name13 m5 : 200|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name14 m5 : 208|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name15 m5 : 216|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_FmtVer m5 : 224|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_GitRev m5 : 232|32@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_FwCrc m5 : 264|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_UptimeS m5 : 280|16@1+ (1,0) [0|0] "s" HETC_M_MOB
+ SG_ Tof_Ready m19 : 8|1@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Tof_Valid m19 : 9|1@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Tof_SignalRate m19 : 16|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Tof_DistanceMm m19 : 24|16@1+ (1,0) [0|0] "mm" HETC_M_MOB
+
+BO_ 2163281508 STATUS_HTOF_14_to_HETC_M_MOB: 48 HTOF_14
+ SG_ SubCode M : 0|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_CanId m5 : 8|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_HostId m5 : 16|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Pid m5 : 24|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Bid m5 : 40|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Mid m5 : 56|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_VerMajor m5 : 72|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_VerMinor m5 : 80|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_VerPatch m5 : 88|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name0 m5 : 96|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name1 m5 : 104|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name2 m5 : 112|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name3 m5 : 120|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name4 m5 : 128|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name5 m5 : 136|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name6 m5 : 144|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name7 m5 : 152|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name8 m5 : 160|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name9 m5 : 168|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name10 m5 : 176|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name11 m5 : 184|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name12 m5 : 192|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name13 m5 : 200|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name14 m5 : 208|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name15 m5 : 216|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_FmtVer m5 : 224|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_GitRev m5 : 232|32@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_FwCrc m5 : 264|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_UptimeS m5 : 280|16@1+ (1,0) [0|0] "s" HETC_M_MOB
+ SG_ Tof_Ready m19 : 8|1@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Tof_Valid m19 : 9|1@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Tof_SignalRate m19 : 16|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Tof_DistanceMm m19 : 24|16@1+ (1,0) [0|0] "mm" HETC_M_MOB
+
+BO_ 2163281764 STATUS_HTOF_15_to_HETC_M_MOB: 48 HTOF_15
+ SG_ SubCode M : 0|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_CanId m5 : 8|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_HostId m5 : 16|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Pid m5 : 24|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Bid m5 : 40|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Mid m5 : 56|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_VerMajor m5 : 72|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_VerMinor m5 : 80|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_VerPatch m5 : 88|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name0 m5 : 96|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name1 m5 : 104|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name2 m5 : 112|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name3 m5 : 120|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name4 m5 : 128|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name5 m5 : 136|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name6 m5 : 144|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name7 m5 : 152|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name8 m5 : 160|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name9 m5 : 168|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name10 m5 : 176|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name11 m5 : 184|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name12 m5 : 192|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name13 m5 : 200|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name14 m5 : 208|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name15 m5 : 216|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_FmtVer m5 : 224|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_GitRev m5 : 232|32@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_FwCrc m5 : 264|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_UptimeS m5 : 280|16@1+ (1,0) [0|0] "s" HETC_M_MOB
+ SG_ Tof_Ready m19 : 8|1@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Tof_Valid m19 : 9|1@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Tof_SignalRate m19 : 16|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Tof_DistanceMm m19 : 24|16@1+ (1,0) [0|0] "mm" HETC_M_MOB
+
+BO_ 2163282020 STATUS_HTOF_16_to_HETC_M_MOB: 48 HTOF_16
+ SG_ SubCode M : 0|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_CanId m5 : 8|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_HostId m5 : 16|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Pid m5 : 24|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Bid m5 : 40|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Mid m5 : 56|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_VerMajor m5 : 72|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_VerMinor m5 : 80|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_VerPatch m5 : 88|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name0 m5 : 96|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name1 m5 : 104|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name2 m5 : 112|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name3 m5 : 120|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name4 m5 : 128|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name5 m5 : 136|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name6 m5 : 144|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name7 m5 : 152|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name8 m5 : 160|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name9 m5 : 168|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name10 m5 : 176|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name11 m5 : 184|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name12 m5 : 192|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name13 m5 : 200|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name14 m5 : 208|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name15 m5 : 216|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_FmtVer m5 : 224|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_GitRev m5 : 232|32@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_FwCrc m5 : 264|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_UptimeS m5 : 280|16@1+ (1,0) [0|0] "s" HETC_M_MOB
+ SG_ Tof_Ready m19 : 8|1@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Tof_Valid m19 : 9|1@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Tof_SignalRate m19 : 16|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Tof_DistanceMm m19 : 24|16@1+ (1,0) [0|0] "mm" HETC_M_MOB
+
+BO_ 2163282276 STATUS_HTOF_17_to_HETC_M_MOB: 48 HTOF_17
+ SG_ SubCode M : 0|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_CanId m5 : 8|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_HostId m5 : 16|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Pid m5 : 24|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Bid m5 : 40|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Mid m5 : 56|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_VerMajor m5 : 72|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_VerMinor m5 : 80|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_VerPatch m5 : 88|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name0 m5 : 96|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name1 m5 : 104|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name2 m5 : 112|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name3 m5 : 120|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name4 m5 : 128|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name5 m5 : 136|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name6 m5 : 144|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name7 m5 : 152|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name8 m5 : 160|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name9 m5 : 168|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name10 m5 : 176|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name11 m5 : 184|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name12 m5 : 192|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name13 m5 : 200|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name14 m5 : 208|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name15 m5 : 216|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_FmtVer m5 : 224|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_GitRev m5 : 232|32@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_FwCrc m5 : 264|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_UptimeS m5 : 280|16@1+ (1,0) [0|0] "s" HETC_M_MOB
+ SG_ Tof_Ready m19 : 8|1@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Tof_Valid m19 : 9|1@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Tof_SignalRate m19 : 16|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Tof_DistanceMm m19 : 24|16@1+ (1,0) [0|0] "mm" HETC_M_MOB
+
+BO_ 2163282532 STATUS_HTOF_18_to_HETC_M_MOB: 48 HTOF_18
+ SG_ SubCode M : 0|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_CanId m5 : 8|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_HostId m5 : 16|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Pid m5 : 24|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Bid m5 : 40|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Mid m5 : 56|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_VerMajor m5 : 72|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_VerMinor m5 : 80|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_VerPatch m5 : 88|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name0 m5 : 96|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name1 m5 : 104|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name2 m5 : 112|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name3 m5 : 120|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name4 m5 : 128|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name5 m5 : 136|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name6 m5 : 144|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name7 m5 : 152|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name8 m5 : 160|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name9 m5 : 168|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name10 m5 : 176|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name11 m5 : 184|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name12 m5 : 192|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name13 m5 : 200|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name14 m5 : 208|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name15 m5 : 216|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_FmtVer m5 : 224|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_GitRev m5 : 232|32@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_FwCrc m5 : 264|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_UptimeS m5 : 280|16@1+ (1,0) [0|0] "s" HETC_M_MOB
+ SG_ Tof_Ready m19 : 8|1@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Tof_Valid m19 : 9|1@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Tof_SignalRate m19 : 16|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Tof_DistanceMm m19 : 24|16@1+ (1,0) [0|0] "mm" HETC_M_MOB
+
+CM_ "FM26C HETC-M-MOB_ch1. CAN ID = type<<16 | sender<<8 | dest. Generated from friday-firmware-2.0 dev c0ace19f. Design values, not measured.";
+CM_ BO_ 2163238143 "CLI ping / RTC sync on all channels";
+CM_ BO_ 2163369215 "slow down periodic TX, e.g. during firmware download";
+CM_ BO_ 2147640575 "EVENT_ERR_CLEAR fault-reset fan-out";
+CM_ BO_ 2163278180 "ping response";
+CM_ BO_ 2163278436 "ping response";
+CM_ BO_ 2163278692 "ping response";
+CM_ BO_ 2163278948 "ping response";
+CM_ BO_ 2163279204 "ping response";
+CM_ BO_ 2163279460 "ping response";
+BA_DEF_ "DBName" STRING ;
+BA_DEF_ "BusType" STRING ;
+BA_DEF_ "Baudrate" INT 0 8000000;
+BA_DEF_ "BaudRateCANFD" INT 0 16000000;
+BA_DEF_ BO_ "GenMsgCycleTime" INT 0 65535;
+BA_DEF_ BO_ "VFrameFormat" ENUM "StandardCAN","ExtendedCAN","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","StandardCAN_FD","ExtendedCAN_FD";
+BA_DEF_ BO_ "CANFD_BRS" ENUM "0","1";
+BA_DEF_ BO_ "SubCodeCycles" STRING ;
+BA_DEF_ BO_ "SubCodeLengths" STRING ;
+BA_DEF_DEF_ "DBName" "";
+BA_DEF_DEF_ "BusType" "CAN FD";
+BA_DEF_DEF_ "Baudrate" 1000000;
+BA_DEF_DEF_ "BaudRateCANFD" 5000000;
+BA_DEF_DEF_ "GenMsgCycleTime" 0;
+BA_DEF_DEF_ "VFrameFormat" "ExtendedCAN_FD";
+BA_DEF_DEF_ "CANFD_BRS" "1";
+BA_DEF_DEF_ "SubCodeCycles" "";
+BA_DEF_DEF_ "SubCodeLengths" "";
+BA_ "DBName" "HETC_M_MOB_ch1";
+BA_ "BusType" "CAN FD";
+BA_ "Baudrate" 1000000;
+BA_ "BaudRateCANFD" 5000000;
+BA_ "VFrameFormat" BO_ 2163238143 15;
+BA_ "CANFD_BRS" BO_ 2163238143 1;
+BA_ "SubCodeLengths" BO_ 2163238143 "2:1;9:7";
+BA_ "VFrameFormat" BO_ 2163369215 15;
+BA_ "CANFD_BRS" BO_ 2163369215 1;
+BA_ "VFrameFormat" BO_ 2147640575 15;
+BA_ "CANFD_BRS" BO_ 2147640575 1;
+BA_ "VFrameFormat" BO_ 2163278335 15;
+BA_ "CANFD_BRS" BO_ 2163278335 1;
+BA_ "GenMsgCycleTime" BO_ 2163278335 100;
+BA_ "SubCodeCycles" BO_ 2163278335 "18:100";
+BA_ "SubCodeLengths" BO_ 2163278335 "18:5";
+BA_ "VFrameFormat" BO_ 2163278180 15;
+BA_ "CANFD_BRS" BO_ 2163278180 1;
+BA_ "SubCodeLengths" BO_ 2163278180 "5:37";
+BA_ "VFrameFormat" BO_ 2163278591 15;
+BA_ "CANFD_BRS" BO_ 2163278591 1;
+BA_ "GenMsgCycleTime" BO_ 2163278591 100;
+BA_ "SubCodeCycles" BO_ 2163278591 "18:100";
+BA_ "SubCodeLengths" BO_ 2163278591 "18:5";
+BA_ "VFrameFormat" BO_ 2163278436 15;
+BA_ "CANFD_BRS" BO_ 2163278436 1;
+BA_ "SubCodeLengths" BO_ 2163278436 "5:37";
+BA_ "VFrameFormat" BO_ 2163278847 15;
+BA_ "CANFD_BRS" BO_ 2163278847 1;
+BA_ "GenMsgCycleTime" BO_ 2163278847 100;
+BA_ "SubCodeCycles" BO_ 2163278847 "18:100";
+BA_ "SubCodeLengths" BO_ 2163278847 "18:5";
+BA_ "VFrameFormat" BO_ 2163278692 15;
+BA_ "CANFD_BRS" BO_ 2163278692 1;
+BA_ "SubCodeLengths" BO_ 2163278692 "5:37";
+BA_ "VFrameFormat" BO_ 2163279103 15;
+BA_ "CANFD_BRS" BO_ 2163279103 1;
+BA_ "GenMsgCycleTime" BO_ 2163279103 100;
+BA_ "SubCodeCycles" BO_ 2163279103 "18:100";
+BA_ "SubCodeLengths" BO_ 2163279103 "18:5";
+BA_ "VFrameFormat" BO_ 2163278948 15;
+BA_ "CANFD_BRS" BO_ 2163278948 1;
+BA_ "SubCodeLengths" BO_ 2163278948 "5:37";
+BA_ "VFrameFormat" BO_ 2163279359 15;
+BA_ "CANFD_BRS" BO_ 2163279359 1;
+BA_ "GenMsgCycleTime" BO_ 2163279359 100;
+BA_ "SubCodeCycles" BO_ 2163279359 "18:100";
+BA_ "SubCodeLengths" BO_ 2163279359 "18:5";
+BA_ "VFrameFormat" BO_ 2163279204 15;
+BA_ "CANFD_BRS" BO_ 2163279204 1;
+BA_ "SubCodeLengths" BO_ 2163279204 "5:37";
+BA_ "VFrameFormat" BO_ 2163279615 15;
+BA_ "CANFD_BRS" BO_ 2163279615 1;
+BA_ "GenMsgCycleTime" BO_ 2163279615 100;
+BA_ "SubCodeCycles" BO_ 2163279615 "18:100";
+BA_ "SubCodeLengths" BO_ 2163279615 "18:5";
+BA_ "VFrameFormat" BO_ 2163279460 15;
+BA_ "CANFD_BRS" BO_ 2163279460 1;
+BA_ "SubCodeLengths" BO_ 2163279460 "5:37";
+BA_ "VFrameFormat" BO_ 2163280740 15;
+BA_ "CANFD_BRS" BO_ 2163280740 1;
+BA_ "GenMsgCycleTime" BO_ 2163280740 10;
+BA_ "SubCodeCycles" BO_ 2163280740 "19:10";
+BA_ "SubCodeLengths" BO_ 2163280740 "5:37;19:5";
+BA_ "VFrameFormat" BO_ 2163280996 15;
+BA_ "CANFD_BRS" BO_ 2163280996 1;
+BA_ "GenMsgCycleTime" BO_ 2163280996 10;
+BA_ "SubCodeCycles" BO_ 2163280996 "19:10";
+BA_ "SubCodeLengths" BO_ 2163280996 "5:37;19:5";
+BA_ "VFrameFormat" BO_ 2163281252 15;
+BA_ "CANFD_BRS" BO_ 2163281252 1;
+BA_ "GenMsgCycleTime" BO_ 2163281252 10;
+BA_ "SubCodeCycles" BO_ 2163281252 "19:10";
+BA_ "SubCodeLengths" BO_ 2163281252 "5:37;19:5";
+BA_ "VFrameFormat" BO_ 2163281508 15;
+BA_ "CANFD_BRS" BO_ 2163281508 1;
+BA_ "GenMsgCycleTime" BO_ 2163281508 10;
+BA_ "SubCodeCycles" BO_ 2163281508 "19:10";
+BA_ "SubCodeLengths" BO_ 2163281508 "5:37;19:5";
+BA_ "VFrameFormat" BO_ 2163281764 15;
+BA_ "CANFD_BRS" BO_ 2163281764 1;
+BA_ "GenMsgCycleTime" BO_ 2163281764 10;
+BA_ "SubCodeCycles" BO_ 2163281764 "19:10";
+BA_ "SubCodeLengths" BO_ 2163281764 "5:37;19:5";
+BA_ "VFrameFormat" BO_ 2163282020 15;
+BA_ "CANFD_BRS" BO_ 2163282020 1;
+BA_ "GenMsgCycleTime" BO_ 2163282020 10;
+BA_ "SubCodeCycles" BO_ 2163282020 "19:10";
+BA_ "SubCodeLengths" BO_ 2163282020 "5:37;19:5";
+BA_ "VFrameFormat" BO_ 2163282276 15;
+BA_ "CANFD_BRS" BO_ 2163282276 1;
+BA_ "GenMsgCycleTime" BO_ 2163282276 10;
+BA_ "SubCodeCycles" BO_ 2163282276 "19:10";
+BA_ "SubCodeLengths" BO_ 2163282276 "5:37;19:5";
+BA_ "VFrameFormat" BO_ 2163282532 15;
+BA_ "CANFD_BRS" BO_ 2163282532 1;
+BA_ "GenMsgCycleTime" BO_ 2163282532 10;
+BA_ "SubCodeCycles" BO_ 2163282532 "19:10";
+BA_ "SubCodeLengths" BO_ 2163282532 "5:37;19:5";
+VAL_ 2163238143 SubCode 11 "POWER" 10 "THOR" 9 "RTC_SYNC" 8 "SAFETY_RESET" 7 "SAFETY_PING" 6 "ECAT_PING" 5 "BAT_LATCH" 4 "BUZZER" 3 "BRAKE" 2 "PING" 1 "MC_TARGET" 0 "MC_TORQUE" ;
+VAL_ 2147640575 EvtCode 19 "CAN_ID_CHANGED" 18 "THOR_OFF" 17 "ROBOT_OFF" 16 "BLACKBOX_TRIG" 15 "BAT_WARN" 14 "ESTOP_UPDATE" 13 "ERR_CLEAR" 12 "ERR_CODE" 11 "WIZ_PHY_SNTP" 10 "WIZ_PHY_DHCP" 9 "WIZ_PHY_LINK" 8 "PAUSE" 7 "ECAT_CONNECT" 6 "ANGLE_EX_CONNECT" 5 "BRAKE_EX_CONNECT" 4 "BLDC_FAULT" 3 "BLDC_TORQUE" 2 "BLDC_LIMIT" 1 "ESTOP" 0 "OK" ;
+VAL_ 2163278335 SubCode 34 "POWER" 33 "THOR" 32 "SAFETY" 31 "ECAT_ERR" 30 "BUZZER_CFG" 27 "ANGLE_MULTI" 26 "BAT_LATCH" 25 "SAFETY_SENSOR" 22 "HRMC" 19 "TOF" 18 "USS" 17 "ANGLE" 9 "TACTILE_G2" 5 "PING" ;
+VAL_ 2163278180 SubCode 34 "POWER" 33 "THOR" 32 "SAFETY" 31 "ECAT_ERR" 30 "BUZZER_CFG" 27 "ANGLE_MULTI" 26 "BAT_LATCH" 25 "SAFETY_SENSOR" 22 "HRMC" 19 "TOF" 18 "USS" 17 "ANGLE" 9 "TACTILE_G2" 5 "PING" ;
+VAL_ 2163278591 SubCode 34 "POWER" 33 "THOR" 32 "SAFETY" 31 "ECAT_ERR" 30 "BUZZER_CFG" 27 "ANGLE_MULTI" 26 "BAT_LATCH" 25 "SAFETY_SENSOR" 22 "HRMC" 19 "TOF" 18 "USS" 17 "ANGLE" 9 "TACTILE_G2" 5 "PING" ;
+VAL_ 2163278436 SubCode 34 "POWER" 33 "THOR" 32 "SAFETY" 31 "ECAT_ERR" 30 "BUZZER_CFG" 27 "ANGLE_MULTI" 26 "BAT_LATCH" 25 "SAFETY_SENSOR" 22 "HRMC" 19 "TOF" 18 "USS" 17 "ANGLE" 9 "TACTILE_G2" 5 "PING" ;
+VAL_ 2163278847 SubCode 34 "POWER" 33 "THOR" 32 "SAFETY" 31 "ECAT_ERR" 30 "BUZZER_CFG" 27 "ANGLE_MULTI" 26 "BAT_LATCH" 25 "SAFETY_SENSOR" 22 "HRMC" 19 "TOF" 18 "USS" 17 "ANGLE" 9 "TACTILE_G2" 5 "PING" ;
+VAL_ 2163278692 SubCode 34 "POWER" 33 "THOR" 32 "SAFETY" 31 "ECAT_ERR" 30 "BUZZER_CFG" 27 "ANGLE_MULTI" 26 "BAT_LATCH" 25 "SAFETY_SENSOR" 22 "HRMC" 19 "TOF" 18 "USS" 17 "ANGLE" 9 "TACTILE_G2" 5 "PING" ;
+VAL_ 2163279103 SubCode 34 "POWER" 33 "THOR" 32 "SAFETY" 31 "ECAT_ERR" 30 "BUZZER_CFG" 27 "ANGLE_MULTI" 26 "BAT_LATCH" 25 "SAFETY_SENSOR" 22 "HRMC" 19 "TOF" 18 "USS" 17 "ANGLE" 9 "TACTILE_G2" 5 "PING" ;
+VAL_ 2163278948 SubCode 34 "POWER" 33 "THOR" 32 "SAFETY" 31 "ECAT_ERR" 30 "BUZZER_CFG" 27 "ANGLE_MULTI" 26 "BAT_LATCH" 25 "SAFETY_SENSOR" 22 "HRMC" 19 "TOF" 18 "USS" 17 "ANGLE" 9 "TACTILE_G2" 5 "PING" ;
+VAL_ 2163279359 SubCode 34 "POWER" 33 "THOR" 32 "SAFETY" 31 "ECAT_ERR" 30 "BUZZER_CFG" 27 "ANGLE_MULTI" 26 "BAT_LATCH" 25 "SAFETY_SENSOR" 22 "HRMC" 19 "TOF" 18 "USS" 17 "ANGLE" 9 "TACTILE_G2" 5 "PING" ;
+VAL_ 2163279204 SubCode 34 "POWER" 33 "THOR" 32 "SAFETY" 31 "ECAT_ERR" 30 "BUZZER_CFG" 27 "ANGLE_MULTI" 26 "BAT_LATCH" 25 "SAFETY_SENSOR" 22 "HRMC" 19 "TOF" 18 "USS" 17 "ANGLE" 9 "TACTILE_G2" 5 "PING" ;
+VAL_ 2163279615 SubCode 34 "POWER" 33 "THOR" 32 "SAFETY" 31 "ECAT_ERR" 30 "BUZZER_CFG" 27 "ANGLE_MULTI" 26 "BAT_LATCH" 25 "SAFETY_SENSOR" 22 "HRMC" 19 "TOF" 18 "USS" 17 "ANGLE" 9 "TACTILE_G2" 5 "PING" ;
+VAL_ 2163279460 SubCode 34 "POWER" 33 "THOR" 32 "SAFETY" 31 "ECAT_ERR" 30 "BUZZER_CFG" 27 "ANGLE_MULTI" 26 "BAT_LATCH" 25 "SAFETY_SENSOR" 22 "HRMC" 19 "TOF" 18 "USS" 17 "ANGLE" 9 "TACTILE_G2" 5 "PING" ;
+VAL_ 2163280740 SubCode 34 "POWER" 33 "THOR" 32 "SAFETY" 31 "ECAT_ERR" 30 "BUZZER_CFG" 27 "ANGLE_MULTI" 26 "BAT_LATCH" 25 "SAFETY_SENSOR" 22 "HRMC" 19 "TOF" 18 "USS" 17 "ANGLE" 9 "TACTILE_G2" 5 "PING" ;
+VAL_ 2163280996 SubCode 34 "POWER" 33 "THOR" 32 "SAFETY" 31 "ECAT_ERR" 30 "BUZZER_CFG" 27 "ANGLE_MULTI" 26 "BAT_LATCH" 25 "SAFETY_SENSOR" 22 "HRMC" 19 "TOF" 18 "USS" 17 "ANGLE" 9 "TACTILE_G2" 5 "PING" ;
+VAL_ 2163281252 SubCode 34 "POWER" 33 "THOR" 32 "SAFETY" 31 "ECAT_ERR" 30 "BUZZER_CFG" 27 "ANGLE_MULTI" 26 "BAT_LATCH" 25 "SAFETY_SENSOR" 22 "HRMC" 19 "TOF" 18 "USS" 17 "ANGLE" 9 "TACTILE_G2" 5 "PING" ;
+VAL_ 2163281508 SubCode 34 "POWER" 33 "THOR" 32 "SAFETY" 31 "ECAT_ERR" 30 "BUZZER_CFG" 27 "ANGLE_MULTI" 26 "BAT_LATCH" 25 "SAFETY_SENSOR" 22 "HRMC" 19 "TOF" 18 "USS" 17 "ANGLE" 9 "TACTILE_G2" 5 "PING" ;
+VAL_ 2163281764 SubCode 34 "POWER" 33 "THOR" 32 "SAFETY" 31 "ECAT_ERR" 30 "BUZZER_CFG" 27 "ANGLE_MULTI" 26 "BAT_LATCH" 25 "SAFETY_SENSOR" 22 "HRMC" 19 "TOF" 18 "USS" 17 "ANGLE" 9 "TACTILE_G2" 5 "PING" ;
+VAL_ 2163282020 SubCode 34 "POWER" 33 "THOR" 32 "SAFETY" 31 "ECAT_ERR" 30 "BUZZER_CFG" 27 "ANGLE_MULTI" 26 "BAT_LATCH" 25 "SAFETY_SENSOR" 22 "HRMC" 19 "TOF" 18 "USS" 17 "ANGLE" 9 "TACTILE_G2" 5 "PING" ;
+VAL_ 2163282276 SubCode 34 "POWER" 33 "THOR" 32 "SAFETY" 31 "ECAT_ERR" 30 "BUZZER_CFG" 27 "ANGLE_MULTI" 26 "BAT_LATCH" 25 "SAFETY_SENSOR" 22 "HRMC" 19 "TOF" 18 "USS" 17 "ANGLE" 9 "TACTILE_G2" 5 "PING" ;
+VAL_ 2163282532 SubCode 34 "POWER" 33 "THOR" 32 "SAFETY" 31 "ECAT_ERR" 30 "BUZZER_CFG" 27 "ANGLE_MULTI" 26 "BAT_LATCH" 25 "SAFETY_SENSOR" 22 "HRMC" 19 "TOF" 18 "USS" 17 "ANGLE" 9 "TACTILE_G2" 5 "PING" ;

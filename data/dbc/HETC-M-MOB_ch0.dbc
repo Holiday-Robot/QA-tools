@@ -1,0 +1,446 @@
+VERSION ""
+
+NS_ :
+
+BS_:
+
+BU_: HETC_M_MOB HMDW_1 HMDW_2 HRMC HTCR
+
+BO_ 2163238143 CTRL_HETC_M_MOB_to_ALL: 7 HETC_M_MOB
+ SG_ SubCode M : 0|8@1+ (1,0) [0|0] "" HMDW_1,HMDW_2,HRMC,HTCR
+ SG_ Rtc_Year2000 m9 : 8|8@1+ (1,0) [0|0] "" HMDW_1,HMDW_2,HRMC,HTCR
+ SG_ Rtc_Month m9 : 16|8@1+ (1,0) [0|0] "" HMDW_1,HMDW_2,HRMC,HTCR
+ SG_ Rtc_Day m9 : 24|8@1+ (1,0) [0|0] "" HMDW_1,HMDW_2,HRMC,HTCR
+ SG_ Rtc_Hour m9 : 32|8@1+ (1,0) [0|0] "" HMDW_1,HMDW_2,HRMC,HTCR
+ SG_ Rtc_Min m9 : 40|8@1+ (1,0) [0|0] "" HMDW_1,HMDW_2,HRMC,HTCR
+ SG_ Rtc_Sec m9 : 48|8@1+ (1,0) [0|0] "" HMDW_1,HMDW_2,HRMC,HTCR
+
+BO_ 2163369215 QUIET_HETC_M_MOB_to_ALL: 6 HETC_M_MOB
+ SG_ Divider : 0|16@1+ (1,0) [0|0] "" HMDW_1,HMDW_2,HRMC,HTCR
+ SG_ HoldMs : 16|32@1+ (1,0) [0|0] "ms" HMDW_1,HMDW_2,HRMC,HTCR
+
+BO_ 2147640575 EVENT_HETC_M_MOB_to_ALL: 7 HETC_M_MOB
+ SG_ EvtType : 0|8@1+ (1,0) [0|0] "" HMDW_1,HMDW_2,HRMC,HTCR
+ SG_ EvtCode : 8|16@1+ (1,0) [0|0] "" HMDW_1,HMDW_2,HRMC,HTCR
+ SG_ EvtData : 24|32@1+ (1,0) [0|0] "" HMDW_1,HMDW_2,HRMC,HTCR
+
+BO_ 2147640320 EVENT_HETC_M_MOB_to_ALLHP: 7 HETC_M_MOB
+ SG_ EvtType : 0|8@1+ (1,0) [0|0] "" HMDW_1,HMDW_2,HRMC,HTCR
+ SG_ EvtCode : 8|16@1+ (1,0) [0|0] "" HMDW_1,HMDW_2,HRMC,HTCR
+ SG_ EvtData : 24|32@1+ (1,0) [0|0] "" HMDW_1,HMDW_2,HRMC,HTCR
+
+BO_ 2147705857 RPDO_HETC_M_MOB_to_HMDW_1: 16 HETC_M_MOB
+ SG_ Type : 0|8@1+ (1,0) [0|0] "" HMDW_1
+ SG_ ReqState : 8|8@1+ (1,0) [0|0] "" HMDW_1
+ SG_ DesiredMode : 16|8@1+ (1,0) [0|0] "" HMDW_1
+ SG_ DesiredPosition : 24|32@1- (1,0) [0|0] "rad" HMDW_1
+ SG_ DesiredVelocity : 56|32@1- (1,0) [0|0] "rad/s" HMDW_1
+ SG_ DesiredTorque : 88|32@1- (1,0) [0|0] "" HMDW_1
+
+BO_ 2147746148 TPDO_HMDW_1_to_HETC_M_MOB: 20 HMDW_1
+ SG_ Type : 0|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ ErrCode : 8|32@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ PresentState : 40|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ PresentMode : 48|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ PresentPosition : 56|32@1- (1,0) [0|0] "rad" HETC_M_MOB
+ SG_ PresentVelocity : 88|32@1- (1,0) [0|0] "rad/s" HETC_M_MOB
+ SG_ PresentTorque : 120|32@1- (1,0) [0|0] "" HETC_M_MOB
+ SG_ Temperature : 152|8@1- (1,0) [0|0] "degC" HETC_M_MOB
+
+BO_ 2163278180 STATUS_HMDW_1_to_HETC_M_MOB: 48 HMDW_1
+ SG_ SubCode M : 0|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_CanId m5 : 8|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_HostId m5 : 16|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Pid m5 : 24|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Bid m5 : 40|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Mid m5 : 56|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_VerMajor m5 : 72|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_VerMinor m5 : 80|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_VerPatch m5 : 88|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name0 m5 : 96|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name1 m5 : 104|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name2 m5 : 112|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name3 m5 : 120|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name4 m5 : 128|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name5 m5 : 136|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name6 m5 : 144|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name7 m5 : 152|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name8 m5 : 160|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name9 m5 : 168|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name10 m5 : 176|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name11 m5 : 184|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name12 m5 : 192|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name13 m5 : 200|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name14 m5 : 208|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name15 m5 : 216|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_FmtVer m5 : 224|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_GitRev m5 : 232|32@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_FwCrc m5 : 264|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_UptimeS m5 : 280|16@1+ (1,0) [0|0] "s" HETC_M_MOB
+
+BO_ 2147614976 EVENT_HMDW_1_to_ALLHP: 7 HMDW_1
+ SG_ EvtType : 0|8@1+ (1,0) [0|0] "" HETC_M_MOB,HMDW_2,HRMC,HTCR
+ SG_ EvtCode : 8|16@1+ (1,0) [0|0] "" HETC_M_MOB,HMDW_2,HRMC,HTCR
+ SG_ EvtData : 24|32@1+ (1,0) [0|0] "" HETC_M_MOB,HMDW_2,HRMC,HTCR
+
+BO_ 2147705858 RPDO_HETC_M_MOB_to_HMDW_2: 16 HETC_M_MOB
+ SG_ Type : 0|8@1+ (1,0) [0|0] "" HMDW_2
+ SG_ ReqState : 8|8@1+ (1,0) [0|0] "" HMDW_2
+ SG_ DesiredMode : 16|8@1+ (1,0) [0|0] "" HMDW_2
+ SG_ DesiredPosition : 24|32@1- (1,0) [0|0] "rad" HMDW_2
+ SG_ DesiredVelocity : 56|32@1- (1,0) [0|0] "rad/s" HMDW_2
+ SG_ DesiredTorque : 88|32@1- (1,0) [0|0] "" HMDW_2
+
+BO_ 2147746404 TPDO_HMDW_2_to_HETC_M_MOB: 20 HMDW_2
+ SG_ Type : 0|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ ErrCode : 8|32@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ PresentState : 40|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ PresentMode : 48|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ PresentPosition : 56|32@1- (1,0) [0|0] "rad" HETC_M_MOB
+ SG_ PresentVelocity : 88|32@1- (1,0) [0|0] "rad/s" HETC_M_MOB
+ SG_ PresentTorque : 120|32@1- (1,0) [0|0] "" HETC_M_MOB
+ SG_ Temperature : 152|8@1- (1,0) [0|0] "degC" HETC_M_MOB
+
+BO_ 2163278436 STATUS_HMDW_2_to_HETC_M_MOB: 48 HMDW_2
+ SG_ SubCode M : 0|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_CanId m5 : 8|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_HostId m5 : 16|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Pid m5 : 24|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Bid m5 : 40|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Mid m5 : 56|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_VerMajor m5 : 72|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_VerMinor m5 : 80|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_VerPatch m5 : 88|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name0 m5 : 96|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name1 m5 : 104|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name2 m5 : 112|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name3 m5 : 120|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name4 m5 : 128|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name5 m5 : 136|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name6 m5 : 144|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name7 m5 : 152|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name8 m5 : 160|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name9 m5 : 168|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name10 m5 : 176|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name11 m5 : 184|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name12 m5 : 192|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name13 m5 : 200|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name14 m5 : 208|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name15 m5 : 216|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_FmtVer m5 : 224|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_GitRev m5 : 232|32@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_FwCrc m5 : 264|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_UptimeS m5 : 280|16@1+ (1,0) [0|0] "s" HETC_M_MOB
+
+BO_ 2147615232 EVENT_HMDW_2_to_ALLHP: 7 HMDW_2
+ SG_ EvtType : 0|8@1+ (1,0) [0|0] "" HETC_M_MOB,HMDW_1,HRMC,HTCR
+ SG_ EvtCode : 8|16@1+ (1,0) [0|0] "" HETC_M_MOB,HMDW_1,HRMC,HTCR
+ SG_ EvtData : 24|32@1+ (1,0) [0|0] "" HETC_M_MOB,HMDW_1,HRMC,HTCR
+
+BO_ 2163278692 STATUS_HRMC_to_HETC_M_MOB: 64 HRMC
+ SG_ SubCode M : 0|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_CanId m5 : 8|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_HostId m5 : 16|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Pid m5 : 24|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Bid m5 : 40|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Mid m5 : 56|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_VerMajor m5 : 72|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_VerMinor m5 : 80|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_VerPatch m5 : 88|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name0 m5 : 96|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name1 m5 : 104|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name2 m5 : 112|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name3 m5 : 120|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name4 m5 : 128|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name5 m5 : 136|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name6 m5 : 144|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name7 m5 : 152|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name8 m5 : 160|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name9 m5 : 168|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name10 m5 : 176|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name11 m5 : 184|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name12 m5 : 192|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name13 m5 : 200|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name14 m5 : 208|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name15 m5 : 216|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_FmtVer m5 : 224|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_GitRev m5 : 232|32@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_FwCrc m5 : 264|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_UptimeS m5 : 280|16@1+ (1,0) [0|0] "s" HETC_M_MOB
+ SG_ Bat_Disp1 m22 : 8|2@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Bat_Disp2 m22 : 10|2@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Bat_ChCount m22 : 16|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Bat_Voltage m22 : 24|16@1+ (0.1,0) [0|0] "V" HETC_M_MOB
+ SG_ Bat_Soc m22 : 40|8@1+ (1,0) [0|0] "%" HETC_M_MOB
+ SG_ Bat_Connected m22 : 48|1@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Bat_Charging m22 : 49|1@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Bat_Src m22 : 50|2@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Bat_State m22 : 52|3@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Bat_LinkOk m22 : 55|1@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Bat_BmsBits m22 : 56|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Bat_SrcCh m22 : 64|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Bat1_Detected m22 : 72|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Bat1_Connected m22 : 80|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Bat1_Charging m22 : 88|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Bat1_ErrCode m22 : 96|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Bat1_ErrCnt m22 : 104|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Bat1_Cycles m22 : 112|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Bat1_CellTemp m22 : 128|16@1- (1,0) [0|0] "" HETC_M_MOB
+ SG_ Bat1_Remaining m22 : 144|16@1- (0.1,0) [0|0] "Ah" HETC_M_MOB
+ SG_ Bat1_Capacity m22 : 160|16@1- (0.1,0) [0|0] "Ah" HETC_M_MOB
+ SG_ Bat1_Voltage m22 : 176|16@1- (0.01,0) [0|0] "V" HETC_M_MOB
+ SG_ Bat1_Soc m22 : 192|16@1- (0.01,0) [0|0] "%" HETC_M_MOB
+ SG_ Bat1_Current m22 : 208|32@1- (1,0) [0|0] "A" HETC_M_MOB
+ SG_ Bat2_Detected m22 : 240|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Bat2_Connected m22 : 248|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Bat2_Charging m22 : 256|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Bat2_ErrCode m22 : 264|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Bat2_ErrCnt m22 : 272|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Bat2_Cycles m22 : 280|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Bat2_CellTemp m22 : 296|16@1- (1,0) [0|0] "" HETC_M_MOB
+ SG_ Bat2_Remaining m22 : 312|16@1- (0.1,0) [0|0] "Ah" HETC_M_MOB
+ SG_ Bat2_Capacity m22 : 328|16@1- (0.1,0) [0|0] "Ah" HETC_M_MOB
+ SG_ Bat2_Voltage m22 : 344|16@1- (0.01,0) [0|0] "V" HETC_M_MOB
+ SG_ Bat2_Soc m22 : 360|16@1- (0.01,0) [0|0] "%" HETC_M_MOB
+ SG_ Bat2_Current m22 : 376|32@1- (1,0) [0|0] "A" HETC_M_MOB
+ SG_ Lat_ChCount m26 : 8|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Lat_Status1 m26 : 16|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Lat_Status2 m26 : 24|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Lat_Sensor1 m26 : 32|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Lat_Sensor2 m26 : 40|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Bz_WarnTh m30 : 8|8@1+ (1,0) [0|0] "%" HETC_M_MOB
+ SG_ Bz_CritTh m30 : 16|8@1+ (1,0) [0|0] "%" HETC_M_MOB
+ SG_ Bz_Muted m30 : 24|8@1+ (1,0) [0|0] "" HETC_M_MOB
+
+BO_ 2163278847 STATUS_HRMC_to_ALL: 20 HRMC
+ SG_ SubCode M : 0|8@1+ (1,0) [0|0] "" HETC_M_MOB,HMDW_1,HMDW_2,HTCR
+ SG_ Ss_LoadCell1 m25 : 24|32@1- (1,0) [0|0] "kg" HETC_M_MOB,HMDW_1,HMDW_2,HTCR
+ SG_ Ss_LoadCell2 m25 : 56|32@1- (1,0) [0|0] "kg" HETC_M_MOB,HMDW_1,HMDW_2,HTCR
+ SG_ Ss_LoadCell3 m25 : 88|32@1- (1,0) [0|0] "kg" HETC_M_MOB,HMDW_1,HMDW_2,HTCR
+ SG_ Ss_LoadCellErr m25 : 120|8@1+ (1,0) [0|0] "" HETC_M_MOB,HMDW_1,HMDW_2,HTCR
+ SG_ Ss_Bumper1 m25 : 128|1@1+ (1,0) [0|0] "" HETC_M_MOB,HMDW_1,HMDW_2,HTCR
+ SG_ Ss_Bumper2 m25 : 129|1@1+ (1,0) [0|0] "" HETC_M_MOB,HMDW_1,HMDW_2,HTCR
+ SG_ Ss_Bumper3 m25 : 130|1@1+ (1,0) [0|0] "" HETC_M_MOB,HMDW_1,HMDW_2,HTCR
+ SG_ Ss_Bumper4 m25 : 131|1@1+ (1,0) [0|0] "" HETC_M_MOB,HMDW_1,HMDW_2,HTCR
+ SG_ Pwr_SbcOn m34 : 8|8@1+ (1,0) [0|0] "" HETC_M_MOB,HMDW_1,HMDW_2,HTCR
+ SG_ Pwr_Busy m34 : 16|8@1+ (1,0) [0|0] "" HETC_M_MOB,HMDW_1,HMDW_2,HTCR
+ SG_ Pwr_CurCmd m34 : 24|8@1+ (1,0) [0|0] "" HETC_M_MOB,HMDW_1,HMDW_2,HTCR
+
+BO_ 2147615488 EVENT_HRMC_to_ALLHP: 7 HRMC
+ SG_ EvtType : 0|8@1+ (1,0) [0|0] "" HETC_M_MOB,HMDW_1,HMDW_2,HTCR
+ SG_ EvtCode : 8|16@1+ (1,0) [0|0] "" HETC_M_MOB,HMDW_1,HMDW_2,HTCR
+ SG_ EvtData : 24|32@1+ (1,0) [0|0] "" HETC_M_MOB,HMDW_1,HMDW_2,HTCR
+
+BO_ 2147615588 EVENT_HRMC_to_HETC_M_MOB: 7 HRMC
+ SG_ EvtType : 0|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ EvtCode : 8|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ EvtData : 24|32@1+ (1,0) [0|0] "" HETC_M_MOB
+
+BO_ 2163237891 CTRL_HETC_M_MOB_to_HRMC: 4 HETC_M_MOB
+ SG_ SubCode M : 0|8@1+ (1,0) [0|0] "" HRMC
+ SG_ Bz_Sub m4 : 8|8@1+ (1,0) [0|0] "" HRMC
+ SG_ Bz_Arg1 m4 : 16|8@1+ (1,0) [0|0] "" HRMC
+ SG_ Bz_Arg2 m4 : 24|8@1+ (1,0) [0|0] "" HRMC
+ SG_ Lat_Ch m5 : 8|8@1+ (1,0) [0|0] "" HRMC
+ SG_ Lat_Cmd m5 : 16|8@1+ (1,0) [0|0] "" HRMC
+ SG_ Pwr_Action m11 : 8|8@1+ (1,0) [0|0] "" HRMC
+
+BO_ 2163283711 STATUS_HTCR_to_ALL: 20 HTCR
+ SG_ SubCode M : 0|8@1+ (1,0) [0|0] "" HETC_M_MOB,HMDW_1,HMDW_2,HRMC
+ SG_ Thor_PowerOn m33 : 8|8@1+ (1,0) [0|0] "" HETC_M_MOB,HMDW_1,HMDW_2,HRMC
+ SG_ Thor_Busy m33 : 16|8@1+ (1,0) [0|0] "" HETC_M_MOB,HMDW_1,HMDW_2,HRMC
+ SG_ Thor_CurCmd m33 : 24|8@1+ (1,0) [0|0] "" HETC_M_MOB,HMDW_1,HMDW_2,HRMC
+ SG_ Thor_V1V8 m33 : 32|16@1+ (1,0) [0|0] "mV" HETC_M_MOB,HMDW_1,HMDW_2,HRMC
+ SG_ Thor_V3V3 m33 : 48|16@1+ (1,0) [0|0] "mV" HETC_M_MOB,HMDW_1,HMDW_2,HRMC
+ SG_ Thor_V3V3STB m33 : 64|16@1+ (1,0) [0|0] "mV" HETC_M_MOB,HMDW_1,HMDW_2,HRMC
+ SG_ Thor_V5V m33 : 80|16@1+ (1,0) [0|0] "mV" HETC_M_MOB,HMDW_1,HMDW_2,HRMC
+ SG_ Thor_V12V m33 : 96|16@1+ (1,0) [0|0] "mV" HETC_M_MOB,HMDW_1,HMDW_2,HRMC
+ SG_ Thor_V19V m33 : 112|16@1+ (1,0) [0|0] "mV" HETC_M_MOB,HMDW_1,HMDW_2,HRMC
+ SG_ Thor_V48V m33 : 128|16@1+ (1,0) [0|0] "mV" HETC_M_MOB,HMDW_1,HMDW_2,HRMC
+
+BO_ 2163283556 STATUS_HTCR_to_HETC_M_MOB: 48 HTCR
+ SG_ SubCode M : 0|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_CanId m5 : 8|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_HostId m5 : 16|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Pid m5 : 24|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Bid m5 : 40|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Mid m5 : 56|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_VerMajor m5 : 72|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_VerMinor m5 : 80|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_VerPatch m5 : 88|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name0 m5 : 96|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name1 m5 : 104|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name2 m5 : 112|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name3 m5 : 120|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name4 m5 : 128|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name5 m5 : 136|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name6 m5 : 144|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name7 m5 : 152|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name8 m5 : 160|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name9 m5 : 168|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name10 m5 : 176|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name11 m5 : 184|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name12 m5 : 192|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name13 m5 : 200|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name14 m5 : 208|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_Name15 m5 : 216|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_FmtVer m5 : 224|8@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_GitRev m5 : 232|32@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_FwCrc m5 : 264|16@1+ (1,0) [0|0] "" HETC_M_MOB
+ SG_ Ping_UptimeS m5 : 280|16@1+ (1,0) [0|0] "s" HETC_M_MOB
+
+BO_ 2147620352 EVENT_HTCR_to_ALLHP: 7 HTCR
+ SG_ EvtType : 0|8@1+ (1,0) [0|0] "" HETC_M_MOB,HMDW_1,HMDW_2,HRMC
+ SG_ EvtCode : 8|16@1+ (1,0) [0|0] "" HETC_M_MOB,HMDW_1,HMDW_2,HRMC
+ SG_ EvtData : 24|32@1+ (1,0) [0|0] "" HETC_M_MOB,HMDW_1,HMDW_2,HRMC
+
+BO_ 2163237910 CTRL_HETC_M_MOB_to_HTCR: 2 HETC_M_MOB
+ SG_ SubCode M : 0|8@1+ (1,0) [0|0] "" HTCR
+ SG_ Thor_Action m10 : 8|8@1+ (1,0) [0|0] "" HTCR
+
+CM_ "FM26C HETC-M-MOB_ch0. CAN ID = type<<16 | sender<<8 | dest. Generated from friday-firmware-2.0 dev c0ace19f. Design values, not measured.";
+CM_ BO_ 2163238143 "CLI ping / RTC sync on all channels";
+CM_ BO_ 2163369215 "slow down periodic TX, e.g. during firmware download";
+CM_ BO_ 2147640575 "EVENT_ERR_CLEAR fault-reset fan-out";
+CM_ BO_ 2163278180 "ping response";
+CM_ BO_ 2163278436 "ping response";
+CM_ BO_ 2163278692 "battery status 100 ms";
+CM_ BO_ 2163278847 "power 100 ms, safety sensor ~12.5 ms";
+CM_ BO_ 2147615488 "E-Stop";
+CM_ BO_ 2147615588 "EVENT_ERR_CODE / EVENT_ERR_CLEAR forwarding";
+CM_ BO_ 2163237891 "dest learned at runtime from HRMC status";
+CM_ BO_ 2163283556 "ping response";
+CM_ BO_ 2163237910 "dest learned at runtime from HTCR status";
+BA_DEF_ "DBName" STRING ;
+BA_DEF_ "BusType" STRING ;
+BA_DEF_ "Baudrate" INT 0 8000000;
+BA_DEF_ "BaudRateCANFD" INT 0 16000000;
+BA_DEF_ BO_ "GenMsgCycleTime" INT 0 65535;
+BA_DEF_ BO_ "VFrameFormat" ENUM "StandardCAN","ExtendedCAN","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","StandardCAN_FD","ExtendedCAN_FD";
+BA_DEF_ BO_ "CANFD_BRS" ENUM "0","1";
+BA_DEF_ BO_ "SubCodeCycles" STRING ;
+BA_DEF_ BO_ "SubCodeLengths" STRING ;
+BA_DEF_DEF_ "DBName" "";
+BA_DEF_DEF_ "BusType" "CAN FD";
+BA_DEF_DEF_ "Baudrate" 1000000;
+BA_DEF_DEF_ "BaudRateCANFD" 5000000;
+BA_DEF_DEF_ "GenMsgCycleTime" 0;
+BA_DEF_DEF_ "VFrameFormat" "ExtendedCAN_FD";
+BA_DEF_DEF_ "CANFD_BRS" "1";
+BA_DEF_DEF_ "SubCodeCycles" "";
+BA_DEF_DEF_ "SubCodeLengths" "";
+BA_ "DBName" "HETC_M_MOB_ch0";
+BA_ "BusType" "CAN FD";
+BA_ "Baudrate" 1000000;
+BA_ "BaudRateCANFD" 5000000;
+BA_ "VFrameFormat" BO_ 2163238143 15;
+BA_ "CANFD_BRS" BO_ 2163238143 1;
+BA_ "SubCodeLengths" BO_ 2163238143 "2:1;9:7";
+BA_ "VFrameFormat" BO_ 2163369215 15;
+BA_ "CANFD_BRS" BO_ 2163369215 1;
+BA_ "VFrameFormat" BO_ 2147640575 15;
+BA_ "CANFD_BRS" BO_ 2147640575 1;
+BA_ "VFrameFormat" BO_ 2147640320 15;
+BA_ "CANFD_BRS" BO_ 2147640320 1;
+BA_ "VFrameFormat" BO_ 2147705857 15;
+BA_ "CANFD_BRS" BO_ 2147705857 1;
+BA_ "GenMsgCycleTime" BO_ 2147705857 2;
+BA_ "VFrameFormat" BO_ 2147746148 15;
+BA_ "CANFD_BRS" BO_ 2147746148 1;
+BA_ "GenMsgCycleTime" BO_ 2147746148 2;
+BA_ "VFrameFormat" BO_ 2163278180 15;
+BA_ "CANFD_BRS" BO_ 2163278180 1;
+BA_ "SubCodeLengths" BO_ 2163278180 "5:37";
+BA_ "VFrameFormat" BO_ 2147614976 15;
+BA_ "CANFD_BRS" BO_ 2147614976 1;
+BA_ "VFrameFormat" BO_ 2147705858 15;
+BA_ "CANFD_BRS" BO_ 2147705858 1;
+BA_ "GenMsgCycleTime" BO_ 2147705858 2;
+BA_ "VFrameFormat" BO_ 2147746404 15;
+BA_ "CANFD_BRS" BO_ 2147746404 1;
+BA_ "GenMsgCycleTime" BO_ 2147746404 2;
+BA_ "VFrameFormat" BO_ 2163278436 15;
+BA_ "CANFD_BRS" BO_ 2163278436 1;
+BA_ "SubCodeLengths" BO_ 2163278436 "5:37";
+BA_ "VFrameFormat" BO_ 2147615232 15;
+BA_ "CANFD_BRS" BO_ 2147615232 1;
+BA_ "VFrameFormat" BO_ 2163278692 15;
+BA_ "CANFD_BRS" BO_ 2163278692 1;
+BA_ "GenMsgCycleTime" BO_ 2163278692 100;
+BA_ "SubCodeCycles" BO_ 2163278692 "22:100";
+BA_ "SubCodeLengths" BO_ 2163278692 "5:37;22:51;26:6;30:4";
+BA_ "VFrameFormat" BO_ 2163278847 15;
+BA_ "CANFD_BRS" BO_ 2163278847 1;
+BA_ "GenMsgCycleTime" BO_ 2163278847 100;
+BA_ "SubCodeCycles" BO_ 2163278847 "25:12.5;34:100";
+BA_ "SubCodeLengths" BO_ 2163278847 "25:17;34:4";
+BA_ "VFrameFormat" BO_ 2147615488 15;
+BA_ "CANFD_BRS" BO_ 2147615488 1;
+BA_ "VFrameFormat" BO_ 2147615588 15;
+BA_ "CANFD_BRS" BO_ 2147615588 1;
+BA_ "VFrameFormat" BO_ 2163237891 15;
+BA_ "CANFD_BRS" BO_ 2163237891 1;
+BA_ "SubCodeLengths" BO_ 2163237891 "4:4;5:3;11:2";
+BA_ "VFrameFormat" BO_ 2163283711 15;
+BA_ "CANFD_BRS" BO_ 2163283711 1;
+BA_ "GenMsgCycleTime" BO_ 2163283711 100;
+BA_ "SubCodeCycles" BO_ 2163283711 "33:100";
+BA_ "SubCodeLengths" BO_ 2163283711 "33:18";
+BA_ "VFrameFormat" BO_ 2163283556 15;
+BA_ "CANFD_BRS" BO_ 2163283556 1;
+BA_ "SubCodeLengths" BO_ 2163283556 "5:37";
+BA_ "VFrameFormat" BO_ 2147620352 15;
+BA_ "CANFD_BRS" BO_ 2147620352 1;
+BA_ "VFrameFormat" BO_ 2163237910 15;
+BA_ "CANFD_BRS" BO_ 2163237910 1;
+BA_ "SubCodeLengths" BO_ 2163237910 "10:2";
+VAL_ 2163238143 SubCode 11 "POWER" 10 "THOR" 9 "RTC_SYNC" 8 "SAFETY_RESET" 7 "SAFETY_PING" 6 "ECAT_PING" 5 "BAT_LATCH" 4 "BUZZER" 3 "BRAKE" 2 "PING" 1 "MC_TARGET" 0 "MC_TORQUE" ;
+VAL_ 2147640575 EvtCode 19 "CAN_ID_CHANGED" 18 "THOR_OFF" 17 "ROBOT_OFF" 16 "BLACKBOX_TRIG" 15 "BAT_WARN" 14 "ESTOP_UPDATE" 13 "ERR_CLEAR" 12 "ERR_CODE" 11 "WIZ_PHY_SNTP" 10 "WIZ_PHY_DHCP" 9 "WIZ_PHY_LINK" 8 "PAUSE" 7 "ECAT_CONNECT" 6 "ANGLE_EX_CONNECT" 5 "BRAKE_EX_CONNECT" 4 "BLDC_FAULT" 3 "BLDC_TORQUE" 2 "BLDC_LIMIT" 1 "ESTOP" 0 "OK" ;
+VAL_ 2147640320 EvtCode 19 "CAN_ID_CHANGED" 18 "THOR_OFF" 17 "ROBOT_OFF" 16 "BLACKBOX_TRIG" 15 "BAT_WARN" 14 "ESTOP_UPDATE" 13 "ERR_CLEAR" 12 "ERR_CODE" 11 "WIZ_PHY_SNTP" 10 "WIZ_PHY_DHCP" 9 "WIZ_PHY_LINK" 8 "PAUSE" 7 "ECAT_CONNECT" 6 "ANGLE_EX_CONNECT" 5 "BRAKE_EX_CONNECT" 4 "BLDC_FAULT" 3 "BLDC_TORQUE" 2 "BLDC_LIMIT" 1 "ESTOP" 0 "OK" ;
+VAL_ 2147705857 ReqState 240 "FAULT_RESET" 10 "QC" 9 "ESTOP" 8 "ERROR" 7 "ERR_OCCUR" 6 "PROC_OFF" 5 "RUN" 4 "TORQUE_ON" 3 "PROC_ON" 2 "READY" 1 "DISABLED" 0 "INIT" ;
+VAL_ 2147705857 DesiredMode 5 "TORQUE" 4 "WHEEL" 3 "SIMPLE" 2 "POSITION" 1 "VELOCITY" 0 "IDLE" ;
+VAL_ 2147746148 PresentState 10 "QC" 9 "ESTOP" 8 "ERROR" 7 "ERR_OCCUR" 6 "PROC_OFF" 5 "RUN" 4 "TORQUE_ON" 3 "PROC_ON" 2 "READY" 1 "DISABLED" 0 "INIT" ;
+VAL_ 2147746148 PresentMode 5 "TORQUE" 4 "WHEEL" 3 "SIMPLE" 2 "POSITION" 1 "VELOCITY" 0 "IDLE" ;
+VAL_ 2163278180 SubCode 34 "POWER" 33 "THOR" 32 "SAFETY" 31 "ECAT_ERR" 30 "BUZZER_CFG" 27 "ANGLE_MULTI" 26 "BAT_LATCH" 25 "SAFETY_SENSOR" 22 "HRMC" 19 "TOF" 18 "USS" 17 "ANGLE" 9 "TACTILE_G2" 5 "PING" ;
+VAL_ 2147614976 EvtCode 19 "CAN_ID_CHANGED" 18 "THOR_OFF" 17 "ROBOT_OFF" 16 "BLACKBOX_TRIG" 15 "BAT_WARN" 14 "ESTOP_UPDATE" 13 "ERR_CLEAR" 12 "ERR_CODE" 11 "WIZ_PHY_SNTP" 10 "WIZ_PHY_DHCP" 9 "WIZ_PHY_LINK" 8 "PAUSE" 7 "ECAT_CONNECT" 6 "ANGLE_EX_CONNECT" 5 "BRAKE_EX_CONNECT" 4 "BLDC_FAULT" 3 "BLDC_TORQUE" 2 "BLDC_LIMIT" 1 "ESTOP" 0 "OK" ;
+VAL_ 2147705858 ReqState 240 "FAULT_RESET" 10 "QC" 9 "ESTOP" 8 "ERROR" 7 "ERR_OCCUR" 6 "PROC_OFF" 5 "RUN" 4 "TORQUE_ON" 3 "PROC_ON" 2 "READY" 1 "DISABLED" 0 "INIT" ;
+VAL_ 2147705858 DesiredMode 5 "TORQUE" 4 "WHEEL" 3 "SIMPLE" 2 "POSITION" 1 "VELOCITY" 0 "IDLE" ;
+VAL_ 2147746404 PresentState 10 "QC" 9 "ESTOP" 8 "ERROR" 7 "ERR_OCCUR" 6 "PROC_OFF" 5 "RUN" 4 "TORQUE_ON" 3 "PROC_ON" 2 "READY" 1 "DISABLED" 0 "INIT" ;
+VAL_ 2147746404 PresentMode 5 "TORQUE" 4 "WHEEL" 3 "SIMPLE" 2 "POSITION" 1 "VELOCITY" 0 "IDLE" ;
+VAL_ 2163278436 SubCode 34 "POWER" 33 "THOR" 32 "SAFETY" 31 "ECAT_ERR" 30 "BUZZER_CFG" 27 "ANGLE_MULTI" 26 "BAT_LATCH" 25 "SAFETY_SENSOR" 22 "HRMC" 19 "TOF" 18 "USS" 17 "ANGLE" 9 "TACTILE_G2" 5 "PING" ;
+VAL_ 2147615232 EvtCode 19 "CAN_ID_CHANGED" 18 "THOR_OFF" 17 "ROBOT_OFF" 16 "BLACKBOX_TRIG" 15 "BAT_WARN" 14 "ESTOP_UPDATE" 13 "ERR_CLEAR" 12 "ERR_CODE" 11 "WIZ_PHY_SNTP" 10 "WIZ_PHY_DHCP" 9 "WIZ_PHY_LINK" 8 "PAUSE" 7 "ECAT_CONNECT" 6 "ANGLE_EX_CONNECT" 5 "BRAKE_EX_CONNECT" 4 "BLDC_FAULT" 3 "BLDC_TORQUE" 2 "BLDC_LIMIT" 1 "ESTOP" 0 "OK" ;
+VAL_ 2163278692 SubCode 34 "POWER" 33 "THOR" 32 "SAFETY" 31 "ECAT_ERR" 30 "BUZZER_CFG" 27 "ANGLE_MULTI" 26 "BAT_LATCH" 25 "SAFETY_SENSOR" 22 "HRMC" 19 "TOF" 18 "USS" 17 "ANGLE" 9 "TACTILE_G2" 5 "PING" ;
+VAL_ 2163278692 Bat_Disp1 2 "CRITICAL" 1 "WARN" 0 "NORMAL" ;
+VAL_ 2163278692 Bat_Disp2 2 "CRITICAL" 1 "WARN" 0 "NORMAL" ;
+VAL_ 2163278692 Bat_Src 2 "ADC" 1 "BMS" 0 "NONE" ;
+VAL_ 2163278692 Bat_State 3 "SHUTDOWN" 2 "CRITICAL" 1 "WARN" 0 "NORMAL" ;
+VAL_ 2163278847 SubCode 34 "POWER" 33 "THOR" 32 "SAFETY" 31 "ECAT_ERR" 30 "BUZZER_CFG" 27 "ANGLE_MULTI" 26 "BAT_LATCH" 25 "SAFETY_SENSOR" 22 "HRMC" 19 "TOF" 18 "USS" 17 "ANGLE" 9 "TACTILE_G2" 5 "PING" ;
+VAL_ 2163278847 Pwr_CurCmd 4 "ROBOT_OFF" 3 "SBC_OFF_FORCE" 2 "SBC_OFF" 1 "SBC_ON" 0 "NONE" ;
+VAL_ 2147615488 EvtCode 19 "CAN_ID_CHANGED" 18 "THOR_OFF" 17 "ROBOT_OFF" 16 "BLACKBOX_TRIG" 15 "BAT_WARN" 14 "ESTOP_UPDATE" 13 "ERR_CLEAR" 12 "ERR_CODE" 11 "WIZ_PHY_SNTP" 10 "WIZ_PHY_DHCP" 9 "WIZ_PHY_LINK" 8 "PAUSE" 7 "ECAT_CONNECT" 6 "ANGLE_EX_CONNECT" 5 "BRAKE_EX_CONNECT" 4 "BLDC_FAULT" 3 "BLDC_TORQUE" 2 "BLDC_LIMIT" 1 "ESTOP" 0 "OK" ;
+VAL_ 2147615588 EvtCode 19 "CAN_ID_CHANGED" 18 "THOR_OFF" 17 "ROBOT_OFF" 16 "BLACKBOX_TRIG" 15 "BAT_WARN" 14 "ESTOP_UPDATE" 13 "ERR_CLEAR" 12 "ERR_CODE" 11 "WIZ_PHY_SNTP" 10 "WIZ_PHY_DHCP" 9 "WIZ_PHY_LINK" 8 "PAUSE" 7 "ECAT_CONNECT" 6 "ANGLE_EX_CONNECT" 5 "BRAKE_EX_CONNECT" 4 "BLDC_FAULT" 3 "BLDC_TORQUE" 2 "BLDC_LIMIT" 1 "ESTOP" 0 "OK" ;
+VAL_ 2163237891 SubCode 11 "POWER" 10 "THOR" 9 "RTC_SYNC" 8 "SAFETY_RESET" 7 "SAFETY_PING" 6 "ECAT_PING" 5 "BAT_LATCH" 4 "BUZZER" 3 "BRAKE" 2 "PING" 1 "MC_TARGET" 0 "MC_TORQUE" ;
+VAL_ 2163237891 Bz_Sub 2 "BEEP" 1 "MUTE" 0 "SET" ;
+VAL_ 2163237891 Pwr_Action 4 "ROBOT_OFF" 3 "SBC_OFF_FORCE" 2 "SBC_OFF" 1 "SBC_ON" 0 "NONE" ;
+VAL_ 2163283711 SubCode 34 "POWER" 33 "THOR" 32 "SAFETY" 31 "ECAT_ERR" 30 "BUZZER_CFG" 27 "ANGLE_MULTI" 26 "BAT_LATCH" 25 "SAFETY_SENSOR" 22 "HRMC" 19 "TOF" 18 "USS" 17 "ANGLE" 9 "TACTILE_G2" 5 "PING" ;
+VAL_ 2163283711 Thor_CurCmd 5 "RECOVERY" 4 "RESET" 3 "POWER_OFF_FORCE" 2 "POWER_OFF" 1 "POWER_ON" 0 "NONE" ;
+VAL_ 2163283556 SubCode 34 "POWER" 33 "THOR" 32 "SAFETY" 31 "ECAT_ERR" 30 "BUZZER_CFG" 27 "ANGLE_MULTI" 26 "BAT_LATCH" 25 "SAFETY_SENSOR" 22 "HRMC" 19 "TOF" 18 "USS" 17 "ANGLE" 9 "TACTILE_G2" 5 "PING" ;
+VAL_ 2147620352 EvtCode 19 "CAN_ID_CHANGED" 18 "THOR_OFF" 17 "ROBOT_OFF" 16 "BLACKBOX_TRIG" 15 "BAT_WARN" 14 "ESTOP_UPDATE" 13 "ERR_CLEAR" 12 "ERR_CODE" 11 "WIZ_PHY_SNTP" 10 "WIZ_PHY_DHCP" 9 "WIZ_PHY_LINK" 8 "PAUSE" 7 "ECAT_CONNECT" 6 "ANGLE_EX_CONNECT" 5 "BRAKE_EX_CONNECT" 4 "BLDC_FAULT" 3 "BLDC_TORQUE" 2 "BLDC_LIMIT" 1 "ESTOP" 0 "OK" ;
+VAL_ 2163237910 SubCode 11 "POWER" 10 "THOR" 9 "RTC_SYNC" 8 "SAFETY_RESET" 7 "SAFETY_PING" 6 "ECAT_PING" 5 "BAT_LATCH" 4 "BUZZER" 3 "BRAKE" 2 "PING" 1 "MC_TARGET" 0 "MC_TORQUE" ;
+VAL_ 2163237910 Thor_Action 5 "RECOVERY" 4 "RESET" 3 "POWER_OFF_FORCE" 2 "POWER_OFF" 1 "POWER_ON" 0 "NONE" ;
+SIG_VALTYPE_ 2147705857 DesiredPosition : 1;
+SIG_VALTYPE_ 2147705857 DesiredVelocity : 1;
+SIG_VALTYPE_ 2147705857 DesiredTorque : 1;
+SIG_VALTYPE_ 2147746148 PresentPosition : 1;
+SIG_VALTYPE_ 2147746148 PresentVelocity : 1;
+SIG_VALTYPE_ 2147746148 PresentTorque : 1;
+SIG_VALTYPE_ 2147705858 DesiredPosition : 1;
+SIG_VALTYPE_ 2147705858 DesiredVelocity : 1;
+SIG_VALTYPE_ 2147705858 DesiredTorque : 1;
+SIG_VALTYPE_ 2147746404 PresentPosition : 1;
+SIG_VALTYPE_ 2147746404 PresentVelocity : 1;
+SIG_VALTYPE_ 2147746404 PresentTorque : 1;
+SIG_VALTYPE_ 2163278692 Bat1_Current : 1;
+SIG_VALTYPE_ 2163278692 Bat2_Current : 1;
+SIG_VALTYPE_ 2163278847 Ss_LoadCell1 : 1;
+SIG_VALTYPE_ 2163278847 Ss_LoadCell2 : 1;
+SIG_VALTYPE_ 2163278847 Ss_LoadCell3 : 1;

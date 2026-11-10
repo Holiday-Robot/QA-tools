@@ -1,0 +1,51 @@
+#!/bin/bash
+# Configure one CAN interface for the FM26 CAN monitor. Installed root-owned at /usr/local/sbin/canmon-setup
+# and run through sudo without a password (see install_can_access.sh), so every argument is checked strictly.
+#
+#   canmon-setup up <iface> <bitrate> <sample-point> <dbitrate> <dsample-point> <listen-only: on|off>
+#   canmon-setup down <iface>
+#   canmon-setup show <iface>
+#
+# sample-point 0 means "let the driver choose". Example (local CAN, receive only):
+#   canmon-setup up can0 1000000 0.875 5000000 0.625 on
+PATH=/usr/sbin:/usr/bin:/sbin:/bin
+set -u
+
+die() { echo "canmon-setup: $*" >&2; exit 2; }
+
+action=${1-}
+iface=${2-}
+[[ $iface =~ ^can[0-9]{1,2}$ ]] || die "interface must look like can0"
+[ -d "/sys/class/net/$iface" ] || die "$iface not found. Is the analyzer plugged in?"
+
+case "$action" in
+  show)
+    [ $# -eq 2 ] || die "usage: show <iface>"
+    exec ip -details -statistics -json link show "$iface"
+    ;;
+  down)
+    [ $# -eq 2 ] || die "usage: down <iface>"
+    exec ip link set "$iface" down
+    ;;
+  up)
+    [ $# -eq 7 ] || die "usage: up <iface> <bitrate> <sample-point> <dbitrate> <dsample-point> <on|off>"
+    bitrate=$3; sp=$4; dbitrate=$5; dsp=$6; listen=$7
+    [[ $bitrate =~ ^[0-9]{4,7}$ ]] && [ "$bitrate" -ge 10000 ] && [ "$bitrate" -le 1000000 ] || die "bitrate must be 10000..1000000"
+    [[ $dbitrate =~ ^[0-9]{4,8}$ ]] && [ "$dbitrate" -ge "$bitrate" ] && [ "$dbitrate" -le 12000000 ] || die "dbitrate must be bitrate..12000000"
+    [[ $sp =~ ^0(\.[0-9]{1,3})?$ ]] || die "sample-point must be 0 or 0.xxx"
+    [[ $dsp =~ ^0(\.[0-9]{1,3})?$ ]] || die "dsample-point must be 0 or 0.xxx"
+    [[ $listen == on || $listen == off ]] || die "listen-only must be on or off"
+    args=(bitrate "$bitrate" dbitrate "$dbitrate" fd on listen-only "$listen" berr-reporting on)
+    [ "$sp" != 0 ] && args+=(sample-point "$sp")
+    [ "$dsp" != 0 ] && args+=(dsample-point "$dsp")
+    # Recover from bus-off by itself only when the tool is allowed to transmit.
+    [ "$listen" = off ] && args+=(restart-ms 100)
+    ip link set "$iface" down 2>/dev/null
+    ip link set "$iface" type can "${args[@]}" || die "the driver refused these settings"
+    ip link set "$iface" txqueuelen 1000
+    ip link set "$iface" up || die "could not bring $iface up"
+    ;;
+  *)
+    die "action must be up, down or show"
+    ;;
+esac
