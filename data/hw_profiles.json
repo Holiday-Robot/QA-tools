@@ -1,0 +1,8 @@
+{
+  "FM26C": {
+    "can0": {"enabled": true, "bitrate": 1000000, "sample_point": 0.875, "dbitrate": 5000000, "dsample_point": 0.625,
+             "listen_only": true, "dbc": ""},
+    "can1": {"enabled": true, "bitrate": 1000000, "sample_point": 0.875, "dbitrate": 5000000, "dsample_point": 0.625,
+             "listen_only": true, "dbc": ""}
+  }
+}

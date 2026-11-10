@@ -21,8 +21,9 @@ MODE_LISTEN, MODE_TX = "수신 전용", "송신 가능"
 
 
 class HardwareDialog(QDialog):
-    def __init__(self, parent, settings, dbc_dir, runner=hwconfig.run):
+    def __init__(self, parent, settings, dbc_dir, runner=hwconfig.run, profiles_file=None):
         super().__init__(parent)
+        self.shared = hwconfig.load_shared_profiles(profiles_file)    # read-only profiles from the repository
         self.setWindowTitle("하드웨어 설정")
         self.resize(1320, 520)
         self.settings, self.dbc_dir, self.runner = settings, Path(dbc_dir), runner
@@ -250,10 +251,14 @@ class HardwareDialog(QDialog):
         return results
 
     # ------------------------------------------------------------ profiles
+    def _profiles(self):
+        """Shared profiles from the repository, overridden by the user's own profiles of the same name."""
+        return {**self.shared, **self._json("hw/profiles")}
+
     def _fill_profiles(self, select=""):
         self.profile.clear()
         self.profile.addItem("")
-        self.profile.addItems(sorted(self._json("hw/profiles")))
+        self.profile.addItems(sorted(self._profiles()))
         self.profile.setCurrentText(select)
 
     def _ask_save(self):
@@ -268,10 +273,16 @@ class HardwareDialog(QDialog):
         self._fill_profiles(name)
 
     def load_profile(self, name):
-        data = self._json("hw/profiles").get(name)
+        data = self._profiles().get(name)
         if not data:
             return
-        missing = [iface for iface, d in data.items() if not self.set_config(ChannelConfig.from_dict(d))]
+        missing = []
+        for iface, d in data.items():
+            cfg = ChannelConfig.from_dict({**d, "iface": iface})
+            if cfg.dbc and Path(cfg.dbc).suffix.lower() != ".dbc":     # shared profiles name a DBC channel, not a path
+                cfg.dbc = str(self.dbc_dir / f"{cfg.dbc}.dbc")
+            if not self.set_config(cfg):
+                missing.append(iface)
         text = f"프로필 \"{name}\"을 불러왔습니다. \"적용\"을 눌러야 장치에 반영됩니다."
         if missing:
             text += f"\n지금 연결되지 않은 채널은 건너뛰었습니다: {', '.join(missing)}"
@@ -282,4 +293,7 @@ class HardwareDialog(QDialog):
         profiles = self._json("hw/profiles")
         if profiles.pop(name, None) is not None:
             self.settings.setValue("hw/profiles", json.dumps(profiles))
-            self._fill_profiles()
+            self._fill_profiles(name if name in self.shared else "")
+        elif name in self.shared:
+            self.log.setPlainText(f"\"{name}\"은 저장소에 들어 있는 공용 프로필이라 여기서 지울 수 없습니다 "
+                                  f"({hwconfig.PROFILES_FILE.name}).")

@@ -2,11 +2,14 @@
 from __future__ import annotations
 
 import json
+import os
 import subprocess
 from dataclasses import asdict, dataclass
 from pathlib import Path
 
 HELPER = "/usr/local/sbin/canmon-setup"
+# Profiles kept in the repository, shared by every PC that uses this checkout. Profiles saved from the dialog stay per user.
+PROFILES_FILE = Path(os.environ.get("CANMON_PROFILES") or Path(__file__).resolve().parents[4] / "data" / "hw_profiles.json")
 PRESETS = {
     "로컬 CAN (1 M / 5 M)": dict(bitrate=1_000_000, sample_point=0.875, dbitrate=5_000_000, dsample_point=0.625),
     "D-CAN (125 k / 1 M)": dict(bitrate=125_000, sample_point=0.0, dbitrate=1_000_000, dsample_point=0.0),
@@ -127,6 +130,15 @@ def parse_interfaces(text, sys_root="/sys/class/net"):
             tx_err=_num(berr.get("tx"), int) or 0, rx_err=_num(berr.get("rx"), int) or 0,
             clock=_num(data.get("clock"), int), device=describe_device(item.get("ifname", ""), sys_root)))
     return sorted(out, key=lambda i: i.name)
+
+
+def load_shared_profiles(path=None):
+    """Profiles from the repository file: {name: {iface: ChannelConfig dict}}. A missing or broken file gives {}."""
+    try:
+        data = json.loads(Path(path or PROFILES_FILE).read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}
+    return {str(k): v for k, v in data.items() if isinstance(v, dict)} if isinstance(data, dict) else {}
 
 
 def run(cmd, timeout=8):

@@ -147,6 +147,23 @@ with tempfile.TemporaryDirectory() as d:
     dlg2.delete_profile()
     if json.loads(settings.value("hw/profiles")) != {}:
         fails.append("profile delete")
+    # shared profiles from the repository file: listed, loadable (DBC by channel name), not deletable
+    shared = Path(d) / "hw_profiles.json"
+    shared.write_text(json.dumps({"공용": {"can0": {"bitrate": 500000, "sample_point": 0.8, "dbitrate": 2000000,
+                                                   "dsample_point": 0.7, "listen_only": True, "dbc": "HETC-L-ARM_ch0"}}}))
+    dlg4 = HardwareDialog(None, settings, DBC_DIR, runner=fake, profiles_file=shared)
+    if "공용" not in [dlg4.profile.itemText(i) for i in range(dlg4.profile.count())]:
+        fails.append("shared profile not listed")
+    dlg4.load_profile("공용")
+    if dlg4.rows["can0"]["bitrate"].value() != 500000 or dlg4.rows["can0"]["dbc"].currentData() != str(DBC_DIR / "HETC-L-ARM_ch0.dbc"):
+        fails.append(f"shared profile load {dlg4.rows['can0']['dbc'].currentData()}")
+    dlg4.profile.setCurrentText("공용")
+    dlg4.delete_profile()
+    if "공용" not in [dlg4.profile.itemText(i) for i in range(dlg4.profile.count())] or "지울 수 없습니다" not in dlg4.log.toPlainText():
+        fails.append("shared profile should not be deletable")
+    real = hwconfig.load_shared_profiles()
+    if set(real.get("FM26C", {})) != {"can0", "can1"} or real["FM26C"]["can0"]["bitrate"] != 1000000:
+        fails.append(f"repository profiles {real}")
     # no devices
     dlg3 = HardwareDialog(None, settings, DBC_DIR, runner=FakeSystem([{"ifname": "eth0", "link_type": "ether"}]))
     dlg3.show()
