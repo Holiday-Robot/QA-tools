@@ -6,19 +6,35 @@ Holiday Robotics 품질·검증용 도구 모음입니다. 도구는 명령줄(`
 |---|---|---|---|
 | CAN Monitor (`canmon`) | 있음 | 있음 | [docs/canmon.md](docs/canmon.md), [docs/manual.html](docs/manual.html) |
 
-실제 CAN 분석기(PCAN-USB Pro FD)로는 아직 확인하지 못했습니다. 지금까지의 검사는 모두 가상 데이터와 가짜 장치로 했습니다.
+2026-11-10에 측정용 노트북에서 실제 분석기(PCAN-USB Pro FD)의 채널 설정(로컬 CAN, 수신 전용)까지 확인했습니다. 로봇 버스에 연결해 프레임을 받아 본 적은 아직 없습니다. 그 밖의 검사는 가상 데이터와 가짜 장치로 했습니다.
 
 ## 설치
 
 Python 3.10 이상이 필요합니다.
 
+Ubuntu 23.04 이후(측정용 노트북의 24.04 포함)는 시스템 Python에 `pip install`을 막아 `externally-managed-environment` 오류가 납니다. 그래서 저장소 안에 가상환경(`.venv`)을 만들어 설치합니다.
+
 ```bash
 git clone git@github.com:Holiday-Robot/QA-tools.git
 cd QA-tools
-pip install -e ".[gui]"      # 화면 없이 명령줄만 쓸 때는 pip install -e .
+
+# uv가 있으면 (2026-11-10 측정용 노트북에서 확인)
+uv venv .venv
+uv pip install --python .venv/bin/python -e ".[gui]"     # 화면 없이 명령줄만 쓸 때는 -e .
+
+# uv가 없으면 (Ubuntu는 먼저 sudo apt install python3-venv)
+python3 -m venv .venv
+.venv/bin/pip install -e ".[gui]"
 ```
 
-설치하지 않고 저장소 폴더에서 `./qa`로 실행해도 됩니다. 이때는 `numpy`, `cantools`, `PyQt6`, `pyqtgraph`가 이미 설치되어 있어야 합니다. `pip install`로 설치하는 방법은 아직 실행해 보지 못했습니다(개발 PC에 pip가 없어 `./qa`로만 확인했습니다).
+설치한 뒤에는 가상환경을 켜고 `qa`로 실행합니다. 켜지 않고 `.venv/bin/qa`로 실행해도 됩니다.
+
+```bash
+source .venv/bin/activate
+qa list
+```
+
+설치하지 않고 저장소 폴더에서 `./qa`로 실행해도 됩니다. `./qa`는 그때 PATH에 있는 `python3`을 쓰므로, 가상환경을 켜 두었거나 `numpy`, `cantools`, `PyQt6`, `pyqtgraph`가 이미 설치되어 있어야 합니다.
 
 ## 사용
 
@@ -52,6 +68,7 @@ src/qatools/
       hw/                                             CAN 채널 설정 스크립트
 tests/                      검사 (화면 없이, CAN 장치 없이 실행)
 data/dbc/                   채널별 DBC
+data/hw_profiles.json       하드웨어 설정 공용 프로필 (FM26C 등)
 docs/                       설명서와 화면 이미지
 ```
 

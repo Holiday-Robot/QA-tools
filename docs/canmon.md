@@ -24,6 +24,8 @@
 # 1. 채널 설정. listen-only라 로봇 버스에 아무것도 보내지 않는다
 sudo ./qa canmon setup can0 local     # 로컬 CAN 1 Mbps / 5 Mbps
 sudo ./qa canmon setup can1 local     # D-CAN이면 dcan
+# 권한 설치(아래)를 한 PC에서는 암호 없이:
+#   sudo -n /usr/local/sbin/canmon-setup up can0 1000000 0.875 5000000 0.625 on
 
 # 2. 캡처 (Ctrl+C로 종료하거나 --seconds 지정)
 ./qa canmon capture can0 can1 -o ltact.csv --seconds 60
@@ -57,7 +59,7 @@ sudo ./qa canmon setup can1 local     # D-CAN이면 dcan
 ```
 
 - `sample_ltact.csv`는 `qa canmon sample`로 만든 **가상 데이터**입니다. 로봇에서 기록한 것이 아닙니다. can0의 `HTAC_61` 엔코더가 8.2초에 약 12 ms 끊기도록 넣어 두었습니다.
-- 필요한 패키지는 `PyQt6`, `pyqtgraph`, `numpy`, `cantools`입니다. `pip install -e ".[gui]"`로 한 번에 설치됩니다.
+- 필요한 패키지는 `PyQt6`, `pyqtgraph`, `numpy`, `cantools`입니다. 저장소 안의 가상환경(`.venv`)에 `pip install -e ".[gui]"`로 한 번에 설치합니다. Ubuntu는 시스템 Python에 `pip install`을 막으므로 가상환경이 필요합니다. 방법은 [README](../README.md#설치)에 있습니다.
 - Windows에서도 Python과 위 패키지를 설치하면 `qa gui canmon 파일.csv`로 실행됩니다(확인하지는 못했습니다).
 - 채널별 DBC는 왼쪽 "채널과 DBC"에서 고릅니다. 마지막 선택은 저장됩니다.
 
@@ -91,7 +93,9 @@ sudo src/qatools/tools/canmon/hw/install_can_access.sh          # 지금 사용�
 sudo src/qatools/tools/canmon/hw/install_can_access.sh kim lee  # 다른 사용자도 등록
 ```
 
-`canmon` 그룹 사용자는 `/usr/local/sbin/canmon-setup` 하나만 암호 없이 관리자 권한으로 실행할 수 있습니다. 이 스크립트는 `can0` 같은 CAN 장치의 속도, 샘플 포인트, 수신 전용 여부만 바꾸고, 그 외 입력은 거부합니다. 한 번 로그아웃한 뒤부터 적용됩니다. 실제 장비에서 실행해 본 적은 없습니다.
+`canmon` 그룹 사용자는 `/usr/local/sbin/canmon-setup` 하나만 암호 없이 관리자 권한으로 실행할 수 있습니다. 이 스크립트는 `can0` 같은 CAN 장치의 속도, 샘플 포인트, 수신 전용 여부만 바꾸고, 그 외 입력은 거부합니다. 한 번 로그아웃했다가 다시 로그인한 뒤부터 적용됩니다. 그 전에 바로 쓰려면 `sg canmon -c ".venv/bin/qa"`처럼 `canmon` 그룹으로 실행합니다.
+
+2026-11-10 측정용 노트북의 PCAN-USB Pro FD로 확인했습니다. 이 분석기의 드라이버(`peak_usb`)는 `berr-reporting` 모드를 지원하지 않아서 설정이 거부됐었습니다. 지금은 드라이버가 지원할 때만 그 모드를 켭니다. `peak_usb`는 이 모드 없이도 오류 프레임과 오류 카운터를 보고합니다. 이 수정 전에 권한을 설치한 PC는 `/usr/local/sbin/canmon-setup`을 다시 설치해야 합니다(설치 스크립트를 다시 실행하거나 `sudo install -o root -g root -m 0755 src/qatools/tools/canmon/hw/canmon-setup /usr/local/sbin/canmon-setup`).
 
 UI에서도 설치할 수 있습니다: 메뉴 "도구 → CAN 설정 권한 설치…". 관리자 암호 창(pkexec)이 한 번 뜹니다. pkexec이 없는 PC에서는 터미널 명령을 복사해 주는 버튼을 씁니다.
 
@@ -106,7 +110,7 @@ UI에서도 설치할 수 있습니다: 메뉴 "도구 → CAN 설정 권한 설
 - 구성을 프로필로 저장하고 불러올 수 있습니다. 화면에서 저장한 프로필은 이 PC의 사용자 설정에만 남습니다.
 - 저장소의 `data/hw_profiles.json`에 있는 프로필(예: `FM26C`)은 모든 PC의 목록에 공용으로 나옵니다. 화면에서 지울 수 없고, DBC는 채널 이름(예: `HETC-L-TACT_ch0`)으로 적습니다.
 - 분석기가 없으면 "CAN 장치를 찾지 못했습니다"가 표시됩니다. Windows와 WSL에서는 항상 이 상태입니다.
-- 검사: `check_hw.py`. 가짜 장치 정보로 검사했고 실제 분석기로는 확인하지 못했습니다.
+- 검사: `check_hw.py`(가짜 장치 정보). 2026-11-10 실제 분석기(PCAN-USB Pro FD)에서도 로컬 CAN 수신 전용 적용과 장비 커넥터 표시를 확인했습니다.
 
 ## 실시간 측정 (2단계)
 
