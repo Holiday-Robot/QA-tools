@@ -14,8 +14,9 @@ from ..core import dbc_files
 from ..hwconfig import CUSTOM, PRESETS, ChannelConfig
 from .hw import AccessDialog
 
-COLS = ["사용", "채널", "장치", "프리셋", "중재 속도 (bps)", "샘플 포인트", "데이터 속도 (bps)", "데이터 샘플 포인트", "모드", "DBC",
+COLS = ["사용", "채널", "장비 커넥터", "장치", "프리셋", "중재 속도 (bps)", "샘플 포인트", "데이터 속도 (bps)", "데이터 샘플 포인트", "모드", "DBC",
         "현재 상태"]
+STATUS_COL = COLS.index("현재 상태")
 NO_DBC, BROWSE = "(DBC 없음)", "__browse__"
 MODE_LISTEN, MODE_TX = "수신 전용", "송신 가능"
 
@@ -25,7 +26,7 @@ class HardwareDialog(QDialog):
         super().__init__(parent)
         self.shared = hwconfig.load_shared_profiles(profiles_file)    # read-only profiles from the repository
         self.setWindowTitle("하드웨어 설정")
-        self.resize(1320, 520)
+        self.resize(1440, 520)
         self.settings, self.dbc_dir, self.runner = settings, Path(dbc_dir), runner
         self.rows = {}                     # iface -> dict of widgets
         self.infos = []
@@ -154,11 +155,14 @@ class HardwareDialog(QDialog):
         w["mode"].setCurrentText(MODE_LISTEN if cfg.listen_only else MODE_TX)
         w["mode"].setToolTip("송신 가능은 메시지 송신을 할 채널에만 씁니다.")
         self.table.setCellWidget(r, 0, w["use"])
-        for c, text in ((1, info.name), (2, info.device or "-"), (10, info.summary())):
+        port = f"CAN {info.port}" if info.port and info.configurable else "-"
+        for c, text in ((1, info.name), (2, port), (3, info.device or "-"), (STATUS_COL, info.summary())):
             item = QTableWidgetItem(text)
             item.setFlags(Qt.ItemFlag.ItemIsEnabled)
             self.table.setItem(r, c, item)
-        for c, key in ((3, "preset"), (4, "bitrate"), (5, "sp"), (6, "dbitrate"), (7, "dsp"), (8, "mode"), (9, "dbc")):
+        self.table.item(r, 2).setToolTip(f"{info.name}은 분석기 본체에 \"{port}\"로 표시된 커넥터입니다. "
+                                         "리눅스 번호는 0부터, 커넥터 번호는 1부터 셉니다." if port != "-" else "")
+        for c, key in ((4, "preset"), (5, "bitrate"), (6, "sp"), (7, "dbitrate"), (8, "dsp"), (9, "mode"), (10, "dbc")):
             self.table.setCellWidget(r, c, w[key])
         self.rows[info.name] = w
         w["preset"].setCurrentText(self._row_config(info.name).preset())
@@ -247,7 +251,7 @@ class HardwareDialog(QDialog):
             if info.name in self.rows:
                 self.rows[info.name]["info"] = info
                 row = list(self.rows).index(info.name)
-                self.table.item(row, 10).setText(info.summary())
+                self.table.item(row, STATUS_COL).setText(info.summary())
         return results
 
     # ------------------------------------------------------------ profiles

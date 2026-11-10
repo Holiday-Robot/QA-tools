@@ -66,6 +66,16 @@ if not (c0.up and c0.bitrate == 1000000 and c0.sample_point == 0.875 and c0.dbit
     fails.append(f"can0 parse {c0}")
 if c1.up or c1.bitrate is not None or c1.summary() != "설정 전" or v0.configurable or "가상" not in v0.summary():
     fails.append(f"can1/vcan parse {c1} {v0}")
+# connector number: peak_usb leaves dev_port at 0 and puts the channel in dev_id (hex); other drivers use dev_port
+with tempfile.TemporaryDirectory() as sysfs:
+    for name, files in (("can0", {"dev_port": "0", "dev_id": "0x0"}), ("can1", {"dev_port": "0", "dev_id": "0x1"}),
+                        ("can2", {"dev_port": "2", "dev_id": "0x0"}), ("can3", {})):
+        (Path(sysfs) / name).mkdir()
+        for f, v in files.items():
+            (Path(sysfs) / name / f).write_text(v + "\n")
+    ports = [hwconfig.device_port(n, sysfs) for n in ("can0", "can1", "can2", "can3")]
+    if ports != [1, 2, 3, None]:
+        fails.append(f"device ports {ports}")
 
 # ---- commands and presets
 cfg = ChannelConfig("can0")
@@ -126,8 +136,8 @@ with tempfile.TemporaryDirectory() as d:
     ups = [c[3:] for c in fake.calls if c[0] == "sudo"]
     if ups != [["up", "can0", "1000000", "0.875", "5000000", "0.625", "on"], ["up", "can1", "125000", "0", "1000000", "0", "on"]]:
         fails.append(f"dialog commands {ups}")
-    if not all(ok for _, ok, _ in results) or "✔ can0" not in dlg.log.toPlainText() or "켜짐" not in dlg.table.item(0, 10).text():
-        fails.append(f"dialog apply {results} {dlg.table.item(0, 10).text()}")
+    if not all(ok for _, ok, _ in results) or "✔ can0" not in dlg.log.toPlainText() or "켜짐" not in dlg.table.item(0, 11).text():
+        fails.append(f"dialog apply {results} {dlg.table.item(0, 11).text()}")
     if settings.value("map/can0") != dbc0 or json.loads(settings.value("hw/config"))["can1"]["bitrate"] != 125000:
         fails.append("settings not stored")
     dlg.show()

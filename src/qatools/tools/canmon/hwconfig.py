@@ -62,6 +62,7 @@ class Interface:
     rx_err: int = 0
     clock: int | None = None
     device: str = ""
+    port: int | None = None           # connector number on the adapter, counted from 1 (CAN 1, CAN 2 ...)
 
     @property
     def configurable(self):
@@ -101,12 +102,24 @@ def describe_device(name, sys_root="/sys/class/net"):
         drv = base / "driver"
         if drv.exists():
             parts.append(f"드라이버 {drv.resolve().name}")
-        port = Path(sys_root) / name / "dev_port"
-        if port.is_file():
-            parts.append(f"채널 {int(port.read_text().strip()) + 1}")
     except (OSError, ValueError):
         pass
     return " · ".join(parts)
+
+
+def device_port(name, sys_root="/sys/class/net"):
+    """Connector of an interface on its adapter, counted from 1, or None when sysfs does not say.
+
+    Drivers put the channel index in dev_port, or (peak_usb and other older drivers) leave dev_port at 0
+    and put it in dev_id, so take whichever is set."""
+    index = 0
+    for f in ("dev_port", "dev_id"):
+        try:
+            index = index or int((Path(sys_root) / name / f).read_text().strip(), 0)
+        except (OSError, ValueError):
+            pass
+    found = any((Path(sys_root) / name / f).is_file() for f in ("dev_port", "dev_id"))
+    return index + 1 if found else None
 
 
 def parse_interfaces(text, sys_root="/sys/class/net"):
@@ -128,7 +141,8 @@ def parse_interfaces(text, sys_root="/sys/class/net"):
             dbitrate=_num(dbt.get("bitrate"), int), dsample_point=_num(dbt.get("sample_point"), float),
             fd="FD" in modes, listen_only="LISTEN-ONLY" in modes,
             tx_err=_num(berr.get("tx"), int) or 0, rx_err=_num(berr.get("rx"), int) or 0,
-            clock=_num(data.get("clock"), int), device=describe_device(item.get("ifname", ""), sys_root)))
+            clock=_num(data.get("clock"), int), device=describe_device(item.get("ifname", ""), sys_root),
+            port=device_port(item.get("ifname", ""), sys_root)))
     return sorted(out, key=lambda i: i.name)
 
 
